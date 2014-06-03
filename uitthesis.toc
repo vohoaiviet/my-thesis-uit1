@@ -4,7 +4,7 @@
 \contentsline {chapter}{Danh s\'ach b\h {a}ng}{vi}{chapter*.3}
 \contentsline {chapter}{Danh s\IeC {\'a}ch t\IeC {\`\uhorn } vi\IeC {\'\ecircumflex }t t\IeC {\'\abreve }t}{vii}{chapter*.4}
 \contentsline {chapter}{\numberline {1}Hi\IeC {\d \ecircumflex }n tr\IeC {\d a}ng v\IeC {\`a} m\IeC {\d u}c ti\IeC {\^e}u}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Hi\IeC {\d \ecircumflex }n tr\IeC {\d a}ng}{1}{section.1.1}
+\contentsline {section}{\numberline {1.1}Hi\IeC {\d \ecircumflex }n tr\IeC {\d a}ng truy v\IeC {\'\acircumflex }n \IeC {\h a}nh}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}M\IeC {\d u}c ti\IeC {\^e}u \IeC {\dj }\IeC {\`\ecircumflex } t\IeC {\`a}i}{2}{section.1.2}
 \contentsline {subsection}{\numberline {1.2.1}\IeC {\DJ }\IeC {\^a}y l\IeC {\`a} subsection }{2}{subsection.1.2.1}
 \contentsline {subsubsection}{\numberline {1.2.1.1}\IeC {\DJ }\IeC {\^a}y l\IeC {\`a} sunsubsection }{2}{subsubsection.1.2.1.1}
