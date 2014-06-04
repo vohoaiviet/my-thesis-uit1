@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.28)  3 JUN 2014 17:44
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.28)  4 JUN 2014 11:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1352,17 +1352,11 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 94.
 (./Appendix2/appendix2.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 94.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 94.
-
-
-Package rerunfilecheck Warning: File `uitthesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `uitthesis.out':
-(rerunfilecheck)             Before: BFE0637F1E058B2D29526D65658F67FE;3465
-(rerunfilecheck)             After:  416E45CE6045DBF584C124B0C2770050;3477.
+Package rerunfilecheck Info: File `uitthesis.out' has not changed.
+(rerunfilecheck)             Checksum: 416E45CE6045DBF584C124B0C2770050;3477.
 Package rerunfilecheck Info: File `uitthesis.brf' has not changed.
 (rerunfilecheck)             Checksum: 4EC3D1134A6619E5705F56D3359D3AA3;624.
+
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1388,7 +1382,7 @@ r/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/vntex/vnr/vnr7.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/vntex/vnr/vnr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/v
 nti12.pfb>
-Output written on uitthesis.pdf (27 pages, 851736 bytes).
+Output written on uitthesis.pdf (27 pages, 853563 bytes).
 PDF statistics:
  510 PDF objects out of 1000 (max. 8388607)
  434 compressed objects within 5 object streams
