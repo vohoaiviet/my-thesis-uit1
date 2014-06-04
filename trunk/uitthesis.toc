@@ -1,8 +1,8 @@
 \select@language {vietnam}
-\contentsline {chapter}{M\d {u}c l\d {u}c}{iii}{chapter*.1}
-\contentsline {chapter}{Danh s\'ach h\`inh v\~e}{v}{chapter*.2}
-\contentsline {chapter}{Danh s\'ach b\h {a}ng}{vi}{chapter*.3}
-\contentsline {chapter}{Danh s\IeC {\'a}ch t\IeC {\`\uhorn } vi\IeC {\'\ecircumflex }t t\IeC {\'\abreve }t}{vii}{chapter*.4}
+\contentsline {chapter}{M\d {u}c l\d {u}c}{iv}{chapter*.1}
+\contentsline {chapter}{Danh s\'ach h\`inh v\~e}{vi}{chapter*.2}
+\contentsline {chapter}{Danh s\'ach b\h {a}ng}{vii}{chapter*.3}
+\contentsline {chapter}{Danh s\IeC {\'a}ch t\IeC {\`\uhorn } vi\IeC {\'\ecircumflex }t t\IeC {\'\abreve }t}{viii}{chapter*.4}
 \contentsline {chapter}{\numberline {1}Hi\IeC {\d \ecircumflex }n tr\IeC {\d a}ng v\IeC {\`a} m\IeC {\d u}c ti\IeC {\^e}u}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Hi\IeC {\d \ecircumflex }n tr\IeC {\d a}ng truy v\IeC {\'\acircumflex }n \IeC {\h a}nh}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}M\IeC {\d u}c ti\IeC {\^e}u \IeC {\dj }\IeC {\`\ecircumflex } t\IeC {\`a}i}{2}{section.1.2}
