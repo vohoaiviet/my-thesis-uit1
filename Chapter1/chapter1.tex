@@ -4,45 +4,39 @@
 % \hspace*{1cm}
 % \pagebreak[4]
 
-\chapter{Hiện trạng và mục tiêu}
+\chapter{Giới thiệu tổng quan}
 \ifpdf
     \graphicspath{{Chapter1/Chapter1Figs/PNG/}{Chapter1/Chapter1Figs/PDF/}{Chapter1/Chapter1Figs/}}
 \else
     \graphicspath{{Chapter1/Chapter1Figs/EPS/}{Chapter1/Chapter1Figs/}}
 \fi
 
-\section{Hiện trạng truy vấn ảnh}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+\section{Mục tiêu và động lực chọn đề tài}
+Trong những năm gần đây, cùng với sự phát triển của công nghệ thông tin, các lĩnh vực liên quan đến kỹ thuật số cũng đang có tốc độ phát triển chóng mặt. Các thiết bị kỹ thuật số như máy ảnh, máy quay phim kỹ thuật số, camera số, điện thoại di động có chức năng chụp hình, ... đang ngày càng phổ biến và không ngừng gia tăng về số lượng. Chính điều này đã làm sản sinh ra một lượng thông tin số khổng lồ bao gồm hình ảnh, video, v.v... Do đó, nhu cầu truy vấn thông tin từ kho dữ liệu hình ảnh, video ngày càng bức thiết hơn bao giờ hết.\\
+Mục tiêu của luận văn này nhằm xây dựng một hệ thống truy vấn ảnh trên tập dữ liệu lớn, trong đó quá trình truy vấn hoàn toàn dựa trên nội dung của ảnh và kết quả phải được trả về gần như ngay lập tức với cơ sở dữ liệu gồm hàng triệu ảnh chưa được gán nhãn. Hệ thống này tập trung vào giải quyết vấn đề về tìm kiếm một đối tượng cụ thể như một địa điểm, một bức tranh, một bìa sách, v.v... Những đối tượng này có thể được chụp trong các điều kiện khác nhau như góc chụp, ánh sáng, kích thước hay bị che khuất. Do đó mục đích của hệ thống không phải là trả về những bức ảnh chụp gần giống nhau như chụp trong cùng một khung cảnh mà là trả về những bức ảnh có chứa đối tượng cần tìm. Ví dụ như khi đưa vào một bức hình có chứa Nhà thờ Đức Bà, kết quả trả về sẽ những bức hình có chứa nhà thờ Đức Bà chứ không phải trả về những nhà thờ có kiến trúc gần giống với Nhà thờ Đức Bà.\\
+Những hệ thống truy vấn ảnh trên tập dữ liệu lớn có rất nhiều ứng dụng trong thực tế. Chúng tôi sẽ liệt kê sơ lược một vài ứng dụng trong phần tiếp theo.\\
 
-Thử nghiệm trích dẫn \cite{Andress2002WLANSecurity}. Trích dẫn tên tác giả \citet{Barbeau2012P2PvoiceOverAdHocSurvey} 
-Trích dẫn toàn bộ các tác giả \citet*{Bennett2012MobileDeviceForensicsChallenges}. 
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-Thử nghiệm trích dẫn \citep{Bertino2009LAAandACC}. Trích dẫn tên tác giả \citet{Breu2004TowardsASystemmaticDevelopmentOfSecureSystems} 
-Trích dẫn toàn bộ các tác giả \citet*{bunting2012encase}. 
+\section{Một vài hướng ứng dụng thực tế của các hệ thống truy vấn đối tượng trên ảnh}
+Trong cuộc sống, ta có thể dễ dàng bắt gặp những ứng dụng vô cùng hữu ích của các hệ thống truy vấn đối tượng trên ảnh. Dưới đây là một vài hướng ứng dụng cụ thể:\\
 
 
-Viết luận văn bằng  \hologo{LaTeX}.\\
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-
-Thử nghiệm trích dẫn \cite{Ahamed2010FTMforPervasiveEnvironments}. Trích dẫn tên tác giả \citet{Ahamed2010FTMforPervasiveEnvironments}. Trích dẫn đầy đủ 
-\citet*{Ahamed2010FTMforPervasiveEnvironments}. 
-
-Để học thêm về cách sử dụng gói trích dẫn natbib, các bạn cần đọc thêm tại đây: http://casa.colorado.edu/\~danforth/comp/tex/tutorial.html
-
-Here is an equation\footnote{the notation is explained in the nomenclature section :-)}:
-\begin{eqnarray}
-CIF: \hspace*{5mm}F_0^j(a) &=& \frac{1}{2\pi \iota} \oint_{\gamma} \frac{F_0^j(z)}{z - a} dz
-\end{eqnarray}
-\nomenclature[zcif]{$CIF$}{Cauchy's Integral Formula}                                % first letter Z is for Acronyms 
-\nomenclature[aF]{$F$}{complex function}                                                   % first letter A is for Roman symbols
-\nomenclature[gp]{$\pi$}{ $\simeq 3.14\ldots$}                                             % first letter G is for Greek Symbols
-\nomenclature[gi]{$\iota$}{unit imaginary number $\sqrt{-1}$}                      % first letter G is for Greek Symbols
-\nomenclature[gg]{$\gamma$}{a simply closed curve on a complex plane}  % first letter G is for Greek Symbols
-\nomenclature[xi]{$\oint_\gamma$}{integration around a curve $\gamma$} % first letter X is for Other Symbols
-\nomenclature[rj]{$j$}{superscript index}                                                       % first letter R is for superscripts
-\nomenclature[s0]{$0$}{subscript index}                                                        % first letter S is for subscripts
+%Thử nghiệm trích dẫn \cite{Ahamed2010FTMforPervasiveEnvironments}. Trích dẫn tên tác giả \citet{Ahamed2010FTMforPervasiveEnvironments}. Trích dẫn đầy đủ 
+%\citet*{Ahamed2010FTMforPervasiveEnvironments}. 
+%
+%Để học thêm về cách sử dụng gói trích dẫn natbib, các bạn cần đọc thêm tại đây: http://casa.colorado.edu/\~danforth/comp/tex/tutorial.html
+%
+%Here is an equation\footnote{the notation is explained in the nomenclature section :-)}:
+%\begin{eqnarray}
+%CIF: \hspace*{5mm}F_0^j(a) &=& \frac{1}{2\pi \iota} \oint_{\gamma} \frac{F_0^j(z)}{z - a} dz
+%\end{eqnarray}
+%\nomenclature[zcif]{$CIF$}{Cauchy's Integral Formula}                                % first letter Z is for Acronyms 
+%\nomenclature[aF]{$F$}{complex function}                                                   % first letter A is for Roman symbols
+%\nomenclature[gp]{$\pi$}{ $\simeq 3.14\ldots$}                                             % first letter G is for Greek Symbols
+%\nomenclature[gi]{$\iota$}{unit imaginary number $\sqrt{-1}$}                      % first letter G is for Greek Symbols
+%\nomenclature[gg]{$\gamma$}{a simply closed curve on a complex plane}  % first letter G is for Greek Symbols
+%\nomenclature[xi]{$\oint_\gamma$}{integration around a curve $\gamma$} % first letter X is for Other Symbols
+%\nomenclature[rj]{$j$}{superscript index}                                                       % first letter R is for superscripts
+%\nomenclature[s0]{$0$}{subscript index}                                                        % first letter S is for subscripts
 
 \section{Mục tiêu đề tài}
  
