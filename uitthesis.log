@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.28)  6 JUN 2014 15:22
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.28)  8 JUN 2014 02:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1148,17 +1148,18 @@ Package hyperref Warning: Composite letter `\textacute+\ecircumflex'
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ecircumflex' on input line 59.
 
+[4]
 
-Package natbib Warning: Citation `Rud73' on page 4 undefined on input line 63.
+Package natbib Warning: Citation `Rud73' on page 5 undefined on input line 63.
 
-<Chapter1/Chapter1Figs/aflow.jpg, id=296, 454.87589pt x 658.93236pt>
+<Chapter1/Chapter1Figs/aflow.jpg, id=301, 454.87589pt x 658.93236pt>
 File: Chapter1/Chapter1Figs/aflow.jpg Graphic file (type jpg)
 
 <use Chapter1/Chapter1Figs/aflow.jpg>
 Package pdftex.def Info: Chapter1/Chapter1Figs/aflow.jpg used on input line 71.
 
 (pdftex.def)             Requested size: 299.34447pt x 433.62pt.
-
+ [5 <./Chapter1/Chapter1Figs/aflow.jpg>]
 
 Package hyperref Warning: Composite letter `\textacute+\ecircumflex'
 (hyperref)                not defined in PD1 encoding,
@@ -1176,7 +1177,7 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ohorn' on input line 94.
 
-) [4] [5 <./Chapter1/Chapter1Figs/aflow.jpg>]
+) [6]
 \openout2 = `Chapter2/chapter2.aux'.
 
  (./Chapter2/chapter2.tex
@@ -1189,7 +1190,7 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ocircumflex' on input line 1.
 
-[6
+[7
 
 
 
@@ -1211,7 +1212,7 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ohorn' on input line 28.
 
-) [7] [8]
+) [8] [9]
 \openout2 = `Chapter3/chapter3.aux'.
 
  (./Chapter3/chapter3.tex
@@ -1255,11 +1256,11 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\dj' on input line 1.
 
-[9
+[10
 
 
 
-] <Chapter3/Chapter3Figs/PDF/tui-main.pdf, id=326, 481.8pt x 857.2025pt>
+] <Chapter3/Chapter3Figs/PDF/tui-main.pdf, id=331, 481.8pt x 857.2025pt>
 File: Chapter3/Chapter3Figs/PDF/tui-main.pdf Graphic file (type pdf)
 
 <use Chapter3/Chapter3Figs/PDF/tui-main.pdf>
@@ -1267,7 +1268,7 @@ Package pdftex.def Info: Chapter3/Chapter3Figs/PDF/tui-main.pdf used on input l
 ine 35.
 (pdftex.def)             Requested size: 123.77074pt x 220.1991pt.
 
-<Chapter3/Chapter3Figs/PDF/tui-controls.pdf, id=327, 481.8pt x 857.2025pt>
+<Chapter3/Chapter3Figs/PDF/tui-controls.pdf, id=332, 481.8pt x 857.2025pt>
 File: Chapter3/Chapter3Figs/PDF/tui-controls.pdf Graphic file (type pdf)
 
 <use Chapter3/Chapter3Figs/PDF/tui-controls.pdf>
@@ -1275,7 +1276,7 @@ Package pdftex.def Info: Chapter3/Chapter3Figs/PDF/tui-controls.pdf used on inp
 ut line 38.
 (pdftex.def)             Requested size: 123.77074pt x 220.1991pt.
 
-<Chapter3/Chapter3Figs/PDF/tui-get-phone-info-controls.pdf, id=328, 481.8pt x 8
+<Chapter3/Chapter3Figs/PDF/tui-get-phone-info-controls.pdf, id=333, 481.8pt x 8
 57.2025pt>
 File: Chapter3/Chapter3Figs/PDF/tui-get-phone-info-controls.pdf Graphic file (t
 ype pdf)
@@ -1284,7 +1285,7 @@ Package pdftex.def Info: Chapter3/Chapter3Figs/PDF/tui-get-phone-info-controls.
 pdf used on input line 41.
 (pdftex.def)             Requested size: 123.77074pt x 220.1991pt.
 
-[10 <./Chapter3/Chapter3Figs/PDF/tui-main.pdf> <./Chapter3/Chapter3Figs/PDF/tui
+[11 <./Chapter3/Chapter3Figs/PDF/tui-main.pdf> <./Chapter3/Chapter3Figs/PDF/tui
 -controls.pdf> <./Chapter3/Chapter3Figs/PDF/tui-get-phone-info-controls.pdf>]
 
 Package hyperref Warning: Composite letter `\textacute+\ecircumflex'
@@ -1303,7 +1304,7 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ohorn' on input line 66.
 
-[11]) [12]
+[12]) [13]
 \openout2 = `Chapter4/chapter4.aux'.
 
  (./Chapter4/chapter4.tex
@@ -1321,7 +1322,7 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\h' on input line 1.
 
-[13
+[14
 
 
 
@@ -1344,7 +1345,7 @@ ype pdf)
 Package pdftex.def Info: Chapter3/Chapter3Figs/PDF/tui-get-phone-info-controls.
 pdf used on input line 41.
 (pdftex.def)             Requested size: 123.77074pt x 220.1991pt.
- [14]
+ [15]
 
 Package hyperref Warning: Composite letter `\textacute+\ecircumflex'
 (hyperref)                not defined in PD1 encoding,
@@ -1362,7 +1363,7 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ohorn' on input line 66.
 
-[15]) [16]
+[16]) [17]
 \openout2 = `Conclusions/conclusions.aux'.
 
  (./Conclusions/conclusions.tex
@@ -1406,7 +1407,7 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ecircumflex' on input line 2.
 
-) [17
+) [18
 
 
 
@@ -1424,7 +1425,7 @@ Package hyperref Warning: Composite letter `\textdotbelow+u'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textdotbelow' on input line 1.
 
-) [18
+) [19
 
 
 
@@ -1443,7 +1444,7 @@ Package hyperref Warning: Composite letter `\textdotbelow+u'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textdotbelow' on input line 1.
 
-) [19
+) [20
 
 
 
@@ -1456,7 +1457,7 @@ Package hyperref Warning: Composite letter `\textdotbelow+u'
 Package natbib Warning: There were undefined citations.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 94.
-[20
+[21
 
 
 ]
@@ -1479,9 +1480,9 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 94.
  ) 
 Here is how much of TeX's memory you used:
- 8913 strings out of 493304
- 129976 string characters out of 6139871
- 231875 words of memory out of 5000000
+ 8914 strings out of 493304
+ 129983 string characters out of 6139871
+ 231876 words of memory out of 5000000
  12000 multiletter control sequences out of 15000+600000
  21938 words of font info for 47 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -1491,10 +1492,10 @@ exlive/texmf-dist/fonts/type1/vntex/vnr/vncsc10.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/vntex/vnr/vnr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 vntex/vnr/vnr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnr8.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnti12.pfb>
-Output written on uitthesis.pdf (29 pages, 812028 bytes).
+Output written on uitthesis.pdf (30 pages, 814349 bytes).
 PDF statistics:
- 464 PDF objects out of 1000 (max. 8388607)
- 394 compressed objects within 4 object streams
- 92 named destinations out of 1000 (max. 500000)
+ 468 PDF objects out of 1000 (max. 8388607)
+ 397 compressed objects within 4 object streams
+ 93 named destinations out of 1000 (max. 500000)
  378 words of extra memory for PDF output out of 10000 (max. 10000000)
 
