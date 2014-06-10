@@ -6,35 +6,30 @@
 \BOOKMARK [1][]{section.1.1}{1.1 Muc ti\352u v\340 ng lc chon \040t\340i}{chapter.1}% 6
 \BOOKMARK [1][]{section.1.2}{1.2 Mt v\340i hng ng dung thc t cua h thng}{chapter.1}% 7
 \BOOKMARK [1][]{section.1.3}{1.3 Nhng th\341ch thc t ra}{chapter.1}% 8
-\BOOKMARK [1][]{section.1.4}{1.4 Kt chng}{chapter.1}% 9
-\BOOKMARK [0][]{chapter.2}{2 Tng quan}{}% 10
-\BOOKMARK [1][]{section.2.1}{2.1 First Section}{chapter.2}% 11
-\BOOKMARK [1][]{section.2.2}{2.2 Second Section}{chapter.2}% 12
-\BOOKMARK [2][]{subsection.2.2.1}{2.2.1 first subsection in the Second Section}{section.2.2}% 13
-\BOOKMARK [2][]{subsection.2.2.2}{2.2.2 second subsection in the Second Section}{section.2.2}% 14
-\BOOKMARK [2][]{subsection.2.2.3}{2.2.3 third subsection in the Second Section}{section.2.2}% 15
-\BOOKMARK [1][]{section.2.3}{2.3 Kt chng}{chapter.2}% 16
-\BOOKMARK [0][]{chapter.3}{3 C\341c tp d liu v\340 phng ph\341p \341nh gi\341}{}% 17
-\BOOKMARK [1][]{section.3.1}{3.1 First Section of the Third Chapter}{chapter.3}% 18
-\BOOKMARK [2][]{subsection.3.1.1}{3.1.1 first subsection in the First Section}{section.3.1}% 19
-\BOOKMARK [2][]{subsection.3.1.2}{3.1.2 second subsection in the First Section}{section.3.1}% 20
-\BOOKMARK [3][]{subsubsection.3.1.2.1}{3.1.2.1 first subsub section in the second subsection}{subsection.3.1.2}% 21
-\BOOKMARK [2][]{subsection.3.1.3}{3.1.3 third subsection in the First Section}{section.3.1}% 22
-\BOOKMARK [3][]{subsubsection.3.1.3.1}{3.1.3.1 first subsub section in the third subsection}{subsection.3.1.3}% 23
-\BOOKMARK [3][]{subsubsection.3.1.3.2}{3.1.3.2 second subsub section in the third subsection}{subsection.3.1.3}% 24
-\BOOKMARK [1][]{section.3.2}{3.2 Second Section of the Third Chapter}{chapter.3}% 25
-\BOOKMARK [1][]{section.3.3}{3.3 Kt chng}{chapter.3}% 26
-\BOOKMARK [0][]{chapter.4}{4 T\355ch hp th\364ng tin kh\364ng gian anh v\340o inverted index}{}% 27
-\BOOKMARK [1][]{section.4.1}{4.1 First Section of the Third Chapter}{chapter.4}% 28
-\BOOKMARK [2][]{subsection.4.1.1}{4.1.1 first subsection in the First Section}{section.4.1}% 29
-\BOOKMARK [2][]{subsection.4.1.2}{4.1.2 second subsection in the First Section}{section.4.1}% 30
-\BOOKMARK [3][]{subsubsection.4.1.2.1}{4.1.2.1 first subsub section in the second subsection}{subsection.4.1.2}% 31
-\BOOKMARK [2][]{subsection.4.1.3}{4.1.3 third subsection in the First Section}{section.4.1}% 32
-\BOOKMARK [3][]{subsubsection.4.1.3.1}{4.1.3.1 first subsub section in the third subsection}{subsection.4.1.3}% 33
-\BOOKMARK [3][]{subsubsection.4.1.3.2}{4.1.3.2 second subsub section in the third subsection}{subsection.4.1.3}% 34
-\BOOKMARK [1][]{section.4.2}{4.2 Second Section of the Third Chapter}{chapter.4}% 35
-\BOOKMARK [1][]{section.4.3}{4.3 Kt chng}{chapter.4}% 36
-\BOOKMARK [0][]{chapter.5}{5 Kt lun v\340 hng ph\341t trin}{}% 37
-\BOOKMARK [0][]{appendix*.5}{Phu luc A}{}% 38
-\BOOKMARK [0][]{appendix*.6}{Phu luc B}{}% 39
-\BOOKMARK [0][]{appendix*.7}{References}{}% 40
+\BOOKMARK [1][]{section.1.4}{1.4 Cu tr\372c lun van}{chapter.1}% 9
+\BOOKMARK [0][]{chapter.2}{2 C\341c c\364ng tr\354nh li\352n quan}{}% 10
+\BOOKMARK [1][]{section.2.1}{2.1 Biu din h\354nh anh bng c\341c local descriptor}{chapter.2}% 11
+\BOOKMARK [1][]{section.2.2}{2.2 M\364 h\354nh Bag-of-words}{chapter.2}% 12
+\BOOKMARK [2][]{subsection.2.2.1}{2.2.1 Bag-of-words trong truy vn van ban}{section.2.2}% 13
+\BOOKMARK [2][]{subsection.2.2.2}{2.2.2 Bag-of-visual-words trong truy vn anh}{section.2.2}% 14
+\BOOKMARK [3][]{subsubsection.2.2.2.1}{2.2.2.1 Visual word}{subsection.2.2.2}% 15
+\BOOKMARK [3][]{subsubsection.2.2.2.2}{2.2.2.2 Lng t h\363a c\341c visual word}{subsection.2.2.2}% 16
+\BOOKMARK [2][]{subsection.2.2.3}{2.2.3 \320\341nh gi\341 s tng ng gia c\341c h\354nh anh}{section.2.2}% 17
+\BOOKMARK [1][]{section.2.3}{2.3 S dung th\364ng tin kh\364ng gian anh trong truy vn anh}{chapter.2}% 18
+\BOOKMARK [1][]{section.2.4}{2.4 Kt chng}{chapter.2}% 19
+\BOOKMARK [0][]{chapter.3}{3 C\341c tp d liu v\340 quy tr\354nh \341nh gi\341}{}% 20
+\BOOKMARK [1][]{section.3.1}{3.1 C\341c tp d liu}{chapter.3}% 21
+\BOOKMARK [2][]{subsection.3.1.1}{3.1.1 Oxford 5k}{section.3.1}% 22
+\BOOKMARK [2][]{subsection.3.1.2}{3.1.2 Paris 6k}{section.3.1}% 23
+\BOOKMARK [2][]{subsection.3.1.3}{3.1.3 Holidays}{section.3.1}% 24
+\BOOKMARK [1][]{section.3.2}{3.2 Quy tr\354nh \341nh gi\341}{chapter.3}% 25
+\BOOKMARK [0][]{chapter.4}{4 T\355ch hp th\364ng tin kh\364ng gian anh v\340o inverted index}{}% 26
+\BOOKMARK [1][]{section.4.1}{4.1 \335 tng phng ph\341p}{chapter.4}% 27
+\BOOKMARK [1][]{section.4.2}{4.2 C\340i t th\355 nghim}{chapter.4}% 28
+\BOOKMARK [1][]{section.4.3}{4.3 Kt qua th\355 nghim v\340 \341nh gi\341 kt qua}{chapter.4}% 29
+\BOOKMARK [0][]{chapter.5}{5 Kt lun v\340 hng ph\341t trin}{}% 30
+\BOOKMARK [1][]{section.5.1}{5.1 Kt lun}{chapter.5}% 31
+\BOOKMARK [1][]{section.5.2}{5.2 Hng ph\341t trin}{chapter.5}% 32
+\BOOKMARK [0][]{appendix*.5}{Phu luc A}{}% 33
+\BOOKMARK [0][]{appendix*.6}{Phu luc B}{}% 34
+\BOOKMARK [0][]{appendix*.7}{References}{}% 35
