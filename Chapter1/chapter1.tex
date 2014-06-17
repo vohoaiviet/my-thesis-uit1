@@ -4,19 +4,32 @@
 % \hspace*{1cm}
 % \pagebreak[4]
 
-\chapter{Giới thiệu tổng quan}
+\chapter{Tổng quan}
 \ifpdf
     \graphicspath{{Chapter1/Chapter1Figs/PNG/}{Chapter1/Chapter1Figs/PDF/}{Chapter1/Chapter1Figs/}}
 \else
     \graphicspath{{Chapter1/Chapter1Figs/EPS/}{Chapter1/Chapter1Figs/}}
 \fi
-\markboth{\MakeUppercase{\thechapter. Giới thiệu tổng quan}}{Chương \thechapter. Giới thiệu tổng quan}
-\section{Mục tiêu và động lực chọn đề tài}
+\markboth{\MakeUppercase{Chương \thechapter. Tổng quan}}{Chương \thechapter. Tổng quan}
+\section{Đặt vấn đề}
 Trong những năm gần đây, cùng với sự phát triển của công nghệ thông tin, các lĩnh vực liên quan đến kỹ thuật số cũng đang có tốc độ phát triển chóng mặt. Các thiết bị kỹ thuật số như máy ảnh, máy quay phim kỹ thuật số, camera số, điện thoại di động có chức năng chụp hình, ... đang ngày càng phổ biến và không ngừng gia tăng về số lượng. Chính điều này đã làm sản sinh ra một lượng thông tin số khổng lồ bao gồm hình ảnh, video, v.v... Do đó, nhu cầu truy vấn thông tin từ kho dữ liệu hình ảnh, video ngày càng bức thiết hơn bao giờ hết.\\
-Mục tiêu của luận văn này nhằm xây dựng một hệ thống truy vấn ảnh trên tập dữ liệu lớn, trong đó quá trình truy vấn hoàn toàn dựa trên nội dung của ảnh và kết quả phải được trả về gần như ngay lập tức với cơ sở dữ liệu gồm hàng triệu hình ảnh chưa được gán nhãn. Hệ thống này tập trung vào giải quyết vấn đề về tìm kiếm một đối tượng cụ thể như một địa điểm, một bức tranh, một bìa sách, v.v... Những đối tượng này có thể được chụp trong các điều kiện khác nhau như góc chụp, ánh sáng, kích thước hay bị che khuất. Do đó mục đích của hệ thống không phải là trả về những hình ảnh chụp gần giống nhau như chụp trong cùng một khung cảnh mà là trả về những hình ảnh có chứa đối tượng cần tìm. Ví dụ như khi đưa vào một bức hình có chứa Nhà thờ Đức Bà, kết quả trả về sẽ những bức hình có chứa nhà thờ Đức Bà chứ không phải trả về những nhà thờ có kiến trúc gần giống với Nhà thờ Đức Bà.\\
-Những hệ thống truy vấn ảnh trên tập dữ liệu lớn có rất nhiều ứng dụng trong thực tế. Chúng tôi sẽ liệt kê sơ lược một vài ứng dụng trong phần tiếp theo.\\
+Để đáp ứng yêu cầu đó, rất nhiều hệ thống truy vấn ảnh đã ra đời. Với đầu vào là một tấm hình có chứa đối tượng quan tâm, hệ thống sẽ trả về những hình ảnh hoặc video từ kho dữ liệu có sẵn mà có chứa đối tượng đó. Hình ảnh \ref{FigSystem} minh họa tổng quát cho một hệ thống truy vấn đối tượng trên ảnh.
+\begin{figure}[!htbp]
+  \begin{center}
+    \leavevmode
+    \ifpdf
+      \includegraphics[scale=0.113]{retrievalSystem}
+    \else
+      \includegraphics[scale=0.113]{retrievalSystem}
+    \fi
+    \caption[Sơ đồ tổng quát của một hệ thống truy vấn ảnh]{Sơ đồ tổng quát của một hệ thống truy vấn ảnh}
+    \label{FigSystem}
+  \end{center}
+\end{figure} 
 
-\section{Một vài hướng ứng dụng thực tế của hệ thống}
+Những hệ thống truy vấn ảnh trên tập dữ liệu lớn có rất nhiều ứng dụng trong thực tế. Từ những ứng dụng phục vụ nhu cầu truy vấn thông tin hàng ngày cho tới những ứng dụng giúp quản lý kho dữ liệu lớn trong doanh nghiệp hay dùng để hỗ trợ cho các hệ thống khác. Chúng tôi sẽ liệt kê sơ lược một vài ứng dụng của hệ thống này trong mục dưới đây.
+
+\subsection{Một vài hướng ứng dụng của hệ thống truy vấn ảnh}
 
 Trong cuộc sống, ta có thể dễ dàng bắt gặp những ứng dụng vô cùng hữu ích của các hệ thống truy vấn đối tượng trên ảnh. Dưới đây là một vài hướng ứng dụng cụ thể:\\
 \textbf{Nhận dạng đối tượng, sản phẩm.} Với sự phổ biến của điện thoại thông minh và internet, một người có thể dễ dàng dùng điện thoại chụp một tấm hình và hỏi hệ thống về thông tin của đối tượng trong tấm hình đó. Ví dụ, tại một cửa hàng, một người mua hàng có thể tham khảo giá của một sản phẩm tại các cửa hàng khác; trong thư viện, một độc giả có thể tìm được những cuốn sách nào chứa hình ảnh mình quan tâm; khi đi thăm bảo tàng, du khách có thể tìm kiếm thêm thông tin về một hiện vật trong đó, v.v...\\
@@ -27,7 +40,7 @@ Trong cuộc sống, ta có thể dễ dàng bắt gặp những ứng dụng v�
 \textbf{Tăng tính tương tác thực tế.} Với sự ra đời của các sản phẩm công nghệ gần gũi với cuộc sống như Google Glass, việc nhận dạng đối tượng trong thời gian thực sẽ mang đến nhiều thông tin hữu ích cho người dùng.\\
 \textbf{Hỗ trợ cho các hệ thống thị giác máy tính khác.} Hệ thống truy vấn đối tượng có thể được dùng để hỗ trợ cho các hệ thống thị giác máy tính khác. Một ví dụ điển hình là hệ thống tự động tái tạo hình ảnh ba chiều sẽ cần gom cụm các hình ảnh của cùng một đối tượng từ một tập dữ liệu lớn.\\
 
-\section{Những thách thức đặt ra}
+\section{Thách thức}
  Để giải quyết bài toán truy vấn đối tượng trên tập dữ liệu ảnh lớn, có rất nhiều thách thức được đặt ra. Dưới đây chúng tôi sẽ trình bày một vài thách thức trong bài toán này:\\
  \begin{figure}[!htbp]
   \begin{center}
@@ -44,6 +57,9 @@ Trong cuộc sống, ta có thể dễ dàng bắt gặp những ứng dụng v�
  \textbf{Sự biến đổi bề ngoài của đối tượng trong hình ảnh.} Một hệ thống truy vấn đối tượng trên hình ảnh cần phải trả về được các hình ảnh có chứa đối tượng quan tâm bất chấp mọi thay đổi trên bên ngoài của đối tượng. Những thay đổi đó có thể đến từ rất nhiều nguyên nhân khác nhau. Đó có thể do tác động từ các yếu tố bên ngoài khi chụp hình như điều kiện chiếu sáng, góc chụp của camera hay những tùy chỉnh khác nhau của các camera về độ tương phản, độ phân giải, màu sắc,... Cùng với đó là những hình ảnh của đối tượng được chụp với góc xoay, kích thước hình hay tỉ lệ khác nhau. Hoặc có những trường hợp đối tượng bị che khuất, cắt ghép, v.v... hoặc đối tượng được thể hiện trên các ấn phẩm, bản in, bản vẽ nên bị thay đổi về màu sắc và chi tiết. Một vài dạng thay đổi kể trên được thể hiện qua Hình \ref{FigTemple}. Còn một trường hợp nữa là do những thay đổi từ chính bản thân đối tượng do các điều kiện bên ngoài ví dụ như đối tượng bị cũ đi hay bị xuống cấp theo thời gian.\\ 
  \textbf{Các loại đặc tính vật lý khác nhau trên mỗi đối tượng.} Dựa trên các đặc tính vật lý người ta chia đối tượng thành các loại khác nhau. Có những đối tượng mà đặc tính thể hiện rõ nét nhất qua cấu trúc bề mặt, nhưng có cái lại qua màu sắc hay hình dạng, v.v... Ví dụ như với những con bướm, đặc trưng cho chúng không phải là hình dạng, kích cỡ vì đa phần các loài bướm đều có hình dạng, kích cỡ gần giống nhau mà ở đây là các họa tiết, màu sắc trên cánh bướm; Hay với những loại lá cây thì đặc trưng về màu sắc, họa tiết lại không cung cấp nhiều thông tin bằng hình dạng của lá.\\
  \textbf{Kích cỡ của tập dữ liệu lớn.} Tập dữ liệu hình ảnh lớn thường bao gồm hàng triệu bức ảnh, vậy nên để người dùng có thể tương tác trực tiếp với hệ thống thông qua một thiết bị phía client như điện thoại di động thì đòi hỏi truy vấn phải được trả về trong thời gian ngắn chấp nhận được. Do đó cần phải có một thuật toán nhận dạng hiệu quả, chi phí thấp. Đồng thời những hình ảnh cũng phải được xử lý để lưu trữ sao cho tiết kiệm nhất để phù hợp với kích cỡ của RAM vì nếu lưu trữ trên ổ cứng sẽ mất rất nhiều thời gian để truy xuất và không thể đạt được yêu cầu về thời gian.\\
+ 
+\section{Mục tiêu và phạm vi của đề tài}
+Mục tiêu của luận văn này nhằm xây dựng một hệ thống truy vấn đối tượng trên ảnh từ tập dữ liệu lớn, trong đó quá trình truy vấn hoàn toàn dựa trên nội dung của ảnh và kết quả phải được trả về gần như ngay lập tức với cơ sở dữ liệu gồm hàng triệu hình ảnh chưa được gán nhãn. Hệ thống này tập trung vào giải quyết vấn đề về tìm kiếm một đối tượng cụ thể như một địa điểm, một bức tranh, một bìa sách, v.v... Những đối tượng này có thể được chụp trong các điều kiện khác nhau như góc chụp, ánh sáng, kích thước hay bị che khuất. Do đó mục đích của hệ thống không phải là trả về những hình ảnh chụp gần giống nhau như chụp trong cùng một khung cảnh hay cùng thuộc một loại đối tượng mà là trả về những hình ảnh có chứa chính xác đối tượng cần tìm. Ví dụ như khi đưa vào một bức hình có chứa Nhà thờ Đức Bà, kết quả trả về sẽ những bức hình có chứa nhà thờ Đức Bà chứ không phải trả về những nhà thờ có kiến trúc hay có không gian bao quanh giống với Nhà thờ Đức Bà.\\
 
 \section{Cấu trúc luận văn}
 Trong phần này, chúng tôi sẽ trình bày cấu trúc phần còn lại của luận văn và những vấn đề được thảo luận ở phần kế tiếp. Các nội dung sẽ được trình bày ở phần kế tiếp bao gồm:\\
