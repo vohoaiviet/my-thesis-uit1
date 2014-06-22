@@ -1,40 +1,73 @@
-\begin{thebibliography}{7}
+\begin{thebibliography}{13}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
-\bibitem[{Ahamed {\em et~al.\/}(2010)Ahamed, Haque, Hoque, Rahman \&
-  Talukder}]{Ahamed2010FTMforPervasiveEnvironments}
-{\sc Ahamed, S.I., Haque, M.M., Hoque, M.E., Rahman, F. \& Talukder, N.}
-  (2010). Design, analysis, and deployment of omnipresent formal trust model
-  (ftm) with trust bootstrapping for pervasive environments. {\em Journal of
-  Systems and Software\/}, {\bf 83}, 253 -- 270.
+\bibitem[{Arandjelovic \& Zisserman(2012)}]{arandjelovic2012three}
+{\sc Arandjelovic, R. \& Zisserman, A.} (2012). Three things everyone should
+  know to improve object retrieval. In {\em Computer Vision and Pattern
+  Recognition (CVPR), 2012 IEEE Conference on\/}, 2911--2918, IEEE.
 
-\bibitem[{Andress(2002)}]{Andress2002WLANSecurity}
-{\sc Andress, M.} (2002). Wireless lan security. {\em Information Systems
-  Security\/}, {\bf 11}, 29--33.
+\bibitem[{Bay {\em et~al.\/}(2006)Bay, Tuytelaars \& Van~Gool}]{bay2006surf}
+{\sc Bay, H., Tuytelaars, T. \& Van~Gool, L.} (2006). Surf: Speeded up robust
+  features. In {\em Computer Vision--ECCV 2006\/}, 404--417, Springer.
 
-\bibitem[{Barbeau(2012)}]{Barbeau2012P2PvoiceOverAdHocSurvey}
-{\sc Barbeau, M.} (2012). Point-to-point voice over ad hoc networks: A survey.
-  {\em Pervasive and Mobile Computing\/}, {\bf 8}, 376 -- 387.
+\bibitem[{Calonder {\em et~al.\/}(2010)Calonder, Lepetit, Strecha \&
+  Fua}]{calonder2010brief}
+{\sc Calonder, M., Lepetit, V., Strecha, C. \& Fua, P.} (2010). Brief: Binary
+  robust independent elementary features. In {\em Computer Vision--ECCV
+  2010\/}, 778--792, Springer.
 
-\bibitem[{Bennett(2012)}]{Bennett2012MobileDeviceForensicsChallenges}
-{\sc Bennett, D.} (2012). The challenges facing computer forensics
-  investigators in obtaining information from mobile devices for use in
-  criminal investigations. {\em Information Security Journal: A Global
-  Perspective\/}, {\bf 21}, 159--168.
+\bibitem[{Leutenegger {\em et~al.\/}(2011)Leutenegger, Chli \&
+  Siegwart}]{leutenegger2011brisk}
+{\sc Leutenegger, S., Chli, M. \& Siegwart, R.Y.} (2011). Brisk: Binary robust
+  invariant scalable keypoints. In {\em Computer Vision (ICCV), 2011 IEEE
+  International Conference on\/}, 2548--2555, IEEE.
 
-\bibitem[{Bertino \& Kirkpatrick(2009)}]{Bertino2009LAAandACC}
-{\sc Bertino, E. \& Kirkpatrick, M.} (2009). Location-aware authentication and
-  access control concepts and issues. In {\em Advanced Information Networking
-  and Applications, 2009. AINA '09. International Conference on\/}, 10 --15.
+\bibitem[{Lowe(2004)}]{lowe2004distinctive}
+{\sc Lowe, D.G.} (2004). Distinctive image features from scale-invariant
+  keypoints. {\em International journal of computer vision\/}, {\bf 60},
+  91--110.
 
-\bibitem[{Breu {\em et~al.\/}(2004)Breu, Burger, Hafner \&
-  Popp}]{Breu2004TowardsASystemmaticDevelopmentOfSecureSystems}
-{\sc Breu, R., Burger, K., Hafner, M. \& Popp, G.} (2004). Towards a systematic
-  development of secure systems. {\em Information Systems Security\/}, {\bf
-  13}, 5--13.
+\bibitem[{Manning {\em et~al.\/}(2008)Manning, Raghavan \&
+  Sch{\"u}tze}]{manning2008introduction}
+{\sc Manning, C.D., Raghavan, P. \& Sch{\"u}tze, H.} (2008). {\em Introduction
+  to information retrieval\/}, vol.~1. Cambridge university press Cambridge.
 
-\bibitem[{Bunting(2012)}]{bunting2012encase}
-{\sc Bunting, S.} (2012). {\em EnCase Computer Forensics -- The Official EnCE:
-  EnCase Certified Examiner Study Guide\/}. John Wiley \& Sons.
+\bibitem[{Matas {\em et~al.\/}(2004)Matas, Chum, Urban \&
+  Pajdla}]{matas2004robust}
+{\sc Matas, J., Chum, O., Urban, M. \& Pajdla, T.} (2004). Robust wide-baseline
+  stereo from maximally stable extremal regions. {\em Image and vision
+  computing\/}, {\bf 22}, 761--767.
+
+\bibitem[{Mikolajczyk \& Schmid(2004)}]{mikolajczyk2004scale}
+{\sc Mikolajczyk, K. \& Schmid, C.} (2004). Scale \& affine invariant interest
+  point detectors. {\em International journal of computer vision\/}, {\bf 60},
+  63--86.
+
+\bibitem[{Mikolajczyk \& Schmid(2005)}]{mikolajczyk2005performance}
+{\sc Mikolajczyk, K. \& Schmid, C.} (2005). A performance evaluation of local
+  descriptors. {\em Pattern Analysis and Machine Intelligence, IEEE
+  Transactions on\/}, {\bf 27}, 1615--1630.
+
+\bibitem[{Rosten {\em et~al.\/}(2010)Rosten, Porter \&
+  Drummond}]{rosten2010faster}
+{\sc Rosten, E., Porter, R. \& Drummond, T.} (2010). Faster and better: A
+  machine learning approach to corner detection. {\em Pattern Analysis and
+  Machine Intelligence, IEEE Transactions on\/}, {\bf 32}, 105--119.
+
+\bibitem[{Salton \& McGill(1986)}]{Salton:1986:IMI:576628}
+{\sc Salton, G. \& McGill, M.J.} (1986). {\em Introduction to Modern
+  Information Retrieval\/}. McGraw-Hill, Inc., New York, NY, USA.
+
+\bibitem[{Tola {\em et~al.\/}(2008)Tola, Lepetit \& Fua}]{tola2008fast}
+{\sc Tola, E., Lepetit, V. \& Fua, P.} (2008). A fast local descriptor for
+  dense matching. In {\em Computer Vision and Pattern Recognition, 2008. CVPR
+  2008. IEEE Conference on\/}, 1--8, IEEE.
+
+\bibitem[{Zheng {\em et~al.\/}(2009)Zheng, Zhao, Song, Adam, Buddemeier,
+  Bissacco, Brucher, Chua \& Neven}]{zheng2009tour}
+{\sc Zheng, Y.T., Zhao, M., Song, Y., Adam, H., Buddemeier, U., Bissacco, A.,
+  Brucher, F., Chua, T.S. \& Neven, H.} (2009). Tour the world: building a
+  web-scale landmark recognition engine. In {\em Computer Vision and Pattern
+  Recognition, 2009. CVPR 2009. IEEE Conference on\/}, 1085--1092, IEEE.
 
 \end{thebibliography}

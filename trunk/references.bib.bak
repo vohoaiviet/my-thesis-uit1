@@ -1,0 +1,137 @@
+% This file was created with JabRef 2.10b2.
+% Encoding: UTF-8
+
+
+@InProceedings{arandjelovic2012three,
+  Title                    = {Three things everyone should know to improve object retrieval},
+  Author                   = {Arandjelovic, Relja and Zisserman, Andrew},
+  Booktitle                = {Computer Vision and Pattern Recognition (CVPR), 2012 IEEE Conference on},
+  Year                     = {2012},
+  Organization             = {IEEE},
+  Pages                    = {2911--2918}
+}
+
+@InCollection{bay2006surf,
+  Title                    = {Surf: Speeded up robust features},
+  Author                   = {Bay, Herbert and Tuytelaars, Tinne and Van Gool, Luc},
+  Booktitle                = {Computer Vision--ECCV 2006},
+  Publisher                = {Springer},
+  Year                     = {2006},
+  Pages                    = {404--417}
+}
+
+@InCollection{calonder2010brief,
+  Title                    = {Brief: Binary robust independent elementary features},
+  Author                   = {Calonder, Michael and Lepetit, Vincent and Strecha, Christoph and Fua, Pascal},
+  Booktitle                = {Computer Vision--ECCV 2010},
+  Publisher                = {Springer},
+  Year                     = {2010},
+  Pages                    = {778--792}
+}
+
+@InProceedings{leutenegger2011brisk,
+  Title                    = {BRISK: Binary robust invariant scalable keypoints},
+  Author                   = {Leutenegger, Stefan and Chli, Margarita and Siegwart, Roland Yves},
+  Booktitle                = {Computer Vision (ICCV), 2011 IEEE International Conference on},
+  Year                     = {2011},
+  Organization             = {IEEE},
+  Pages                    = {2548--2555}
+}
+
+@Article{lowe2004distinctive,
+  Title                    = {Distinctive image features from scale-invariant keypoints},
+  Author                   = {Lowe, David G},
+  Journal                  = {International journal of computer vision},
+  Year                     = {2004},
+  Number                   = {2},
+  Pages                    = {91--110},
+  Volume                   = {60},
+
+  Publisher                = {Springer}
+}
+
+@Book{manning2008introduction,
+  Title                    = {Introduction to information retrieval},
+  Author                   = {Manning, Christopher D and Raghavan, Prabhakar and Sch{\"u}tze, Hinrich},
+  Publisher                = {Cambridge university press Cambridge},
+  Year                     = {2008},
+  Volume                   = {1}
+}
+
+@Article{matas2004robust,
+  Title                    = {Robust wide-baseline stereo from maximally stable extremal regions},
+  Author                   = {Matas, Jiri and Chum, Ondrej and Urban, Martin and Pajdla, Tom{\'a}s},
+  Journal                  = {Image and vision computing},
+  Year                     = {2004},
+  Number                   = {10},
+  Pages                    = {761--767},
+  Volume                   = {22},
+
+  Publisher                = {Elsevier}
+}
+
+@Article{mikolajczyk2005performance,
+  Title                    = {A performance evaluation of local descriptors},
+  Author                   = {Mikolajczyk, Krystian and Schmid, Cordelia},
+  Journal                  = {Pattern Analysis and Machine Intelligence, IEEE Transactions on},
+  Year                     = {2005},
+  Number                   = {10},
+  Pages                    = {1615--1630},
+  Volume                   = {27},
+
+  Publisher                = {IEEE}
+}
+
+@Article{mikolajczyk2004scale,
+  Title                    = {Scale \& affine invariant interest point detectors},
+  Author                   = {Mikolajczyk, Krystian and Schmid, Cordelia},
+  Journal                  = {International journal of computer vision},
+  Year                     = {2004},
+  Number                   = {1},
+  Pages                    = {63--86},
+  Volume                   = {60},
+
+  Publisher                = {Springer}
+}
+
+@Article{rosten2010faster,
+  Title                    = {Faster and better: A machine learning approach to corner detection},
+  Author                   = {Rosten, Edward and Porter, Reid and Drummond, Tom},
+  Journal                  = {Pattern Analysis and Machine Intelligence, IEEE Transactions on},
+  Year                     = {2010},
+  Number                   = {1},
+  Pages                    = {105--119},
+  Volume                   = {32},
+
+  Publisher                = {IEEE}
+}
+
+@Book{Salton:1986:IMI:576628,
+  Title                    = {Introduction to Modern Information Retrieval},
+  Author                   = {Salton, Gerard and McGill, Michael J.},
+  Publisher                = {McGraw-Hill, Inc.},
+  Year                     = {1986},
+
+  Address                  = {New York, NY, USA},
+
+  ISBN                     = {0070544840}
+}
+
+@InProceedings{tola2008fast,
+  Title                    = {A fast local descriptor for dense matching},
+  Author                   = {Tola, Engin and Lepetit, Vincent and Fua, Pascal},
+  Booktitle                = {Computer Vision and Pattern Recognition, 2008. CVPR 2008. IEEE Conference on},
+  Year                     = {2008},
+  Organization             = {IEEE},
+  Pages                    = {1--8}
+}
+
+@InProceedings{zheng2009tour,
+  Title                    = {Tour the world: building a web-scale landmark recognition engine},
+  Author                   = {Zheng, Yan-Tao and Zhao, Ming and Song, Yang and Adam, Hartwig and Buddemeier, Ulrich and Bissacco, Alessandro and Brucher, Fernando and Chua, T-S and Neven, Hartmut},
+  Booktitle                = {Computer Vision and Pattern Recognition, 2009. CVPR 2009. IEEE Conference on},
+  Year                     = {2009},
+  Organization             = {IEEE},
+  Pages                    = {1085--1092}
+}
+

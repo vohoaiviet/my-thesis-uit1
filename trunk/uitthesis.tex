@@ -8,8 +8,6 @@
 % Vietnam National University. 
 
 \documentclass[oneside,12pt]{Classes/uitBA}
-
-
  \ifpdf
      \pdfinfo { /Title  (Nghien cuu ky thuat va xay dung ung dung tim kiem doi tuong tren anh)
                 /Creator (TeX)
@@ -51,6 +49,9 @@
 \usepackage{hyperref}
 \usepackage{acronym}
 
+%subscript
+\usepackage{fixltx2e}
+
 \begin{document}
 \maketitle
 \setcounter{secnumdepth}{3}
@@ -89,6 +90,6 @@
  
 \bibliographystyle{Classes/jmb} % bibliography style
 \renewcommand{\bibname}{References} % changes default name Bibliography to References
-\bibliography{security} % References file
+\bibliography{references} % References file
 
 \end{document}
