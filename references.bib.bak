@@ -117,6 +117,15 @@
   ISBN                     = {0070544840}
 }
 
+@InProceedings{sivic2003video,
+  Title                    = {Video Google: A text retrieval approach to object matching in videos},
+  Author                   = {Sivic, Josef and Zisserman, Andrew},
+  Booktitle                = {Computer Vision, 2003. Proceedings. Ninth IEEE International Conference on},
+  Year                     = {2003},
+  Organization             = {IEEE},
+  Pages                    = {1470--1477}
+}
+
 @InProceedings{tola2008fast,
   Title                    = {A fast local descriptor for dense matching},
   Author                   = {Tola, Engin and Lepetit, Vincent and Fua, Pascal},
