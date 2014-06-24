@@ -14,44 +14,44 @@ A level-1 auxiliary file: Appendix2/appendix2.aux
 The style file: Classes/jmb.bst
 Database file #1: references.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 15 entries,
+You've used 23 entries,
             3018 wiz_defined-function locations,
-            733 strings with 7292 characters,
-and the built_in function-call counts, 10394 in all, are:
-= -- 928
-> -- 420
-< -- 8
-+ -- 154
-- -- 135
-* -- 823
-:= -- 1495
-add.period$ -- 45
-call.type$ -- 15
-change.case$ -- 132
-chr.to.int$ -- 15
-cite$ -- 15
-duplicate$ -- 743
-empty$ -- 790
-format.name$ -- 190
-if$ -- 2157
+            780 strings with 8863 characters,
+and the built_in function-call counts, 15991 in all, are:
+= -- 1436
+> -- 625
+< -- 13
++ -- 232
+- -- 201
+* -- 1253
+:= -- 2289
+add.period$ -- 69
+call.type$ -- 23
+change.case$ -- 203
+chr.to.int$ -- 23
+cite$ -- 23
+duplicate$ -- 1155
+empty$ -- 1229
+format.name$ -- 284
+if$ -- 3333
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 136
-newline$ -- 49
-num.names$ -- 60
-pop$ -- 301
+missing$ -- 208
+newline$ -- 73
+num.names$ -- 92
+pop$ -- 455
 preamble$ -- 1
-purify$ -- 105
+purify$ -- 158
 quote$ -- 0
-skip$ -- 333
+skip$ -- 519
 stack$ -- 0
-substring$ -- 556
-swap$ -- 404
-text.length$ -- 1
+substring$ -- 872
+swap$ -- 626
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 129
+type$ -- 201
 warning$ -- 0
-while$ -- 78
+while$ -- 123
 width$ -- 0
-write$ -- 174
+write$ -- 268
