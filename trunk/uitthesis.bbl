@@ -1,4 +1,4 @@
-\begin{thebibliography}{15}
+\begin{thebibliography}{23}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Arandjelovic \& Zisserman(2012)}]{arandjelovic2012three}
@@ -16,11 +16,26 @@
   robust independent elementary features. In {\em Computer Vision--ECCV
   2010\/}, 778--792, Springer.
 
+\bibitem[{Fischler \& Bolles(1981)}]{fischler1981random}
+{\sc Fischler, M.A. \& Bolles, R.C.} (1981). Random sample consensus: a
+  paradigm for model fitting with applications to image analysis and automated
+  cartography. {\em Communications of the ACM\/}, {\bf 24}, 381--395.
+
+\bibitem[{Lampert(2009)}]{lampert2009detecting}
+{\sc Lampert, C.H.} (2009). Detecting objects in large image collections and
+  videos by efficient subimage retrieval. In {\em Computer Vision, 2009 IEEE
+  12th International Conference on\/}, 987--994, IEEE.
+
 \bibitem[{Leutenegger {\em et~al.\/}(2011)Leutenegger, Chli \&
   Siegwart}]{leutenegger2011brisk}
 {\sc Leutenegger, S., Chli, M. \& Siegwart, R.Y.} (2011). Brisk: Binary robust
   invariant scalable keypoints. In {\em Computer Vision (ICCV), 2011 IEEE
   International Conference on\/}, 2548--2555, IEEE.
+
+\bibitem[{Lin \& Brandt(2010)}]{lin2010local}
+{\sc Lin, Z. \& Brandt, J.} (2010). A local bag-of-features model for
+  large-scale object retrieval. In {\em Computer Vision--ECCV 2010\/},
+  294--308, Springer.
 
 \bibitem[{Lowe(2004)}]{lowe2004distinctive}
 {\sc Lowe, D.G.} (2004). Distinctive image features from scale-invariant
@@ -48,6 +63,18 @@
   descriptors. {\em Pattern Analysis and Machine Intelligence, IEEE
   Transactions on\/}, {\bf 27}, 1615--1630.
 
+\bibitem[{Nister \& Stewenius(2006)}]{nister2006scalable}
+{\sc Nister, D. \& Stewenius, H.} (2006). Scalable recognition with a
+  vocabulary tree. In {\em Computer Vision and Pattern Recognition, 2006 IEEE
+  Computer Society Conference on\/}, vol.~2, 2161--2168, IEEE.
+
+\bibitem[{Philbin {\em et~al.\/}(2007)Philbin, Chum, Isard, Sivic \&
+  Zisserman}]{philbin2007object}
+{\sc Philbin, J., Chum, O., Isard, M., Sivic, J. \& Zisserman, A.} (2007).
+  Object retrieval with large vocabularies and fast spatial matching. In {\em
+  Computer Vision and Pattern Recognition, 2007. CVPR'07. IEEE Conference
+  on\/}, 1--8, IEEE.
+
 \bibitem[{Rosten {\em et~al.\/}(2010)Rosten, Porter \&
   Drummond}]{rosten2010faster}
 {\sc Rosten, E., Porter, R. \& Drummond, T.} (2010). Faster and better: A
@@ -57,6 +84,12 @@
 \bibitem[{Salton \& McGill(1986)}]{Salton:1986:IMI:576628}
 {\sc Salton, G. \& McGill, M.J.} (1986). {\em Introduction to Modern
   Information Retrieval\/}. McGraw-Hill, Inc., New York, NY, USA.
+
+\bibitem[{Schmid {\em et~al.\/}(1997)Schmid, Mohr {\em
+  et~al.\/}}]{schmid1997local}
+{\sc Schmid, C., Mohr, R. {\em et~al.\/}} (1997). Local grayvalue invariants
+  for image retrieval. {\em IEEE Transactions on Pattern Analysis and Machine
+  Intelligence\/}, {\bf 19}, 530--534.
 
 \bibitem[{Sivic \& Zisserman(2003)}]{sivic2003video}
 {\sc Sivic, J. \& Zisserman, A.} (2003). Video google: A text retrieval
@@ -72,6 +105,18 @@
 {\sc Tola, E., Lepetit, V. \& Fua, P.} (2008). A fast local descriptor for
   dense matching. In {\em Computer Vision and Pattern Recognition, 2008. CVPR
   2008. IEEE Conference on\/}, 1--8, IEEE.
+
+\bibitem[{Zhang {\em et~al.\/}(2011)Zhang, Jia \& Chen}]{zhang2011image}
+{\sc Zhang, Y., Jia, Z. \& Chen, T.} (2011). Image retrieval with
+  geometry-preserving visual phrases. In {\em Computer Vision and Pattern
+  Recognition (CVPR), 2011 IEEE Conference on\/}, 809--816, IEEE.
+
+\bibitem[{Zhang {\em et~al.\/}(1995)Zhang, Deriche, Faugeras \&
+  Luong}]{zhang1995robust}
+{\sc Zhang, Z., Deriche, R., Faugeras, O. \& Luong, Q.T.} (1995). A robust
+  technique for matching two uncalibrated images through the recovery of the
+  unknown epipolar geometry. {\em Artificial intelligence\/}, {\bf 78},
+  87--119.
 
 \bibitem[{Zheng {\em et~al.\/}(2009)Zheng, Zhao, Song, Adam, Buddemeier,
   Bissacco, Brucher, Chua \& Neven}]{zheng2009tour}

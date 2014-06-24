@@ -29,6 +29,27 @@
   Pages                    = {778--792}
 }
 
+@Article{fischler1981random,
+  Title                    = {Random sample consensus: a paradigm for model fitting with applications to image analysis and automated cartography},
+  Author                   = {Fischler, Martin A and Bolles, Robert C},
+  Journal                  = {Communications of the ACM},
+  Year                     = {1981},
+  Number                   = {6},
+  Pages                    = {381--395},
+  Volume                   = {24},
+
+  Publisher                = {ACM}
+}
+
+@InProceedings{lampert2009detecting,
+  Title                    = {Detecting objects in large image collections and videos by efficient subimage retrieval},
+  Author                   = {Lampert, Christoph H},
+  Booktitle                = {Computer Vision, 2009 IEEE 12th International Conference on},
+  Year                     = {2009},
+  Organization             = {IEEE},
+  Pages                    = {987--994}
+}
+
 @InProceedings{leutenegger2011brisk,
   Title                    = {BRISK: Binary robust invariant scalable keypoints},
   Author                   = {Leutenegger, Stefan and Chli, Margarita and Siegwart, Roland Yves},
@@ -36,6 +57,15 @@
   Year                     = {2011},
   Organization             = {IEEE},
   Pages                    = {2548--2555}
+}
+
+@InCollection{lin2010local,
+  Title                    = {A local bag-of-features model for large-scale object retrieval},
+  Author                   = {Lin, Zhe and Brandt, Jonathan},
+  Booktitle                = {Computer Vision--ECCV 2010},
+  Publisher                = {Springer},
+  Year                     = {2010},
+  Pages                    = {294--308}
 }
 
 @Article{lowe2004distinctive,
@@ -94,6 +124,25 @@
   Publisher                = {Springer}
 }
 
+@InProceedings{nister2006scalable,
+  Title                    = {Scalable recognition with a vocabulary tree},
+  Author                   = {Nister, David and Stewenius, Henrik},
+  Booktitle                = {Computer Vision and Pattern Recognition, 2006 IEEE Computer Society Conference on},
+  Year                     = {2006},
+  Organization             = {IEEE},
+  Pages                    = {2161--2168},
+  Volume                   = {2}
+}
+
+@InProceedings{philbin2007object,
+  Title                    = {Object retrieval with large vocabularies and fast spatial matching},
+  Author                   = {Philbin, James and Chum, Ondrej and Isard, Michael and Sivic, Josef and Zisserman, Andrew},
+  Booktitle                = {Computer Vision and Pattern Recognition, 2007. CVPR'07. IEEE Conference on},
+  Year                     = {2007},
+  Organization             = {IEEE},
+  Pages                    = {1--8}
+}
+
 @Article{rosten2010faster,
   Title                    = {Faster and better: A machine learning approach to corner detection},
   Author                   = {Rosten, Edward and Porter, Reid and Drummond, Tom},
@@ -117,6 +166,28 @@
   ISBN                     = {0070544840}
 }
 
+@Article{schmid1997local,
+  Title                    = {Local grayvalue invariants for image retrieval},
+  Author                   = {Schmid, Cordelia and Mohr, Roger and others},
+  Journal                  = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  Year                     = {1997},
+  Number                   = {5},
+  Pages                    = {530--534},
+  Volume                   = {19}
+}
+
+@Article{sivic2009efficient,
+  Title                    = {Efficient visual search of videos cast as text retrieval},
+  Author                   = {Sivic, Josef and Zisserman, Andrew},
+  Journal                  = {Pattern Analysis and Machine Intelligence, IEEE Transactions on},
+  Year                     = {2009},
+  Number                   = {4},
+  Pages                    = {591--606},
+  Volume                   = {31},
+
+  Publisher                = {IEEE}
+}
+
 @InProceedings{sivic2003video,
   Title                    = {Video Google: A text retrieval approach to object matching in videos},
   Author                   = {Sivic, Josef and Zisserman, Andrew},
@@ -133,6 +204,27 @@
   Year                     = {2008},
   Organization             = {IEEE},
   Pages                    = {1--8}
+}
+
+@InProceedings{zhang2011image,
+  Title                    = {Image retrieval with geometry-preserving visual phrases},
+  Author                   = {Zhang, Yimeng and Jia, Zhaoyin and Chen, Tsuhan},
+  Booktitle                = {Computer Vision and Pattern Recognition (CVPR), 2011 IEEE Conference on},
+  Year                     = {2011},
+  Organization             = {IEEE},
+  Pages                    = {809--816}
+}
+
+@Article{zhang1995robust,
+  Title                    = {A robust technique for matching two uncalibrated images through the recovery of the unknown epipolar geometry},
+  Author                   = {Zhang, Zhengyou and Deriche, Rachid and Faugeras, Olivier and Luong, Quang-Tuan},
+  Journal                  = {Artificial intelligence},
+  Year                     = {1995},
+  Number                   = {1},
+  Pages                    = {87--119},
+  Volume                   = {78},
+
+  Publisher                = {Elsevier}
 }
 
 @InProceedings{zheng2009tour,
