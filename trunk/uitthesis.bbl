@@ -1,4 +1,4 @@
-\begin{thebibliography}{23}
+\begin{thebibliography}{25}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Arandjelovic \& Zisserman(2012)}]{arandjelovic2012three}
@@ -21,10 +21,23 @@
   paradigm for model fitting with applications to image analysis and automated
   cartography. {\em Communications of the ACM\/}, {\bf 24}, 381--395.
 
+\bibitem[{Grauman \& Darrell(2005)}]{grauman2005pyramid}
+{\sc Grauman, K. \& Darrell, T.} (2005). The pyramid match kernel:
+  Discriminative classification with sets of image features. In {\em Computer
+  Vision, 2005. ICCV 2005. Tenth IEEE International Conference on\/}, vol.~2,
+  1458--1465, IEEE.
+
 \bibitem[{Lampert(2009)}]{lampert2009detecting}
 {\sc Lampert, C.H.} (2009). Detecting objects in large image collections and
   videos by efficient subimage retrieval. In {\em Computer Vision, 2009 IEEE
   12th International Conference on\/}, 987--994, IEEE.
+
+\bibitem[{Lazebnik {\em et~al.\/}(2006)Lazebnik, Schmid \&
+  Ponce}]{lazebnik2006beyond}
+{\sc Lazebnik, S., Schmid, C. \& Ponce, J.} (2006). Beyond bags of features:
+  Spatial pyramid matching for recognizing natural scene categories. In {\em
+  Computer Vision and Pattern Recognition, 2006 IEEE Computer Society
+  Conference on\/}, vol.~2, 2169--2178, IEEE.
 
 \bibitem[{Leutenegger {\em et~al.\/}(2011)Leutenegger, Chli \&
   Siegwart}]{leutenegger2011brisk}
