@@ -1,15 +1,24 @@
-\chapter{Tích hợp thông tin không gian ảnh vào inverted index}
+\chapter{Tích hợp thông tin không gian ảnh vào chỉ mục ngược}
 \ifpdf
     \graphicspath{{Chapter3/Chapter3Figs/PNG/}{Chapter3/Chapter3Figs/PDF/}{Chapter3/Chapter3Figs/}}
 \else
     \graphicspath{{Chapter3/Chapter3Figs/EPS/}{Chapter3/Chapter3Figs/}}
 \fi
 
-\section{Ý tưởng phương pháp}
-\markboth{\MakeUppercase{\thechapter. My Third Chapter }}{\thechapter. My Third Chapter}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et semper arcu. In augue eros, varius ac aliquam vel, suscipit vitae erat. Curabitur sodales semper lectus, eu imperdiet quam vulputate quis. Sed consectetur scelerisque rhoncus. Cras sed pretium augue. Pellentesque magna eros, mattis sed massa nec, pellentesque gravida eros. Sed nec tellus vel urna pharetra feugiat. Fusce ultricies tincidunt facilisis. Suspendisse sodales est metus, quis tincidunt dolor molestie ut. Etiam vitae dignissim mi. Suspendisse pulvinar tellus ac libero rutrum, quis sagittis ligula rhoncus.
+\markboth{\MakeUppercase{\thechapter. Tích hợp thông tin không gian ảnh vào chỉ mục ngược}}{\thechapter. Tích hợp thông tin không gian ảnh vào chỉ mục ngược}
 
-Nam id lectus quis ligula ullamcorper pharetra. In eget commodo sem. Curabitur dictum imperdiet urna, vitae euismod lorem tristique pellentesque. Proin sollicitudin elementum lobortis. Curabitur posuere, arcu suscipit porta consectetur, nisi urna faucibus mauris, in elementum risus dolor at diam. Nunc fermentum lobortis imperdiet. Cras pellentesque elementum rutrum. In hac habitasse platea dictumst. Quisque elementum felis eu risus venenatis congue. Nullam ornare, justo sed pulvinar semper, risus elit ullamcorper libero, viverra euismod metus diam quis urna. Suspendisse neque quam, condimentum sit amet consectetur malesuada, vehicula fringilla augue. Etiam eu mi commodo, egestas tellus et, dapibus tellus. Cras nec urna justo.
+Nhắc lại bài toán chúng tôi đang cố gắng tập trung giải quyết ở đây là truy vấn đối tượng trên tập dữ liệu lớn trong thời gian gần với thời gian thực. Rất nhiều công trình được đưa ra để giải quyết bài toán này (mục \ref{local-features} và \ref{bag-of-words}). Phương pháp cơ bản để giải quyết bài toán là biểu diễn một hình ảnh dưới dạng mô hình bag-of-visual-words (BoW), sau đó xếp hạng các hình ảnh sử dụng phương pháp tf-idf và dùng chỉ mục ngược (inverted index) để tăng hiệu suất tính toán.Tuy nhiên, phương pháp trên vẫn còn bị giới hạn về độ chính xác do chưa sử dụng đến thông tin không gian ảnh. Các phương pháp được đưa ra trong những năm gần đây để giải quyết vấn đề này đã được giới thiệu trong mục \ref{spatial}.\\
+Trong chương này, chúng tôi sẽ mô tả phương pháp đề xuất để tích hợp thông tin không gian ảnh vào chỉ mục ngược. Trước tiên chúng tôi sẽ nhắc lại những công trình khơi nguồn ý tưởng cho phương pháp của chúng tôi trong mục \ref{idea}
+
+\section{Ý tưởng phương pháp}
+\label{idea}
+
+\subsection{Chỉ mục ngược với biểu diễn Bag-of-Visual-Words}
+Như đã được giới thiệu sơ lược trọng mục 2.2.1, 
+
+
+\subsection{Phương pháp}
+\label{experiment}
 
 \section{Cài đặt thí nghiệm}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum euismod libero a augue suscipit, a dignissim justo ullamcorper. Nunc in tincidunt dolor, sed feugiat ante. Curabitur ut elit sit amet dui euismod congue porttitor rhoncus enim. Donec in mollis massa, et sagittis est. Duis est dui, suscipit id sollicitudin vel, malesuada non metus. Vivamus tincidunt libero non nunc dignissim, interdum auctor lorem lacinia. Praesent ultrices nec turpis placerat consectetur. Maecenas volutpat lobortis interdum. Fusce ullamcorper nunc at varius bibendum. Praesent at ipsum sagittis, facilisis leo ac, commodo orci.

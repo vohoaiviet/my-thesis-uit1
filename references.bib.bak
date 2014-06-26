@@ -154,6 +154,15 @@
   Volume                   = {2}
 }
 
+@InProceedings{philbin2008lost,
+  Title                    = {Lost in quantization: Improving particular object retrieval in large scale image databases},
+  Author                   = {Philbin, James and Chum, Ondrej and Isard, Michael and Sivic, Josef and Zisserman, Andrew},
+  Booktitle                = {Computer Vision and Pattern Recognition, 2008. CVPR 2008. IEEE Conference on},
+  Year                     = {2008},
+  Organization             = {IEEE},
+  Pages                    = {1--8}
+}
+
 @InProceedings{philbin2007object,
   Title                    = {Object retrieval with large vocabularies and fast spatial matching},
   Author                   = {Philbin, James and Chum, Ondrej and Isard, Michael and Sivic, Josef and Zisserman, Andrew},
