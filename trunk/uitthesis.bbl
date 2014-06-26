@@ -1,4 +1,4 @@
-\begin{thebibliography}{25}
+\begin{thebibliography}{27}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Arandjelovic \& Zisserman(2012)}]{arandjelovic2012three}
@@ -26,6 +26,12 @@
   Discriminative classification with sets of image features. In {\em Computer
   Vision, 2005. ICCV 2005. Tenth IEEE International Conference on\/}, vol.~2,
   1458--1465, IEEE.
+
+\bibitem[{J\'egou {\em et~al.\/}(2008)J\'egou, Douze \& Schmid}]{JDS08}
+{\sc J\'egou, H., Douze, M. \& Schmid, C.} (2008). Hamming embedding and weak
+  geometric consistency for large scale image search. In A.Z. David~Forsyth
+  Philip~Torr, ed., {\em European Conference on Computer Vision\/}, vol.~I of
+  {\em LNCS\/}, 304--317, Springer.
 
 \bibitem[{Lampert(2009)}]{lampert2009detecting}
 {\sc Lampert, C.H.} (2009). Detecting objects in large image collections and
@@ -87,6 +93,13 @@
   Object retrieval with large vocabularies and fast spatial matching. In {\em
   Computer Vision and Pattern Recognition, 2007. CVPR'07. IEEE Conference
   on\/}, 1--8, IEEE.
+
+\bibitem[{Philbin {\em et~al.\/}(2008)Philbin, Chum, Isard, Sivic \&
+  Zisserman}]{philbin2008lost}
+{\sc Philbin, J., Chum, O., Isard, M., Sivic, J. \& Zisserman, A.} (2008). Lost
+  in quantization: Improving particular object retrieval in large scale image
+  databases. In {\em Computer Vision and Pattern Recognition, 2008. CVPR 2008.
+  IEEE Conference on\/}, 1--8, IEEE.
 
 \bibitem[{Rosten {\em et~al.\/}(2010)Rosten, Porter \&
   Drummond}]{rosten2010faster}

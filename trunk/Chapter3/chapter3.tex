@@ -1,47 +1,45 @@
-\chapter{Các tập dữ liệu và quy trình đánh giá}
+\chapter{Các bộ dữ liệu và phương thức đánh giá}
 \ifpdf
     \graphicspath{{Chapter3/Chapter3Figs/PNG/}{Chapter3/Chapter3Figs/PDF/}{Chapter3/Chapter3Figs/}}
 \else
     \graphicspath{{Chapter3/Chapter3Figs/EPS/}{Chapter3/Chapter3Figs/}}
 \fi
+\markboth{\MakeUppercase{\thechapter. Các bộ dữ liệu và phương thức đánh giá}}{\thechapter. Các bộ dữ liệu và phương thức đánh giá}
 
-\section{Các tập dữ liệu}
-\markboth{\MakeUppercase{\thechapter. My Third Chapter }}{\thechapter. My Third Chapter}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit ligula vel magna pulvinar, et volutpat dolor mattis. Vivamus euismod lobortis sagittis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent hendrerit est vel orci vulputate varius. Nam nunc lorem, imperdiet eget faucibus vitae, mattis et lorem. Suspendisse potenti. In tristique scelerisque consequat. Nam bibendum, arcu non adipiscing hendrerit, dolor mi suscipit neque, blandit euismod lacus tortor sed ligula. Quisque convallis enim sit amet mauris ullamcorper, vitae hendrerit neque sagittis. Nullam pharetra elit sit amet nulla laoreet, eget tincidunt lectus auctor.
+Chương này sẽ trình bày quy trình đánh giá chuẩn được sử dụng rộng rãi trong truy vấn đối tượng trên tập dữ liệu lớn. Trước tiên là mô tả về các bộ dữ liệu chuẩn, sau đó là phần trình bày chi tiết về phương thức đánh giá cho các kết quả thí nghiệm.
+
+
+\section{Các bộ dữ liệu}
 
 \subsection{Oxford 5k}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec laoreet risus urna, sed sodales lacus semper et. Aliquam quis sem ac metus hendrerit fringilla at vitae ligula. Proin varius dolor non magna varius congue. Donec faucibus semper massa, eu posuere urna tincidunt non. In vitae risus magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque semper rutrum nibh, nec scelerisque nunc pulvinar eget. Pellentesque vitae porta sem. Sed venenatis, nisi in imperdiet consequat, nunc lorem volutpat ipsum, iaculis tincidunt odio risus at nunc. Aliquam adipiscing est tellus, a volutpat purus cursus a. Aenean eget urna id odio mollis aliquam quis vitae erat. Morbi convallis ipsum nec nisi ultricies molestie. Nunc arcu enim, pulvinar id imperdiet in, accumsan et erat. In tincidunt laoreet odio, sit amet auctor nisl fermentum sit amet.\\
+Bộ dữ liệu Oxford 5k được xây dựng bởi \cite{philbin2007object}, bao gồm 11 Oxford "landmark"\footnote{landmark ở đây có nghĩa là một góc nhìn/góc chụp đặc biệt của một tòa nhà} cùng các hình ảnh gây nhiễu. Hình ảnh cho mỗi landmark được tự động lấy về từ trang chia sẻ ảnh trực tuyến Flickr sử dụng các câu truy vấn như "Oxford Christ Church" và "Oxford Radcliffee Camera", đồng thời các hình ảnh gây nhiễu cũng được lấy về bằng câu truy vấn "Oxford". Bộ dữ liệu bao gồm 5,062 hình ảnh chất lượng cao (1366 $\times$ 768).\\
+\textit{Tập dữ liệu đánh giá chuẩn} (ground truth) được xây dựng thủ công cho 11 landmark. Các hình ảnh được gán vào một trong bốn nhãn: \textit{Good} nếu nó là một hình ảnh rõ ràng và đầy đủ về đối tượng/tòa nhà, \textit{OK} nếu hình ảnh chứa hơn 25\% của đối tượng và \textit{Junk} nếu hình ảnh chứa ít hơn 25\% của đối tượng hoặc đối tượng bị che khuất phần lớn hoặc hình ảnh đối tượng bị méo mó nhiều.\\
+Bộ dữ liệu gồm 55 truy vấn trong đó mỗi landmark sẽ có 5 truy vấn. Các đối tượng sẽ được khoanh vùng trên các hình ảnh truy vấn. Tất cả các truy vấn được thể hiện trong hình \ref{FigOxfordDataset}.
 
-Curabitur ut metus a nibh iaculis venenatis eu et sem. Nunc vulputate nisl ut vehicula convallis. Aenean felis tortor, faucibus a congue ut, faucibus eget lorem. Nulla et ullamcorper purus. Pellentesque dignissim nunc ut aliquet tincidunt. Sed in neque eget turpis auctor convallis quis vel erat. Quisque eget turpis et risus dictum faucibus id sit amet dolor. Morbi interdum, leo id dictum rutrum, odio nulla vulputate turpis, non suscipit massa sapien vitae elit. Suspendisse dignissim orci eget tortor tincidunt, vitae pretium leo consequat. Nunc aliquet, quam ut tempus varius, ligula tellus molestie lectus, quis tempus diam metus ac massa. Etiam tempus, nisl ac adipiscing aliquam, arcu ante lacinia ante, non pretium risus lacus sed neque. Nulla facilisi. Cras eu porttitor mi, id lobortis nibh.
+\begin{figure}[!htbp]
+  \begin{center}
+    \leavevmode
+    \ifpdf
+      \includegraphics[scale=0.27]{oxfordDataset}
+    \else
+      \includegraphics[scale=0.27]{oxfordDataset}
+    \fi
+    \caption[Landmark và các truy vấn được dùng để đánh giá]{\textbf{Landmark và các truy vấn được dùng để đánh giá} 55 hình ảnh truy vấn được sử dụng trong tập dữ liệu đánh giá chuẩn. Mỗi hàng là 5 hình của 5 truy vấn khác nhau cho cùng một cảnh landmark. Hình ảnh được lấy từ bài báo \citep{philbin2007object}.}
+    \label{FigOxfordDataset}
+  \end{center}
+\end{figure}
 
 \subsection{Paris 6k}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam interdum mauris a sollicitudin posuere. Morbi vulputate arcu risus, sit amet feugiat lorem varius sed. Vestibulum vitae aliquet orci. Aliquam neque quam, fringilla eget nunc id, posuere semper eros. Curabitur id lorem tellus. Vivamus a leo purus. Sed porttitor faucibus risus in ullamcorper. Mauris vel adipiscing nisi, eget faucibus nulla. Pellentesque eget feugiat lectus, id hendrerit ligula. Aenean vehicula lorem vel augue interdum, et aliquam dolor fermentum. Maecenas quis risus sit amet odio sagittis vestibulum iaculis et orci. Quisque massa odio, faucibus sit amet pulvinar eu, tincidunt id tortor. Aliquam fermentum, purus ac porttitor gravida, elit elit vulputate mi, vitae facilisis nulla purus vel eros. Maecenas ut consectetur leo. Fusce id ante varius, ultricies purus eu, ullamcorper felis. Integer tempus convallis ipsum sit amet tristique.
+Tương tự như bộ dữ liệu Oxford 5k, Paris 6k bao gồm 6,392 hình ảnh chất lượng cao (1366 $\times$ 768) của các địa danh nổi tiếng ở Paris được lấy về từ Flickr với các câu truy vấn như "Paris Eiffel Tower" hay "Paris Triomphe". Paris 6k cũng có 55 hình ảnh truy vấn cho 11 landmark (5 truy vấn cho mỗi landmark) (\cite{philbin2008lost}).\\
+Paris 6k được đánh giá là một bộ dữ liệu hoàn toàn độc lập so với Oxford 5k và thường được dùng để kiểm tra các tác động của việc tính toán từ trực quan trong khi Oxford 5k thường được dùng để kiểm tra hiệu suất.\\
 
 \subsection{Holidays}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis, orci sed volutpat tincidunt, ipsum turpis tincidunt est, ac gravida enim purus id ligula. Vestibulum lobortis orci ut ante tincidunt placerat. Nunc aliquam mi aliquet, luctus mi id, convallis urna. Proin quis pharetra tortor. Mauris cursus sollicitudin aliquam. Nunc convallis ipsum et tincidunt suscipit. Maecenas elit arcu, dictum in massa et, tempor malesuada quam. Proin ornare volutpat sem eu varius. In elementum sit amet enim vel consequat. Nullam quis augue at tellus sollicitudin commodo. Nunc pulvinar ullamcorper ornare. Vestibulum volutpat mi et nisl laoreet, sed convallis leo bibendum. Suspendisse potenti. Vestibulum commodo felis erat, ut placerat felis volutpat nec.
-  
-  
- 
-%\begin{figure} 
-%\centering
-%\subfigure[tui-main]{
-%   \includegraphics[width=0.30\textwidth] {tui-main.pdf}
-%   \label{fig:tui-main}}
-%\subfigure[tui-victim controls]{
-%   \includegraphics[width=0.30\textwidth] {tui-controls.pdf}
-%   \label{fig:tui-controls}}
-%\subfigure[tui-get-phone-info-controls]{
-%   \includegraphics[width=0.30\textwidth] {tui-get-phone-info-controls.pdf}
-%   \label{fig:tui-get-phone-info-controls}}
-%\label{myfigure}
-%\caption{TUI security program main features}
-%\end{figure}
+Bộ Holidays bao gồm 1,491 hình ảnh chất lượng cao về các lễ hội với 500 truy vấn mà mỗi truy vấn chứa một vài hình ảnh chính xác về đối tượng truy vấn (\cite{JDS08}). Bộ dữ liệu này nhằm hướng tới mục đích truy vấn ảnh trên tập dữ liệu lớn vì các hình ảnh không phải về một đối tượng đặc biệt như trong Oxford 5k và Paris 6k, đồng thời các thay đổi trên hình ảnh của đối tượng cũng đa dạng hơn với nhiều loại thay đổi khác nhau và truy vấn được thực hiện với toàn bộ hình ảnh chứ không phải với một vùng hình ảnh có chứa đối tượng được chỉ định trước.\\
+Tập dữ liệu bao gồm 500 nhóm hình ảnh, mỗi nhóm là một cảnh khác nhau và bao gồm rất nhiều loại hình ảnh khác nhau như tự nhiên, nhân tạo, hiệu ứng nước và lửa,... Hình ảnh đầu tiên của mỗi nhóm là hình truy vấn và các hình còn lại trong nhóm là kết quả chính xác cho truy vấn. Và các hình ảnh truy vấn không được xem xét tới trong kết quả trả về chứ không phải được xem là một kết quả chính xác như trong Oxford 5k và Paris 6k.\\
+Thông thường bô dữ liệu Holidays thường được ghép với khoảng 1 triệu hình ảnh từ Flickr khác để kiểm tra truy vấn trên tập dữ liệu lớn, thường được gọi là bộ dữ liệu \textit{Holidays + Flickr1M}.\\
 
-
-\section{Quy trình đánh giá}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet sollicitudin nibh, sodales rutrum metus. Morbi faucibus tincidunt felis, at pretium tellus placerat ut. Phasellus aliquet leo a vestibulum eleifend. Phasellus fermentum eros ut erat fringilla posuere. Suspendisse sodales dictum turpis, et pulvinar magna sodales rutrum. Quisque vel commodo sem. Vivamus arcu risus, commodo eu facilisis sed, posuere vel nisi. Proin risus ipsum, hendrerit vitae venenatis ut, fringilla quis nunc.
-
-Ut eget erat vitae odio gravida adipiscing. Pellentesque rutrum sit amet odio eget ornare. Sed non blandit ligula. Mauris mollis nibh sed eros consectetur, at semper erat dictum. Nam dolor purus, convallis a mauris aliquet, consectetur rhoncus leo. Cras nec erat eleifend, cursus purus mattis, dapibus lacus. Duis tortor nibh, consectetur eget arcu vitae, mollis laoreet magna. Vestibulum tincidunt augue ut condimentum consequat. Vestibulum vel neque mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam risus est, posuere in rhoncus a, varius non elit. Fusce a dictum eros, eget vestibulum tellus. Nunc at aliquet velit. Fusce eget quam mi. Vestibulum tristique, ligula id condimentum dapibus, nunc nisi consequat magna, vel luctus lorem quam eget velit.
-
-Sed egestas eu lorem sollicitudin blandit. Morbi et iaculis nisi, ac consequat sem. Duis elementum leo sit amet dolor eleifend, id gravida dui mattis. Praesent malesuada, eros ac consequat auctor, ante justo lobortis dui, id malesuada lectus dolor at lorem. Phasellus ultricies rhoncus semper. Etiam lacus ligula, vehicula ut metus ac, sagittis varius quam. Nulla ut pretium tortor. Nunc feugiat, arcu et posuere consectetur, nibh diam porta eros, a consectetur leo ante ac ante. Integer malesuada laoreet augue, quis scelerisque tortor varius non. Phasellus a quam ut est tempus pharetra. Duis hendrerit eros ut lacinia tincidunt. Aenean non molestie neque. Mauris dapibus non massa eget ullamcorper. Quisque id urna vestibulum neque feugiat egestas. Praesent at egestas massa.
-
+\section{Phương thức đánh giá}
+\label{evaluation}
+Với mỗi truy vấn, để đánh giá kết quả trả về ta thường dùng độ đo \textit{precision-recall} (PR). Precision là tỉ lệ giữa số kết quả đúng trả về trong tổng số kết quả trả về. Recall là tỉ số của số kết quả đúng trả về trên tổng số hình ảnh đúng trong tập dữ liệu. Hay nói theo cách dễ hiểu hơn, precison cho thấy độ "tinh khiết" của kết quả trả về, còn recall cho biết đã tìm thấy bao nhiêu phần của đáp án.\\
+Tùy theo từng mục đích mà người ta sẽ tập trung vào việc nâng cao precision hay recall. Ví dụ, những ứng dụng như Google Goggles\footnote{Google Goggles là một ứng dụng nhận dạng hình ảnh được phát hành bởi Google. Người sử dụng điện thoại di động chỉ cần chụp ảnh của đối tượng như xe hơi, đồ chơi, bìa sách, mã vạch,... sau đó Goggles sẽ quét và đối chiếu kho dữ liệu để hiển thị thông tin liên quan đến vật đó.} thì câu hỏi nó cần phải trả lời là "Nó là cái gì?", do đó nó chỉ chú ý đến việc đạt được chỉ số precison tối đa có thể, tức là lấy được những kết quả đúng nhưng vừa đủ để nhận dạng đối tượng. Trong nhiều trường hợp khác thì chỉ số recall cũng được quan tâm. Ví dụ việc tái tạo không gian ba chiều đòi hỏi phải tìm được đủ số lượng hình ảnh của đối tượng để xây dựng được mô hình ba chiều chính xác.\\
+Để đo hiệu suất thực thi của hệ thống, ở đây ta dùng độ đo average precision (AP)(\cite{philbin2007object}), nó cũng tương đương với phần diện tích bên dưới đường biểu diễn cho chỉ số precision-recall trong biểu đồ. Một đường biểu diễn precision-recall lý tưởng có chỉ số precision bằng 1 trên tất cả các mức recall khác nhau và nó tương ứng chỉ số average precision bằng 1. Average precision được tính cho từng truy vấn một sau đó ta lấy trung bình cộng của chúng, đó chính là mean Average Precision - một con số để đánh giá hiệu suất tổng thể của hệ th
