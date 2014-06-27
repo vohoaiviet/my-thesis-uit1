@@ -1,45 +1,57 @@
-\chapter{Các bộ dữ liệu và phương thức đánh giá}
+\chapter{Phương pháp đề xuất}
 \ifpdf
     \graphicspath{{Chapter3/Chapter3Figs/PNG/}{Chapter3/Chapter3Figs/PDF/}{Chapter3/Chapter3Figs/}}
 \else
     \graphicspath{{Chapter3/Chapter3Figs/EPS/}{Chapter3/Chapter3Figs/}}
 \fi
-\markboth{\MakeUppercase{\thechapter. Các bộ dữ liệu và phương thức đánh giá}}{\thechapter. Các bộ dữ liệu và phương thức đánh giá}
 
-Chương này sẽ trình bày quy trình đánh giá chuẩn được sử dụng rộng rãi trong truy vấn đối tượng trên tập dữ liệu lớn. Trước tiên là mô tả về các bộ dữ liệu chuẩn, sau đó là phần trình bày chi tiết về phương thức đánh giá cho các kết quả thí nghiệm.
+\markboth{\MakeUppercase{\thechapter. Tích hợp thông tin không gian ảnh vào chỉ mục ngược}}{\thechapter. Tích hợp thông tin không gian ảnh vào chỉ mục ngược}
 
+Bài toán mà luận văn này tập trung giải quyết là truy vấn đối tượng trên tập dữ liệu lớn trong thời gian gần với thời gian thực. Rất nhiều công trình được đưa ra để giải quyết bài toán này (mục \ref{local-features} và \ref{bag-of-words}). Phương pháp cơ bản để giải quyết bài toán là biểu diễn một hình ảnh dưới dạng mô hình bag-of-visual-words (BoW), sau đó xếp hạng các hình ảnh sử dụng phương pháp tf-idf và dùng chỉ mục ngược (inverted index) để tăng hiệu suất tính toán. Tuy nhiên, phương pháp trên vẫn còn bị giới hạn về độ chính xác do chưa sử dụng đến thông tin không gian ảnh. Các phương pháp được đưa ra trong những năm gần đây để giải quyết vấn đề này đã được giới thiệu trong mục \ref{spatial}.\\
+Trong chương này, chúng tôi sẽ mô tả phương pháp đề xuất để tích hợp thông tin không gian ảnh vào chỉ mục ngược. Trước tiên chúng tôi sẽ nhắc lại những công trình khơi nguồn ý tưởng cho phương pháp của chúng tôi. Sau đó là phần trình bày chi tiết phương pháp đề xuất.\\
 
-\section{Các bộ dữ liệu}
-
-\subsection{Oxford 5k}
-Bộ dữ liệu Oxford 5k được xây dựng bởi \cite{philbin2007object}, bao gồm 11 Oxford "landmark"\footnote{landmark ở đây có nghĩa là một góc nhìn/góc chụp đặc biệt của một tòa nhà} cùng các hình ảnh gây nhiễu. Hình ảnh cho mỗi landmark được tự động lấy về từ trang chia sẻ ảnh trực tuyến Flickr sử dụng các câu truy vấn như "Oxford Christ Church" và "Oxford Radcliffee Camera", đồng thời các hình ảnh gây nhiễu cũng được lấy về bằng câu truy vấn "Oxford". Bộ dữ liệu bao gồm 5,062 hình ảnh chất lượng cao (1366 $\times$ 768).\\
-\textit{Tập dữ liệu đánh giá chuẩn} (ground truth) được xây dựng thủ công cho 11 landmark. Các hình ảnh được gán vào một trong bốn nhãn: \textit{Good} nếu nó là một hình ảnh rõ ràng và đầy đủ về đối tượng/tòa nhà, \textit{OK} nếu hình ảnh chứa hơn 25\% của đối tượng và \textit{Junk} nếu hình ảnh chứa ít hơn 25\% của đối tượng hoặc đối tượng bị che khuất phần lớn hoặc hình ảnh đối tượng bị méo mó nhiều.\\
-Bộ dữ liệu gồm 55 truy vấn trong đó mỗi landmark sẽ có 5 truy vấn. Các đối tượng sẽ được khoanh vùng trên các hình ảnh truy vấn. Tất cả các truy vấn được thể hiện trong hình \ref{FigOxfordDataset}.
+\section{Chỉ mục ngược với biểu diễn Bag-of-Visual-Words}
+Như đã được giới thiệu sơ lược trọng mục 2.2.1, chỉ mục ngược (inverted index) là phương pháp phổ dùng để tối ưu hóa tốc độ truy vấn cơ sở dữ liệu bằng việc lưu trữ trước một ánh xạ từ nội dung đến vị trí trong cơ sở dữ liêu. Nói cách khác, chỉ mục ngược là một cấu trúc dữ liệu chủ yếu bao gồm 2 trường là khóa và giá trị. Mỗi khóa đại diện cho một \textit{từ}, và phần giá trị của tương ứng lưu trữ danh sách các văn bản có chứa từ đó. Vì vậy ta có thể dễ dàng lấy được danh sách tất cả các văn bản chứa từ truy vấn.\\
+Chính vì sự thành công của các kỹ thuật tìm kiếm văn bản, chỉ mục ngược đã được mở rộng để sử dụng cho tìm kiếm ảnh trên cơ sở dữ liệu lớn. Để có thể xây dựng chỉ mục ngược cho cơ sở dữ liệu ảnh, mô hình BoW đã được sử dụng để biểu diễn hình ảnh. Quá trình xây dựng chỉ mục ngược như sau: (i) một bộ dò tìm các đặc trưng sẽ phát hiện những điểm quan trọng, sau đó một bộ mô tả sẽ trích rút trích được những đặc trưng xung quanh điểm đó; (ii) các đặc trưng được gom thành các cụm để tạo thành từ điển, mỗi cụm là một tập các đặc trưng gần giống nhau và trung tâm của mỗi cụm là một \textit{từ trực quan} (visual word), mỗi từ trực quan sẽ được gán một mã số khác nhau; (iii) Trường giá trị trong tệp chỉ mục ngược sẽ lưu trữ danh sách các hình ảnh có chứa các từ trực quan tương ứng. Quá trình tạo tập tin chỉ mục ngược (inverted file) được minh họa trong hình \ref{FigInvertedFile}.
 
 \begin{figure}[!htbp]
   \begin{center}
     \leavevmode
     \ifpdf
-      \includegraphics[scale=0.27]{oxfordDataset}
+      \includegraphics[scale=0.51]{invertedFile}
     \else
-      \includegraphics[scale=0.27]{oxfordDataset}
+      \includegraphics[scale=0.51]{invertedFile}
     \fi
-    \caption[Landmark và các truy vấn được dùng để đánh giá]{\textbf{Landmark và các truy vấn được dùng để đánh giá} 55 hình ảnh truy vấn được sử dụng trong tập dữ liệu đánh giá chuẩn. Mỗi hàng là 5 hình của 5 truy vấn khác nhau cho cùng một cảnh landmark. Hình ảnh được lấy từ bài báo \citep{philbin2007object}.}
-    \label{FigOxfordDataset}
+    \caption[Quá trình tạo tập tin chỉ mục ngược]{Quá trình tạo tập tin chỉ mục ngược (inverted index file).}
+    \label{FigInvertedFile}
   \end{center}
 \end{figure}
 
-\subsection{Paris 6k}
-Tương tự như bộ dữ liệu Oxford 5k, Paris 6k bao gồm 6,392 hình ảnh chất lượng cao (1366 $\times$ 768) của các địa danh nổi tiếng ở Paris được lấy về từ Flickr với các câu truy vấn như "Paris Eiffel Tower" hay "Paris Triomphe". Paris 6k cũng có 55 hình ảnh truy vấn cho 11 landmark (5 truy vấn cho mỗi landmark) (\cite{philbin2008lost}).\\
-Paris 6k được đánh giá là một bộ dữ liệu hoàn toàn độc lập so với Oxford 5k và thường được dùng để kiểm tra các tác động của việc tính toán từ trực quan trong khi Oxford 5k thường được dùng để kiểm tra hiệu suất.\\
+Trong quá trình truy vấn, các đặc trưng sẽ được rút trích từ hình ảnh truy vấn, sau đó từ các đặc trưng ta sẽ lấy được các từ trực quan bằng cách sử dụng từ điển sau đó tra cứu trong tập tin chỉ mục ngược để lấy được các hình ảnh ứng viên. Những hình ảnh nào có số lượng từ trực quan trùng với các từ trong hình ảnh truy vấn càng nhiều thì sẽ càng được xếp hạng cao hơn trong danh sách kết quả truy vấn trả về. Kỹ thuật này được gọi là \textit{bầu chọn} (voting).\\
+Bên cạnh kỹ thuật bầu chọn, để nâng cao độ chính xác của kết quả trả về, người ta có thể thêm một bước tái xếp hạng danh sách kết quả bằng cách tính khoảng cách trong không gian đặc trưng giữa hình ảnh truy vấn và các hình ảnh ứng viên sử dụng biểu diễn BoW của chúng. Tuy nhiên, chi phí tính toán của quá trình này rất cao dẫn đến thời gian thực hiện truy vấn tăng đáng kể.\\
+Trong thí nghiệm được trình bày ở Chương 4, chúng tôi sẽ so sánh cả hai phương pháp bầu chọn và tái xếp hạng với phương pháp được đề xuất.\\
 
-\subsection{Holidays}
-Bộ Holidays bao gồm 1,491 hình ảnh chất lượng cao về các lễ hội với 500 truy vấn mà mỗi truy vấn chứa một vài hình ảnh chính xác về đối tượng truy vấn (\cite{JDS08}). Bộ dữ liệu này nhằm hướng tới mục đích truy vấn ảnh trên tập dữ liệu lớn vì các hình ảnh không phải về một đối tượng đặc biệt như trong Oxford 5k và Paris 6k, đồng thời các thay đổi trên hình ảnh của đối tượng cũng đa dạng hơn với nhiều loại thay đổi khác nhau và truy vấn được thực hiện với toàn bộ hình ảnh chứ không phải với một vùng hình ảnh có chứa đối tượng được chỉ định trước.\\
-Tập dữ liệu bao gồm 500 nhóm hình ảnh, mỗi nhóm là một cảnh khác nhau và bao gồm rất nhiều loại hình ảnh khác nhau như tự nhiên, nhân tạo, hiệu ứng nước và lửa,... Hình ảnh đầu tiên của mỗi nhóm là hình truy vấn và các hình còn lại trong nhóm là kết quả chính xác cho truy vấn. Và các hình ảnh truy vấn không được xem xét tới trong kết quả trả về chứ không phải được xem là một kết quả chính xác như trong Oxford 5k và Paris 6k.\\
-Thông thường bô dữ liệu Holidays thường được ghép với khoảng 1 triệu hình ảnh từ Flickr khác để kiểm tra truy vấn trên tập dữ liệu lớn, thường được gọi là bộ dữ liệu \textit{Holidays + Flickr1M}.\\
+\section{Tích hợp Thông tin không gian ảnh vào Chỉ mục ngược}
+Phương pháp chúng tôi đề xuất nhằm tích hợp thông tin không gian ảnh vào chỉ mục ngược được bắt nguồn từ ý tưởng của một công trình nghiên cứu của \cite{lazebnik2006beyond}. Trong công trình đó, thay vì sử dụng một biểu đồ(histogram) chung  của các từ trực quan để biểu diễn một hình ảnh thì họ chia hình ảnh thành các nhiều phần sử dụng lưới ô vuông phân cấp (hay còn được gọi là không gian phân cấp - spatial pyramid). Một lưới ô vuông tại cấp \textit{l} sẽ chia hình ảnh thành $2^l \times 2^l$ ô với kích cỡ như nhau. Do đó, số ô vuông trên lưới ở cấp 0 là $1 \times 1$; cấp 1 là $2 \times 2$. Nếu cấp \textit{l} càng cao thì lưới ô vuông sẽ càng dày đặc hơn. Nếu coi mỗi ô của hình ảnh được chia bởi lưới ô vuông phân cấp là một hình ảnh độc lập, dựa trên mô hình BoW ta sẽ tính được các biểu đồ độc lập. Chính vì mức độ chia tiết của các biểu đồ khác nhau nên chúng sẽ được đánh trọng số khác rồi rồi được ghép nối với nhau để tạo thành một vector đặc trưng biểu diễn cho hình ảnh. Bằng cách biểu diễn như vậy, các hình ảnh có sự phân bố các từ tương tự nhau sẽ được biễu diễn bằng những biểu đồ ghép nối gần giống nhau.\\
+Dựa trên ý tưởng của nghiên cứu trên, chúng tôi đề xuất sử dụng không gian phân cấp để tăng cường mức độ bầu chọn và lập chỉ mục của kỹ thuật đánh chỉ mục ngược căn bản. Ý tưởng được chúng tôi đưa ra là chia hình ảnh thành nhiều ô sử dụng không gian phân cấp và giới hạn ở một cấp xác định. Sau đó các từ trực quan sẽ được đánh số tương ứng với các ô chúng rơi vào. Ta sẽ duyệt qua tất cả các ô ở tất cả các cấp khác nhau để thực hiện việc bầu chọn. Do đó, nếu hai hình ảnh chứa các từ trực quan giống nhau trong cùng một ô sẽ nhận được nhiều lượt bầu chọn hơn so với hai hình ảnh có các từ trực quan giống nhau nhưng lại nằm rải rác ở các ô khác nhau.\\
+Một trong những điểm đặc biệt của phương pháp đề xuất là chúng tôi sử dụng đa chỉ mục ngược. Tức là chia thành nhiều tập tin chỉ mục ngược khác nhau nhưng các tập tin vẫn giữ được cấu trúc căn bản của chỉ mục ngược. Mỗi tập tin sẽ dùng để lưu trữ chỉ muc cho một ô trên không gian phân cấp. Nếu cấp độ cao nhất của không gian phân cấp là \textit{L} thì tổng số lượng tập tin chỉ mục ngược sẽ là $\frac{1}{3}(4^{L+1} - 1)$ và mỗi cấp độ sẽ có $2^l \times 2^l$ tập tin chỉ mục ngược với $0 \leq l \leq L$. Hình \ref{FigBasicIdea} mô tả khái quát cho phương pháp được đề xuất.\\
 
-\section{Phương thức đánh giá}
-\label{evaluation}
-Với mỗi truy vấn, để đánh giá kết quả trả về ta thường dùng độ đo \textit{precision-recall} (PR). Precision là tỉ lệ giữa số kết quả đúng trả về trong tổng số kết quả trả về. Recall là tỉ số của số kết quả đúng trả về trên tổng số hình ảnh đúng trong tập dữ liệu. Hay nói theo cách dễ hiểu hơn, precison cho thấy độ "tinh khiết" của kết quả trả về, còn recall cho biết đã tìm thấy bao nhiêu phần của đáp án.\\
-Tùy theo từng mục đích mà người ta sẽ tập trung vào việc nâng cao precision hay recall. Ví dụ, những ứng dụng như Google Goggles\footnote{Google Goggles là một ứng dụng nhận dạng hình ảnh được phát hành bởi Google. Người sử dụng điện thoại di động chỉ cần chụp ảnh của đối tượng như xe hơi, đồ chơi, bìa sách, mã vạch,... sau đó Goggles sẽ quét và đối chiếu kho dữ liệu để hiển thị thông tin liên quan đến vật đó.} thì câu hỏi nó cần phải trả lời là "Nó là cái gì?", do đó nó chỉ chú ý đến việc đạt được chỉ số precison tối đa có thể, tức là lấy được những kết quả đúng nhưng vừa đủ để nhận dạng đối tượng. Trong nhiều trường hợp khác thì chỉ số recall cũng được quan tâm. Ví dụ việc tái tạo không gian ba chiều đòi hỏi phải tìm được đủ số lượng hình ảnh của đối tượng để xây dựng được mô hình ba chiều chính xác.\\
-Để đo hiệu suất thực thi của hệ thống, ở đây ta dùng độ đo average precision (AP)(\cite{philbin2007object}), nó cũng tương đương với phần diện tích bên dưới đường biểu diễn cho chỉ số precision-recall trong biểu đồ. Một đường biểu diễn precision-recall lý tưởng có chỉ số precision bằng 1 trên tất cả các mức recall khác nhau và nó tương ứng chỉ số average precision bằng 1. Average precision được tính cho từng truy vấn một sau đó ta lấy trung bình cộng của chúng, đó chính là mean Average Precision - một con số để đánh giá hiệu suất tổng thể của hệ th
+\begin{figure}[!htbp]
+  \begin{center}
+    \leavevmode
+    \ifpdf
+      \includegraphics[scale=0.15]{basicIdea}
+    \else
+      \includegraphics[scale=0.15]{basicIdea}
+    \fi
+    \caption[Khái quát về phương pháp đề xuất]{Khái quát về phương pháp đề xuất.}
+    \label{FigBasicIdea}
+  \end{center}
+\end{figure}
+
+Sau khi 
+
+
+
+
+
