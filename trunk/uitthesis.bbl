@@ -1,4 +1,4 @@
-\begin{thebibliography}{27}
+\begin{thebibliography}{28}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Arandjelovic \& Zisserman(2012)}]{arandjelovic2012three}
@@ -81,6 +81,14 @@
 {\sc Mikolajczyk, K. \& Schmid, C.} (2005). A performance evaluation of local
   descriptors. {\em Pattern Analysis and Machine Intelligence, IEEE
   Transactions on\/}, {\bf 27}, 1615--1630.
+
+\bibitem[{Mikolajczyk {\em et~al.\/}(2005)Mikolajczyk, Tuytelaars, Schmid,
+  Zisserman, Matas, Schaffalitzky, Kadir \&
+  Van~Gool}]{mikolajczyk2005comparison}
+{\sc Mikolajczyk, K., Tuytelaars, T., Schmid, C., Zisserman, A., Matas, J.,
+  Schaffalitzky, F., Kadir, T. \& Van~Gool, L.} (2005). A comparison of affine
+  region detectors. {\em International journal of computer vision\/}, {\bf 65},
+  43--72.
 
 \bibitem[{Nister \& Stewenius(2006)}]{nister2006scalable}
 {\sc Nister, D. \& Stewenius, H.} (2006). Scalable recognition with a

@@ -1,5 +1,5 @@
 \def\baselinestretch{1}
-\chapter{Kết luận và hướng phát triển}
+\chapter{Tổng kết}
 \ifpdf
     \graphicspath{{Conclusions/ConclusionsFigs/PNG/}{Conclusions/ConclusionsFigs/PDF/}{Conclusions/ConclusionsFigs/}}
 \else
@@ -7,12 +7,16 @@
 \fi
 
 \section{Kết luận}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id quam at nisi imperdiet ultrices. Suspendisse porttitor velit non neque suscipit, eget aliquet ante pharetra. Pellentesque in ornare orci, vitae adipiscing eros. Proin eu purus sollicitudin, imperdiet augue vel, elementum arcu. Cras condimentum, sapien et vestibulum cursus, turpis risus sollicitudin mauris, quis ultricies nibh nibh sed lorem. Nulla ante dolor, sodales in libero et, cursus auctor nisi. Mauris felis tortor, bibendum sed hendrerit eget, rhoncus vitae magna. In hac habitasse platea dictumst. Suspendisse fringilla viverra nibh, ut viverra odio venenatis vel. Fusce ante mauris, laoreet non elementum ac, gravida a neque. In at mauris urna. Quisque vitae consectetur est. Mauris neque est, varius id interdum quis, lobortis imperdiet tortor. Quisque sapien massa, facilisis nec sapien quis, suscipit ultrices mi. Vestibulum ut felis ac sapien scelerisque tristique.
+Với những kiến thức cơ sở và sự tìm hiểu, nghiên cứu các công trình trong lĩnh vực truy vấn ảnh, chúng tôi đã hệ thống lại những nền tảng kiến thức quan trọng. Từ đó, đề xuất phương pháp phương pháp nhằm nâng hiệu suất của các hệ thống truy vấn ảnh trên tập dữ liệu lớn phục vụ cho các ứng dụng yêu cầu thời gian thực.
 
-In ullamcorper magna massa, ac mollis ligula viverra quis. Mauris velit dui, luctus in massa sit amet, tincidunt faucibus felis. Duis cursus fermentum tortor, in facilisis velit tincidunt a. Nullam felis orci, faucibus vel ultrices at, vestibulum non tellus. Donec eu adipiscing mi. Mauris semper turpis diam, vel consectetur metus tincidunt a. Donec euismod elementum enim. Nulla quam mi, lacinia quis gravida eget, imperdiet et libero.
+Để đánh giá hiệu quả của phương pháp đề xuất, chúng tôi đã tiến hành cài đặt và thử nghiệm với ba bộ dữ liệu chuẩn là Oxford 5k, Paris 6k và Holidays đồng thời so sánh với các phương pháp cơ bản phổ biến hiện nay. Kết quả thí nghiệm được đánh giá theo quy trình đánh giá chuẩn được dùng cho các hệ thống truy vấn ảnh. Kết quả đạt được cho thấy phương pháp đề xuất đã giúp nâng cao hiệu suất của hệ thống truy vấn và đạt được sự cân bằng giữa độ chính xác và thời gian truy vấn.
+
+Mặc dù công trình nghiên cứu còn giới hạn và nhiều hạn chế song đã đạt được những thành quả bước đầu đáng khích lệ, làm nền tảng cho những nghiên cứu sau này.
 
 \section{Hướng phát triển}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacus nisl, ullamcorper a condimentum quis, eleifend in tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut nec congue felis. Cras convallis nulla a dui aliquet mollis. Sed eget convallis enim. Morbi sed aliquet ante. Integer ut nisi a ipsum sodales condimentum et et dolor. Aliquam et commodo massa. Praesent lobortis, nunc non fermentum iaculis, mauris elit cursus velit, non fringilla purus magna nec nunc. Praesent tincidunt venenatis nibh nec tempus. Mauris mattis tortor nunc, quis fermentum velit mollis in. Curabitur eu nibh enim. Nam sodales vulputate quam eget lacinia. Duis ultrices erat eu molestie auctor. Aliquam erat volutpat.
+Để có thể xây dựng được những hệ thống truy vấn ảnh ứng dụng trong thực tế có khả năng truy vấn trên cơ sở dữ liệu gồm hàng triệu hoặc thâm chí hàng tỉ hình ảnh trong thời gian thực, sẽ cần rất nhiều thứ cần làm và ta cũng không thể nào biết được như thế nào sẽ là đủ để cho ra đời một hệ thống đáp ứng được các yêu cầu trong thực tế. Dưới đây chúng tôi chỉ nêu ra một vài hướng mở rộng cho công trình này.\\
+\textbf{Cải tiến phương pháp xếp hạng.} Phương pháp xếp hạng bầu chọn (voting) chúng tôi dùng trong công trình này vẫn còn khá sơ khai và chưa tận dụng hết được thông tin không gian ảnh của chỉ mục ngược. Cụ thể, phương pháp bầu chọn mới chỉ quan tâm tới việc hai ô vuông trong không gian phân cấp có chứa cùng một từ trực quan hay không chứ không quan tâm tới con số của từ trực quan đó chứa trong mỗi ô. Đồng thời cũng phải quan tâm tới việc đánh trọng số cho trường hợp này để tránh rơi vào trường hợp có quá nhiều từ giống nhau tập trung trong một ô cục bộ.\\
+\textbf{Thay đổi cấu trúc của chỉ mục ngược.} Cấu trúc của chỉ mục ngược vẫn chỉ dừng lại ở việc lưu trữ danh sách hình ảnh có chứa một từ nào đó, do đó vẫn chưa tận dụng hết được khả năng của chỉ mục ngược. Ta có thể mở rộng cấu trúc của chỉ mục ngược để phục vụ cho việc lưu trữ các thông tin khác như trọng số tương ứng của từng từ, số lượng của từ đó trong ảnh,...
 
 
 
