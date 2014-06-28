@@ -51,6 +51,21 @@
   Volume                   = {2}
 }
 
+@InProceedings{JDS08,
+  Title                    = {Hamming embedding and weak geometric consistency for large scale image search},
+  Author                   = {Herv\'e J\'egou and Matthijs Douze and Cordelia Schmid},
+  Booktitle                = {European Conference on Computer Vision},
+  Year                     = {2008},
+  Editor                   = {David Forsyth, Philip Torr, Andrew Zisserman},
+  Month                    = {oct},
+  Pages                    = {304--317},
+  Publisher                = {Springer},
+  Series                   = {LNCS},
+  Volume                   = {I},
+
+  Url                      = {http://lear.inrialpes.fr/pubs/2008/JDS08}
+}
+
 @InProceedings{lampert2009detecting,
   Title                    = {Detecting objects in large image collections and videos by efficient subimage retrieval},
   Author                   = {Lampert, Christoph H},
@@ -140,6 +155,18 @@
   Number                   = {1},
   Pages                    = {63--86},
   Volume                   = {60},
+
+  Publisher                = {Springer}
+}
+
+@Article{mikolajczyk2005comparison,
+  Title                    = {A comparison of affine region detectors},
+  Author                   = {Mikolajczyk, Krystian and Tuytelaars, Tinne and Schmid, Cordelia and Zisserman, Andrew and Matas, Jiri and Schaffalitzky, Frederik and Kadir, Timor and Van Gool, Luc},
+  Journal                  = {International journal of computer vision},
+  Year                     = {2005},
+  Number                   = {1-2},
+  Pages                    = {43--72},
+  Volume                   = {65},
 
   Publisher                = {Springer}
 }
