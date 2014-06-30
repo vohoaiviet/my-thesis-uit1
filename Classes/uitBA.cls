@@ -48,7 +48,7 @@
 %\usepackage[english]{babel}
 \usepackage[usenames, dvipsnames]{color}
 \usepackage[perpage]{footmisc}
-\usepackage[square, sort, numbers, authoryear]{natbib}
+%\usepackage[square, sort, comma, numbers, authoryear]{natbib}
 \usepackage{ifthen}
 \usepackage{ifpdf}
 \usepackage{hologo}
@@ -224,31 +224,41 @@
     \renewcommand{\footnoterule}{\relax}
     \thispagestyle{empty}
 %  \null\vfill
+
+%%----- UNIVERSITY & DEPARTMENT
   \begin{center}
   \vspace*{1ex}
-     {{\@university} \par}
-     {{\@collegeordept} \par}
+     {{\bf \fontsize{14}{12} \selectfont \@university} \par}
+     {{\bf \fontsize{16}{12} \selectfont \@collegeordept} \par}
 
-  \vspace*{20mm} 
-	 SINH VIÊN THỰC HIỆN:\\ 
-    {{\large \@author} \par \vspace*{5mm}}
+%  \vspace*{20mm} 
+%	 SINH VIÊN THỰC HIỆN:\\ 
+%    {{\large \@author} \par \vspace*{5mm}}
+
+%------ STUDENT
+  \vspace*{15mm}  
+    {{\bf \fontsize{14}{12} \selectfont \@author} \par \vspace*{20mm}}
 
 %Khoa luan tot nghiep
-    {{\submittedtext} \par}
+    {{\bf \fontsize{16}{12} \selectfont \submittedtext} \par}
 \vspace*{1ex}
      
      % topic of thesis
-     { \LARGE {\bfseries {\@title}} \par}
-     {\vspace*{7mm} {{\@crest}\par}\vspace*{7mm}}
+     { \bf \fontsize{20}{12} \selectfont {\bfseries {\@title}} \par}
+     
+     {\vspace{2cm}}
+     % logo uit
+     %{\vspace*{7mm} {{\@crest}\par}\vspace*{7mm}}
  
  %luan van cu nhan khmt
-    {\it {\@degree} \par}
-\vspace*{2ex}
+    {{\bf \fontsize{14}{12} \selectfont \@degree} \par}
+\vspace*{15mm}
 	 
-	 GIẢNG VIÊN HƯỚNG DẪN:\\
-	 {{\large \@supervisor} \par \vspace*{5mm}} 
+	 {\bf \fontsize{14}{12} \selectfont GIẢNG VIÊN HƯỚNG DẪN:\\ \vspace*{5mm}}
+	 {{\bf \fontsize{14}{12} \selectfont \@supervisor} \par \vspace*{15mm}} 
 
-     {\large  {\@degreedate} }
+
+     {\bf \fontsize{13}{12} \selectfont  {\@degreedate} }
   \end{center}
 %  \null\vfill
 \end{alwayssingle}}

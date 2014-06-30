@@ -9,49 +9,56 @@ A level-1 auxiliary file: Chapter2/chapter2.aux
 A level-1 auxiliary file: Chapter3/chapter3.aux
 A level-1 auxiliary file: Chapter4/chapter4.aux
 A level-1 auxiliary file: Conclusions/conclusions.aux
-A level-1 auxiliary file: Appendix1/appendix1.aux
-A level-1 auxiliary file: Appendix2/appendix2.aux
-The style file: Classes/jmb.bst
-Database file #1: references.bib
+The style file: Classes/IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: references.bib
+-- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+
+Done.
 You've used 28 entries,
-            3018 wiz_defined-function locations,
-            806 strings with 9836 characters,
-and the built_in function-call counts, 20186 in all, are:
-= -- 1793
-> -- 823
-< -- 17
-+ -- 305
-- -- 265
-* -- 1596
-:= -- 2868
-add.period$ -- 84
+            4039 wiz_defined-function locations,
+            979 strings with 12632 characters,
+and the built_in function-call counts, 25334 in all, are:
+= -- 2029
+> -- 587
+< -- 257
++ -- 331
+- -- 89
+* -- 1232
+:= -- 3595
+add.period$ -- 72
 call.type$ -- 28
-change.case$ -- 257
-chr.to.int$ -- 28
+change.case$ -- 28
+chr.to.int$ -- 618
 cite$ -- 28
-duplicate$ -- 1456
-empty$ -- 1532
-format.name$ -- 365
-if$ -- 4208
-int.to.chr$ -- 1
-int.to.str$ -- 1
-missing$ -- 267
-newline$ -- 88
-num.names$ -- 114
-pop$ -- 588
+duplicate$ -- 1738
+empty$ -- 2080
+format.name$ -- 115
+if$ -- 5928
+int.to.chr$ -- 0
+int.to.str$ -- 28
+missing$ -- 284
+newline$ -- 109
+num.names$ -- 30
+pop$ -- 651
 preamble$ -- 1
-purify$ -- 199
-quote$ -- 0
-skip$ -- 655
+purify$ -- 0
+quote$ -- 2
+skip$ -- 1959
 stack$ -- 0
-substring$ -- 1078
-swap$ -- 807
-text.length$ -- 5
+substring$ -- 1466
+swap$ -- 1502
+text.length$ -- 51
 text.prefix$ -- 0
-top$ -- 0
-type$ -- 246
+top$ -- 5
+type$ -- 28
 warning$ -- 0
-while$ -- 153
-width$ -- 0
-write$ -- 330
+while$ -- 133
+width$ -- 30
+write$ -- 300
