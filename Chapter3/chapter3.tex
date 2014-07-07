@@ -10,7 +10,7 @@
 
 Bài toán mà luận văn này tập trung giải quyết là truy vấn đối tượng trên tập dữ liệu lớn trong thời gian gần với thời gian thực. Rất nhiều công trình được đưa ra để giải quyết bài toán này (mục \ref{local-features} và \ref{bag-of-words}). Phương pháp cơ bản để giải quyết bài toán là biểu diễn một hình ảnh dưới dạng mô hình Bag-of-visual-Words (BoW), sau đó xếp hạng các hình ảnh sử dụng phương pháp tf-idf và dùng chỉ mục ngược (inverted index) để tăng hiệu suất tính toán. Tuy nhiên, phương pháp trên vẫn còn bị giới hạn về độ chính xác do chưa sử dụng đến thông tin không gian ảnh. Các phương pháp được đưa ra trong những năm gần đây để giải quyết vấn đề này đã được giới thiệu trong mục \ref{spatial}.\\
 
-Trong chương này, chúng tôi sẽ mô tả phương pháp đề xuất để tích hợp thông tin không gian ảnh vào chỉ mục ngược. Trước tiên chúng tôi sẽ nhắc lại những công trình khơi nguồn ý tưởng cho phương pháp của chúng tôi. Sau đó là phần trình bày chi tiết phương pháp đề xuất.
+Trong chương này, chúng tôi sẽ mô tả phương pháp đề xuất để tích hợp thông tin không gian ảnh vào chỉ mục ngược. Trước tiên chúng tôi sẽ nhắc lại những công trình khơi nguồn ý tưởng cho phương pháp của chúng tôi. Sau đó là phần trình bày chi tiết phương pháp đề xuất và những cải tiến nhằm nâng cao hiệu suất cho hệ thống.
 
 \section{Chỉ mục ngược với biểu diễn Bag-of-Visual-Words}
 Như đã được giới thiệu sơ lược trọng mục 2.2.1, chỉ mục ngược (inverted index) là phương pháp phổ dùng để tối ưu hóa tốc độ truy vấn cơ sở dữ liệu bằng việc lưu trữ trước một ánh xạ từ nội dung đến vị trí trong cơ sở dữ liêu. Nói cách khác, chỉ mục ngược là một cấu trúc dữ liệu chủ yếu bao gồm 2 trường là khóa và giá trị. Mỗi khóa đại diện cho một \textit{từ}, và phần giá trị của tương ứng lưu trữ danh sách các văn bản có chứa từ đó. Vì vậy ta có thể dễ dàng lấy được danh sách tất cả các văn bản chứa từ truy vấn.
@@ -72,3 +72,50 @@ Trong quá trình truy vấn, các đặc trưng cũng được rút trích từ
     \label{FigQueryProcess}
   \end{center}
 \end{figure}
+
+\section{Cải thiện hiệu suất của hệ thống}
+Một hệ thống truy vấn ảnh dựa trên mô hình BoW căn bản phải đối mặt với rất nhiều vấn đề như độ chính xác của quá trình gom cụm các đặc trưng, quá trình so khớp bị "gây nhiễu" bởi các stop word, lựa chọn độ đo khoảng cách phù hợp giữa các histogram,... Để tăng hiệu suất của quá trình truy vấn, dưới đây chúng tôi sẽ đề xuất các kỹ thuật cải tiến và thử nghiệm để so sánh kết quả.
+
+\subsection{Tăng độ chính xác của quá trình gom cụm}
+Quá trình gom cụm các đặc trưng tạo thành các từ trực quan càng chính xác thì độ chính xác của quá trình truy vấn càng cao. Như đã trình bày trong mục \ref{bow-ir}, mặc dù đạt được độ chính xác cao nhưng thuật toán k-means đòi hỏi chi phí tính toán vô cùng lớn nên ta không thể áp dụng k-means cho bài toán này. Trong công trình \cite{philbin2007object}, tác giả đã chứng minh lợi thế vượt trội về chi phí tính toán của thuât toán gom cụm AKM so với k-means trong khi độ chính xác gần như nhau. Trong thuật toán k-means, quá trình gom cụm sẽ lặp đi lặp lại cho tới khi đạt được độ chính xác tuyệt đối. Còn AKM sẽ lặp lại quá trình gom cụm với một số lần lặp (iteration) đã được định trước. Độ phức tạp của thuật toán k-means luôn lớn hơn $O(N^2_w)$ còn của AKM là $O(N_d log(N_w))$. Tuy nhiên, để đạt hiệu suất cao nhất, ta cần phải điều chỉnh số lượng vòng lặp của AKM sao cho phù hợp với lượng tài nguyên giới hạn và đảm bảo kết quả tốt. Trong bảng \ref{table:iteration}, chúng tôi điều chỉnh số lượng vòng lặp (iteration) khác nhau của thuật toán AKM và thử nghiệm trên bộ dữ liệu Oxford 5k để theo dõi sự thay đổi của kết quả trả về.
+
+\begin{table}
+\begin{center}
+	\begin{tabular}{c c c}
+	\hline
+	\begin{tabular}[l]{@{}c@{}}Số lần lặp\\(iterations)\end{tabular} & \begin{tabular}[l]{@{}c@{}}mAP\\(mean Average Precision)\end{tabular} \\ \hline
+    5 & 0.6084 \\ 
+    10 & 0.6199 \\
+    20 & 0.6249 \\
+    \textbf{30} & \textbf{0.6278} \\
+	\hline
+	%\label{table:datasets}
+	\end{tabular}
+\end{center}
+\caption[So sánh kết quả truy vấn với số lần lặp khác nhau trong thuật toán gom cụm AKM]{So sánh kết quả truy vấn với số lần lặp khác nhau trong thuật toán gom cụm AKM.}
+\label{table:iteration}
+\end{table}
+
+Bảng \ref{table:iteration} cho thấy hiệu suất tăng mạnh khi số lần lặp tăng từ 5 lên 10 và giảm một chút khi tăng từ 10 lên 20 mặc dù chi phí tính toán vẫn tăng đáng kể. Khi số lần lặp tăng từ 20 lên 30, chi phí tính toán vẫn tăng nhưng hiệu suất không tăng nhiều. Điều đó cho thấy, càng về sau, khi ta tăng số lần lặp thì chi phí tính toán vẫn tăng nhưng hiệu suất tăng rất ít. Do đó, trong các thí nghiệm của mình, chúng tôi sử dụng thông số $iterations = 30$ để đạt được kết quả tốt nhất và giữ chi phí tính toán ở mức cho phép.
+
+\subsection{Lọc bỏ các stop word}
+Trong truy vấn văn bản, các từ phổ biến và xuất hiện thường xuyên trong văn bản với tần suất cao được gọi là stop word. Các stop word này làm giảm độ chính xác của quá trình truy vấn do không có giá trị nhiều trong việc phân biệt các văn bản. Tương tự, trong mô hình BoW, ta cũng bắt gặp rất nhiều stop word làm giảm độ chính xác của truy vấn, gây tốn không gian lưu trữ và chi phí tính toán. Do đó, chúng tôi tiến hành thêm một bước sàng lọc các từ trực quan bằng cách đếm số lần xuất hiện của các từ trong các văn bản và lọc bỏ một nhóm các từ có số lần xuất hiện nhiều nhất. Kết quả thí nghiệm được tiến hành trên bộ Oxford 5k và được trình bày trong bảng \ref{table:stop-words}.
+
+\begin{table}
+\begin{center}
+	\begin{tabular}{l c c}
+	\hline
+	Lọc bỏ stop words & \begin{tabular}[l]{@{}c@{}}mAP\\(mean Average Precision)\end{tabular} \\ \hline
+    Chưa lọc bỏ & 0.6278 \\ 
+    \textbf{Lọc bỏ 5\% top} & \textbf{0.6323} \\
+    Lọc bỏ 10\% top & 0.6293 \\
+	\hline
+	%\label{table:datasets}
+	\end{tabular}
+\end{center}
+\caption[Kết quả lọc bỏ các stop words]{Thí nghiệm lọc bỏ các stop words (các từ có tần số xuất hiện cao nhất trong bộ dữ liệu).}
+\label{table:stop-words}
+\end{table}
+
+Kết quả thí nghiệm trong bảng \ref{table:stop-words} cho thấy khi lọc bỏ stop word, độ chính xác của truy vấn tăng lên rõ rệt. Khi lọc bỏ 5\% số từ có tần suất xuất hiện cao nhất, độ chính xác tăng mạnh. Tuy nhiên, nếu ta loại bỏ quá nhiều thì độ chính xác lại giảm xuống do với bộ dữ liệu này, lượng stop word chỉ giới hạn ở mức trong khoảng 5\%. Với kết quả trên, chúng tôi sẽ tiến hành tiền xử lý loại bỏ 5\% các từ có tần suất xuất hiện cao nhất ở các thí nghiệm tiếp theo để hệ thống đạt được hiệu suất tốt nhất.
+
