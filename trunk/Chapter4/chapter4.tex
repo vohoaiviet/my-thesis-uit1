@@ -136,10 +136,10 @@ Kết quả trên cho thấy phương pháp của chúng tôi đã cân bằng �
 \begin{center}
 	\begin{tabular}{l c c c}
 	\hline
-	\begin{tabular}[l]{@{}l@{}}Phương pháp\\(trên Holidays)\end{tabular} & mAP & \begin{tabular}[l]{@{}c@{}}Thời gian truy vấn\\(55 truy vấn)\end{tabular} & Bộ nhớ sử dụng\\ \hline
-    \begin{tabular}[l]{@{}l@{}}Phương pháp\\cơ sở 1\end{tabular} & ---  & --- (s)  & --- \\
-    \begin{tabular}[l]{@{}l@{}}Phương pháp\\cơ sở 2\end{tabular} & --- & --- (s) & --- \\
-    \begin{tabular}[l]{@{}l@{}}\textbf{Phương pháp}\\\textbf{đề xuất} ($L=2$)\end{tabular} & \textbf{---} & \textbf{---} (s) & \textbf{---} \\
+	\begin{tabular}[l]{@{}l@{}}Phương pháp\\(trên Holidays)\end{tabular} & mAP & \begin{tabular}[l]{@{}c@{}}Thời gian truy vấn\\(500 truy vấn)\end{tabular} & Bộ nhớ sử dụng\\ \hline
+    \begin{tabular}[l]{@{}l@{}}Phương pháp\\cơ sở 1\end{tabular} & 0.1743  & 2.9220 (s)  & 99.31MB \\
+    \begin{tabular}[l]{@{}l@{}}Phương pháp\\cơ sở 2\end{tabular} & 0.5984 & 586.4864 (s) & 99.31MB \\
+    \begin{tabular}[l]{@{}l@{}}\textbf{Phương pháp}\\\textbf{đề xuất} ($L=2$)\end{tabular} & \textbf{0.2503} & \textbf{8.4944} (s) & \textbf{580.21MB} \\
 	\hline
 	\end{tabular} \\
 \end{center}
@@ -196,18 +196,49 @@ Kết quả thí nghiệm trên cả ba bộ dữ liệu đều cho thấy hiệ
 \label{table:paris6k-test-level}	
 \end{table}
 
+Hình \ref{FigResultsOxf} cho thấy ví dụ về hình ảnh truy vấn và thể hiện các kết quả trả về với các phương pháp khác nhau trên bộ Oxford 5k. 10 hình ảnh có đứng đầu trong kết quả trả về của các phương pháp được hiển thị. Có thể thấy rằng phương pháp đề xuất của chúng tôi có độ chính xác tương đương với phương pháp cơ sở 2 trong khi kết quả của phương pháp cơ sở 1 vẫn chứa một vài hình ảnh sai.
+
 
 \begin{figure}[!htbp]
   \begin{center}
     \leavevmode
     \ifpdf
-      \includegraphics[scale=0.25]{queryResult}
+      \includegraphics[scale=0.25]{resOxford5k}
     \else
-      \includegraphics[scale=0.25]{queryResult}
+      \includegraphics[scale=0.25]{resOxford5k}
     \fi
-    \caption[Ví dụ thể hiện kết quả khi tìm kiếm một hình ảnh]{Ví dụ thể hiện khi tìm kiếm một hình ảnh. Những kết quả sai được đánh dấu bằng ô có viền màu đỏ.}
-    \label{FigResults}
+    \caption[Ví dụ thể hiện kết quả khi tìm kiếm một hình ảnh trên bộ dữ liệu Oxford 5k]{Ví dụ thể hiện kết quả khi tìm kiếm một hình ảnh trên bộ dữ liệu Oxford 5k. Những kết quả sai được đánh dấu bằng ô có viền màu đỏ.}
+    \label{FigResultsOxf}
   \end{center}
 \end{figure}
 
-Hình \ref{FigResults} cho thấy ví dụ về hình ảnh truy vấn và thể hiện các kết quả trả về với các phương pháp khác nhau. 10 hình ảnh có đứng đầu trong kết quả trả về của các phương pháp được hiển thị. Có thể thấy rằng phương pháp đề xuất của chúng tôi có độ chính xác tương đương với phương pháp cơ sở 2 trong khi kết quả của phương pháp cơ sở 1 vẫn chứa vài hình ảnh sai.
+Tương tự, trong hình \ref{FigResultsParis}, phương pháp đề xuất cũng cho thấy độ chính xác tốt tương đương với phương pháp cơ sở 2 khi chạy trên bộ dữ liệu Paris 6k.
+
+
+\begin{figure}[!htbp]
+  \begin{center}
+    \leavevmode
+    \ifpdf
+      \includegraphics[scale=0.2]{resParis6k}
+    \else
+      \includegraphics[scale=0.2]{resParis6k}
+    \fi
+    \caption[Ví dụ thể hiện kết quả khi tìm kiếm một hình ảnh trên bộ dữ liệu Paris 6k]{Ví dụ thể hiện kết quả khi tìm kiếm một hình ảnh trên bộ dữ liệu Paris 6k. Những kết quả sai được đánh dấu bằng ô có viền màu đỏ.}
+    \label{FigResultsParis}
+  \end{center}
+\end{figure}
+
+Đối với bộ dữ liệu Holidays, kết quả được thể hiện trong hình \ref{FigResultsHolidays}. Vì với mỗi truy vấn trong bộ dữ liệu này, kết quả đúng chỉ gồm một vài hình chứa đối tượng nên chúng tôi chỉ khoanh vùng những kết quả đúng bằng các ô viền xanh. Phương pháp của chúng tôi cũng cho thấy độ chính xác tốt ở bộ dữ liệu này.
+
+\begin{figure}[!htbp]
+  \begin{center}
+    \leavevmode
+    \ifpdf
+      \includegraphics[scale=0.2]{resHolidays}
+    \else
+      \includegraphics[scale=0.2]{resHolidays}
+    \fi
+    \caption[Ví dụ thể hiện kết quả khi tìm kiếm một hình ảnh trên bộ dữ liệu Holidays]{Ví dụ thể hiện kết quả khi tìm kiếm một hình ảnh trên bộ dữ liệu Holidays. Những kết quả đúng được đánh dấu bằng ô có viền màu xanh dương.}
+    \label{FigResultsHolidays}
+  \end{center}
+\end{figure}
