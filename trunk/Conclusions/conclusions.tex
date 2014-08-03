@@ -15,11 +15,18 @@ Với những kiến thức cơ sở và sự tìm hiểu, nghiên cứu các c�
 Mặc dù công trình nghiên cứu còn giới hạn và nhiều hạn chế song đã đạt được những thành quả bước đầu đáng khích lệ, làm nền tảng cho những nghiên cứu sau này.
 
 \section{Hướng phát triển}
+\subsection{Mở rộng phương pháp đề xuất}
 Để có thể xây dựng được những hệ thống truy vấn ảnh ứng dụng trong thực tế có khả năng truy vấn trên cơ sở dữ liệu gồm hàng triệu hoặc thâm chí hàng tỉ hình ảnh trong thời gian thực, sẽ cần rất nhiều thứ cần làm và ta cũng không thể nào biết được như thế nào sẽ là đủ để cho ra đời một hệ thống đáp ứng được các yêu cầu trong thực tế. Dưới đây chúng tôi chỉ nêu ra một vài hướng mở rộng cho công trình này.\\
 \textbf{Cải tiến phương pháp xếp hạng.} Phương pháp xếp hạng bầu chọn (voting) chúng tôi dùng trong công trình này vẫn còn khá sơ khai và chưa tận dụng hết được thông tin không gian ảnh của chỉ mục ngược. Cụ thể, phương pháp bầu chọn mới chỉ quan tâm tới việc hai ô vuông trong không gian phân cấp có chứa cùng một từ trực quan hay không chứ không quan tâm tới con số của từ trực quan đó chứa trong mỗi ô. Đồng thời cũng phải quan tâm tới việc đánh trọng số cho trường hợp này để tránh rơi vào trường hợp có quá nhiều từ giống nhau tập trung trong một ô cục bộ.\\
 \textbf{Thay đổi cấu trúc của chỉ mục ngược.} Cấu trúc của chỉ mục ngược vẫn chỉ dừng lại ở việc lưu trữ danh sách hình ảnh có chứa một từ nào đó, do đó vẫn chưa tận dụng hết được khả năng của chỉ mục ngược. Ta có thể mở rộng cấu trúc của chỉ mục ngược để phục vụ cho việc lưu trữ các thông tin khác như trọng số tương ứng của từng từ, số lượng của từ đó trong ảnh,...
 
 
+\subsection{Phát triển ứng dụng thực tế}
+Ứng dụng tìm kiếm đối tượng trên ảnh nhóm đã xây dựng đã chứng minh được tính thực tế của nghiên cứu, đồng thời mở ra hướng ứng dụng trên nhiều lĩnh vực khác nhau trong thực tế.
+
+Để ứng dụng đáp ứng được các yêu cầu khác nhau của từng lĩnh vực, ta có thể thay đổi cơ sở dữ liệu và nội dung của kết quả trả về có thể là các thông tin liên quan đến đối tượng cần truy vấn,... Tùy theo yêu cầu cụ thế.
+
+Ngoài ra để đáp ứng được lượng request lớn, hệ thống hoàn toàn có khả năng mở rộng, scale trên nhiều server và đảm bảo được cân bằng tải giữa các server. Như vậy sẽ tăng hiệu năng của hệ thống và giảm chi phí về tài nguyên cho doanh nghiệp.
 
 %\def\baselinestretch{1.66} 
 
