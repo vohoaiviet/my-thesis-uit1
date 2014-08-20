@@ -24,7 +24,7 @@
 \contentsline {chapter}{\numberline {3}Ph\IeC {\uhorn }\IeC {\ohorn }ng ph\IeC {\'a}p \IeC {\dj }\IeC {\`\ecircumflex } xu\IeC {\'\acircumflex }t}{17}{chapter.3}
 \contentsline {section}{\numberline {3.1}Ch\IeC {\h i} m\IeC {\d u}c ng\IeC {\uhorn }\IeC {\d \ohorn }c v\IeC {\'\ohorn }i bi\IeC {\h \ecircumflex }u di\IeC {\~\ecircumflex }n Bag-of-Visual-Words}{17}{section.3.1}
 \contentsline {section}{\numberline {3.2}T\IeC {\'\i }ch h\IeC {\d \ohorn }p th\IeC {\^o}ng tin kh\IeC {\^o}ng gian \IeC {\h a}nh v\IeC {\`a}o ch\IeC {\h i} m\IeC {\d u}c ng\IeC {\uhorn }\IeC {\d \ohorn }c}{19}{section.3.2}
-\contentsline {section}{\numberline {3.3}C\IeC {\h a}i thi\IeC {\d \ecircumflex }n hi\IeC {\d \ecircumflex }u su\IeC {\'\acircumflex }t c\IeC {\h u}a h\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng}{21}{section.3.3}
+\contentsline {section}{\numberline {3.3}N\IeC {\^a}ng cao hi\IeC {\d \ecircumflex }u su\IeC {\'\acircumflex }t c\IeC {\h u}a h\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng}{21}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}T\IeC {\u a}ng \IeC {\dj }\IeC {\d \ocircumflex } ch\IeC {\'\i }nh x\IeC {\'a}c c\IeC {\h u}a qu\IeC {\'a} tr\IeC {\`\i }nh gom c\IeC {\d u}m}{23}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}L\IeC {\d o}c b\IeC {\h o} c\IeC {\'a}c stop word}{24}{subsection.3.3.2}
 \contentsline {chapter}{\numberline {4}Th\IeC {\d \uhorn }c nghi\IeC {\d \ecircumflex }m v\IeC {\`a} \IeC {\dj }\IeC {\'a}nh gi\IeC {\'a} k\IeC {\'\ecircumflex }t qu\IeC {\h a}}{25}{chapter.4}
