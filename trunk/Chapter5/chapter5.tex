@@ -176,47 +176,50 @@ Client side là một ứng dụng cung cấp giao diện để người dùng t
 \end{figure}
 
 %% trình bày chi tiết các lớp ...
-\textbf{Lớp CameraManager:} Truy xuất tới camera trên điện thoại di động, thiết lập các thông số liên quan tới camera, nhận dữ liệu hình ảnh từ camera.
+\begin{itemize}
+\item \textbf{Lớp CameraManager:} truy xuất tới camera trên điện thoại di động, thiết lập các thông số liên quan tới camera, nhận dữ liệu hình ảnh từ camera.
 
-\textbf{Lớp WebServiceManager:} Lưu trữ thông tin kết nối và thực hiện các kết nối tới web service, gửi và nhận dữ liệu truy vấn, gọi bộ interface lắng nghe sự kiện WebServiceListener để tương tác với các thành phần khác của ứng dụng.
+\item \textbf{Lớp WebServiceManager:} lưu trữ thông tin kết nối và thực hiện các kết nối tới web service, gửi và nhận dữ liệu truy vấn, gọi bộ interface lắng nghe sự kiện WebServiceListener để tương tác với các thành phần khác của ứng dụng.
 
-\textbf{Lớp Decoder và Encoder:} Giải mã và mã hóa hình ảnh.
+\item \textbf{Lớp Decoder và Encoder:} giải mã và mã hóa hình ảnh.
 
-\textbf{Interface WebServiceListener:} bộ lắng nghe các sự kiện liên quan tới web service. Onquerying: trong khi đang truy vấn. OnServerResponded: khi có kết quả phản hồi từ server, OnImageRecieved: khi có kết quả là các hình ảnh được trả về.
+\item \textbf{Interface WebServiceListener:} bộ lắng nghe các sự kiện liên quan tới web service. Onquerying: trong khi đang truy vấn. OnServerResponded: khi có kết quả phản hồi từ server, OnImageRecieved: khi có kết quả là các hình ảnh được trả về.
 
-\textbf{Interface ResultViewListener:} bộ lắng nghe sự kiện liên quan tới việc hiển thị kết quả truy vấn. OnRequestImage: yêu cầu tải về một hình ảnh khi chọn xem hoặc tải xuống thiết bị, tải về danh sách hình ảnh khi người dùng muốn xem thêm kết quả. OnCompleted: khi hoàn tất việc xem kết quả, kết thúc một quá trình truy vấn.
+\item \textbf{Interface ResultViewListener:} bộ lắng nghe sự kiện liên quan tới việc hiển thị kết quả truy vấn. OnRequestImage: yêu cầu tải về một hình ảnh khi chọn xem hoặc tải xuống thiết bị, tải về danh sách hình ảnh khi người dùng muốn xem thêm kết quả. OnCompleted: khi hoàn tất việc xem kết quả, kết thúc một quá trình truy vấn.
 
-\textbf{Interface ActionListener:} bộ lắng nghe các sự kiện là các chức năng trên ứng dụng. OnCameraCapture: khi có yêu cầu chụp hình. OnCameraFlashChange: khi có yêu cầu thay đổi trạng thái đèn flash. OnSelectImage: khi có yêu cầu chọn một hình ảnh trong thiết bị để truy vấn.
+\item \textbf{Interface ActionListener:} bộ lắng nghe các sự kiện là các chức năng trên ứng dụng. OnCameraCapture: khi có yêu cầu chụp hình. OnCameraFlashChange: khi có yêu cầu thay đổi trạng thái đèn flash. OnSelectImage: khi có yêu cầu chọn một hình ảnh trong thiết bị để truy vấn.
 
-\textbf{Interface RegionSelectionListener:} bộ lắng nghe các sự kiện liên quan tới chức năng chọn vùng đối tượng trên camera. OnRegionSelected: khi người dùng đã chọn vùng đối tượng. OnRegionConfirmed: khi vùng đối tượng đã được xác nhận và được tiến hành truy vấn. OnRegionCancelled: Khi vùng đối tượng đã bị hủy.
+\item \textbf{Interface RegionSelectionListener:} bộ lắng nghe các sự kiện liên quan tới chức năng chọn vùng đối tượng trên camera. OnRegionSelected: khi người dùng đã chọn vùng đối tượng. OnRegionConfirmed: khi vùng đối tượng đã được xác nhận và được tiến hành truy vấn. OnRegionCancelled: Khi vùng đối tượng đã bị hủy.
 
-\textbf{Lớp CameraPreview:} Hiển thị dữ liệu được lấy từ camera.
+\item \textbf{Lớp CameraPreview:} hiển thị dữ liệu được lấy từ camera.
 
-\textbf{Lớp MenuView:} cung cấp các phím chức năng cho phép người dùng thao tác với ứng dụng, gọi bộ lắng nghe sự kiện ActionListener khi người dùng thực hiện các chức năng để tương tác với các thành phần khác.
+\item \textbf{Lớp MenuView:} cung cấp các phím chức năng cho phép người dùng thao tác với ứng dụng, gọi bộ lắng nghe sự kiện ActionListener khi người dùng thực hiện các chức năng để tương tác với các thành phần khác.
 
-\textbf{RegionView:} cung cấp cho người dùng chức năng chọn vùng đối tượng trên camera. gọi bộ lắng ghe sự kiện RegionSelectionListener để tương tác với các thành phần khác.
+\item \textbf{RegionView:} cung cấp cho người dùng chức năng chọn vùng đối tượng trên camera. gọi bộ lắng ghe sự kiện RegionSelectionListener để tương tác với các thành phần khác.
 
-\textbf{ResultView:} cung cấp giao diện cho phép người dùng xem và thao tác trên kết quả truy vấn. Lưu trữ kết quả truy vấn và gọi bộ lắng nghe sự kiên ResultListener để thao tác với các thành phần khác.
+\item \textbf{ResultView:} cung cấp giao diện cho phép người dùng xem và thao tác trên kết quả truy vấn. Lưu trữ kết quả truy vấn và gọi bộ lắng nghe sự kiên ResultListener để thao tác với các thành phần khác.
 
-\textbf{Lớp FileManager:} đọc, ghi dữ liệu từ bộ nhớ thiết bị.
+\item \textbf{Lớp FileManager:} đọc, ghi dữ liệu từ bộ nhớ thiết bị.
 
-\textbf{Lớp MainActitity:} cung cấp giao diện chính cho ứng dụng, là thành phần trung tâm quản lý toàn bộ các lớp khác, được cài đặt tất cả các bộ lắng nghe sự kiện để các lớp có thể giao tiếp với nhau thông qua nó.
+\item \textbf{Lớp MainActitity:} cung cấp giao diện chính cho ứng dụng, là thành phần trung tâm quản lý toàn bộ các lớp khác, được cài đặt tất cả các bộ lắng nghe sự kiện để các lớp có thể giao tiếp với nhau thông qua nó.
+
+\end{itemize}
 
 \subsubsection{Chức năng và giao diện}
 Là thành phần tương tác trực tiếp với người dùng, do đó ứng dụng cần đáp ứng các yêu cầu về giao diện thân thiện, đơn giản, tiện dụng nhưng vấn cung cấp đầy đủ các chức năng cho người dùng.
 
-Dưới đây là giao diện cùng các chứng năng của ứng dụng.
+Dưới đây là giao diện cùng các chức năng của ứng dụng được thể hiện qua các hình \ref{FigInterface1}, \ref{FigInterface2}, \ref{FigInterface3}, \ref{FigInterface4}, \ref{FigInterface5} và \ref{FigInterface6}.
 
 \begin{figure}[!htbp]
   \begin{center}
     \leavevmode
     \ifpdf
-      \includegraphics[scale=0.35]{interface_1}
+      \includegraphics[scale=0.4]{interface_1}
     \else
-      \includegraphics[scale=0.35]{interface_1}
+      \includegraphics[scale=0.4]{interface_1}
     \fi
     \caption[Hình ảnh ứng dụng với các chức năng chính]{Hình ảnh giao diện ứng dụng với các chức năng chính. Ứng dụng cho phép người dùng chọn vùng đối tượng trên camera, chụp hình vùng đối tượng, bật / tắt đèn flash và chọn hình ảnh trong thiết bị để truy vấn.}
-    \label{FigChooseRegion}
+    \label{FigInterface1}
   \end{center}
 \end{figure}
 
@@ -228,8 +231,8 @@ Dưới đây là giao diện cùng các chứng năng của ứng dụng.
     \else
       \includegraphics[scale=0.35]{interface_2}
     \fi
-    \caption[Hình ảnh ứng dụng trong khi thực hiện truy vấn]{Hình ảnh ứng dụng trong khi thực hiện truy vấn. Trong khi chờ kết quả xử lý từ server, ứng dụng sẽ quét trên vùng đối tượng đã chọn để tạo cảm giác hứng thú cho người dùng. Tương tự khi chọn một hình ảnh trong thiết bị để truy vấn, ứng dụng cũng quét trên toàn bộ vùng truy vấn.}
-    \label{FigChooseRegion}
+    \caption[Hình ảnh ứng dụng trong khi thực hiện truy vấn]{Hình ảnh ứng dụng trong khi thực hiện truy vấn. Trong khi chờ kết quả xử lý từ server, ứng dụng sẽ tạo hiệu ứng quét trên vùng đối tượng đã chọn để tránh cảm giác chờ đội. Tương tự khi chọn một hình ảnh trong thiết bị để truy vấn, ứng dụng cũng quét trên toàn bộ vùng truy vấn.}
+    \label{FigInterface2}
   \end{center}
 \end{figure}
 
@@ -242,7 +245,7 @@ Dưới đây là giao diện cùng các chứng năng của ứng dụng.
       \includegraphics[scale=0.35]{interface_3}
     \fi
     \caption[Hình ảnh ứng dụng khi có kết quả trả về]{Hình ảnh ứng dụng khi có kết quả trả về. Ứng dụng cho người dùng xem vùng đối tượng vừa được truy vấn cùng danh sách các hình ảnh thu nhỏ được trả về từ server.}
-    \label{FigChooseRegion}
+    \label{FigInterface3}
   \end{center}
 \end{figure}
 
@@ -250,12 +253,12 @@ Dưới đây là giao diện cùng các chứng năng của ứng dụng.
   \begin{center}
     \leavevmode
     \ifpdf
-      \includegraphics[scale=0.35]{interface_4}
+      \includegraphics[scale=0.4]{interface_4}
     \else
-      \includegraphics[scale=0.35]{interface_4}
+      \includegraphics[scale=0.4]{interface_4}
     \fi
     \caption[Hình ảnh ứng dụng khi xem chi tiết kết quả truy vấn]{Hình ảnh ứng dụng khi xem chi tiết kết quả truy vấn. Người dùng có thể chọn xem một hình ảnh trong danh sách kết quả truy vấn. Ứng dụng sẽ tải hình ảnh chất lượng cao hơn để người dùng dễ dàng xem trong khung hình lớn hơn, nhưng đây chưa phải hình ảnh với chất lượng tốt nhất. Do dó, ứng dụng cũng cho phép người dùng tải hình ảnh gốc chất lượng cao bằng cách chạm vào nút như trên hình.}
-    \label{FigChooseRegion}
+    \label{FigInterface4}
   \end{center}
 \end{figure}
 
@@ -263,12 +266,12 @@ Dưới đây là giao diện cùng các chứng năng của ứng dụng.
   \begin{center}
     \leavevmode
     \ifpdf
-      \includegraphics[scale=0.35]{interface_5}
+      \includegraphics[scale=0.36]{interface_5}
     \else
-      \includegraphics[scale=0.35]{interface_5}
+      \includegraphics[scale=0.36]{interface_5}
     \fi
     \caption[Hình ảnh ứng dụng với chức năng tải thêm hình ảnh trong danh sách kết quả]{Hình ảnh ứng dụng với chức năng tải thêm hình ảnh trong danh sách kết quả truy vấn. Khi hoàn tất xử lý, server chỉ trả về cho ứng dụng một số hình ảnh đứng đầu danh sách xếp hạng, người dùng có thể tải thêm các hình ảnh khác bằng cách chạm vào dấu cộng như trên hình, với số lượng hình ảnh tối đa có thể tải là 50 hình.}
-    \label{FigChooseRegion}
+    \label{FigInterface5}
   \end{center}
 \end{figure}
 
@@ -281,7 +284,7 @@ Dưới đây là giao diện cùng các chứng năng của ứng dụng.
       \includegraphics[scale=0.35]{interface_6}
     \fi
     \caption[Hình ảnh ứng dụng với chức năng thay đổi chế độ xem ảnh]{Ứng dụng cho phép người dùng thay đổi chế độ xem hình ảnh truy vấn bằng cách kéo khung kết quả để thu nhỏ, phóng to hình ảnh đang xem.}
-    \label{FigChooseRegion}
+    \label{FigInterface6}
   \end{center}
 \end{figure}
 
@@ -289,7 +292,8 @@ Dưới đây là giao diện cùng các chứng năng của ứng dụng.
 \label{subsection:optimize}
 Việc xử lý truy vấn hình ảnh đòi hỏi chi phí tính toán rất lớn, vì vậy một hệ thống tìm kiếm hình ảnh muốn đáp ứng được các yêu cầu thực tế cần phải tối ưu hóa hiệu suất trong quá trình xử lý cũng như truyền dẫn. Trong hệ thống đã xây dựng, chúng tôi đưa ra các giải pháp đề tối ưu hoạt động tại cả ba thành phần của hệ thống là client side, web service và sever side.
 
-\textbf{Tại client side - giảm tối đa dung lượng hình ảnh truy vấn}
+\begin{itemize}
+\item \textbf{Tại client side: giảm tối đa dung lượng hình ảnh truy vấn}
 
 Như đã trình bày trong mục \ref{subsection:web_service}, thời gian truyền dữ liệu dẫn phụ thuộc phần lớn vào tốc độ băng thông tại client, mà hình ảnh là dữ liệu khá lớn. Vì vậy chúng tôi đưa ra giải pháp giảm tối đa dung lượng hình ảnh nhưng vẫn đảm bảo kết quả truy vấn.
 
@@ -297,13 +301,17 @@ Dung lượng hình ảnh phụ thuộc vào ba yếu tố chính là kích thư
 
 Kết quả truy vấn phụ thuộc phần lớn vào quá trình trích xuất đặc trưng tại server xử lý, và chất lượng hình ảnh sẽ ảnh hưởng trực tiếp tới quá trình này. Tại bước trích xuất đặc trưng, server xử lý sử dụng bộ phát hiện đặc trưng Hessian-affine detector và bộ mô tả đặc trưng SIFT descriptor, cả hai đều phụ thuộc phần lớn vào texture trên hình ảnh là các góc cạnh, đường viền. Việc giảm dung lượng hình ảnh như đã trình bày ở trên không làm mất các góc cạnh đường viền trên hình, vì vậy không ảnh hưởng nhiều tới kết quả truy vấn, mặt khác nó còn giúp tăng tốc độ xử lý trích xuất đặc trưng tại phía server.
 
-Tại web service - giảm số lượng request bằng kỹ thuật long-polling
+\item \textbf{Tại web service: giảm số lượng request bằng kỹ thuật long-polling}
+
 Kỹ thuật long-polling như đã trình bày trong mục \ref{subsection:web_service} giúp giảm lượng request từ mỗi client khi có yêu cầu truy vấn hình ảnh. Vì vậy hệ thống có thể đáp ứng được nhiều client hơn, tốc độ phản hồi tới client vì thế cũng sẽ nhanh hơn.
 
-Tại server xử lý - tối ưu kết quả trả về
+\item \textbf{Tại server xử lý: tối ưu kết quả trả về}
+
 Kết quả của quá trình truy vấn là một danh sách các hình ảnh và việc trả về những hình ảnh này cho client cũng sẽ chịu ảnh hưởng rất lớn từ tốc độ băng thông. Với một yêu cầu truy vấn, server chỉ cần trả về một số hình ảnh đầu trong danh sách xếp hạng là đủ, và chỉ trả về các hình ảnh thu nhỏ dể giảm tối đa thời gian phản hồi về client. Cụ thể hơn, khi có kết quả truy vấn, server sẽ trả về cho client 15 hình ảnh thu nhỏ đứng đầu danh sách xếp hạng, mỗi hình thu nhỏ này có kích thước tối đa là 150 x 150 pixel và kích cỡ trung bình khoảng 5kB mỗi hình. Như vậy, tổng dung lượng cần gửi về client cho mỗi lần truy vấn là khoảng 75kB, vẫn có thể đáp ứng trên những kết nối chậm. 
 
 Thêm vào đó, việc sử dụng các server truy xuất dữ liệu độc lập với quá trình xử lý truy vấn cũng giúp tăng hiệu suất của hệ thống bằng cách phàn hồi từng phần dữ liệu về client. Với chức năng xem cụ thể hình ảnh trả về, các server truy xuất dữ liệu sẽ nhận yêu cầu xem hình ảnh từ client và gửi về một hình ảnh thu nhỏ với kích thước tối đã là 500 x 500 pixel, với dung lượng khoảng 30kB mỗi hình, vẫn có thể hiển thị tốt trên điện thoại di động màn hình full hd (1920x1080) trong khi dung lượng giảm tới 95\% (với bộ dữ liệu oxford 5k, mỗi hình ảnh gốc nặng trung bình 500kB).
+
+\end{itemize}
 
 Như vậy, với việc tối ưu tất cả các thành phần trên, hệ thống có thể cung cấp một ứng dụng đáp ứng được các yêu cầu thực tế đối với một hệ thống tìm kiếm đối tượng trên ảnh.
 
@@ -339,21 +347,21 @@ Như vậy, với việc tối ưu tất cả các thành phần trên, hệ th�
 	
 	Để đánh giá hiệu suất truy vấn, chúng tôi đo \textbf{thời gian phản hồi} của một truy vấn cơ bản, tính từ khi client gửi yêu cầu truy vấn tới khi nhận được kết quả, thực hiện trên bộ dữ liệu chuẩn Oxford Buildings 5k (Bảng \ref{table:datasets}). Thêm vào đó, để đánh giá chi tiết hơn, chúng tôi cũng đo các thông số sau:
 	
-	-- Dung lượng (DL) hình ảnh truy vấn sau mã hóa (MH)
+	-- Dung lượng (DL) hình ảnh truy vấn sau mã hóa (MH).
 	
-	-- Thời gian xử lý tại client và server: tại client, thời gian xử lý là thời gian nén và mã hóa hình ảnh truy vấn và giải mã kết quả. Tại server, thời gian xử lý bao gồm: trích xuất đặc trưng (TXĐT), truy vấn, giải mã (GM) và mã hóa (MH) và truy xuất dữ liệu (TXDL)
+	-- Thời gian xử lý tại client và server: tại client, thời gian xử lý là thời gian nén và mã hóa hình ảnh truy vấn và giải mã kết quả. Tại server, thời gian xử lý bao gồm: trích xuất đặc trưng (TXĐT), truy vấn, giải mã (GM) và mã hóa (MH) và truy xuất dữ liệu (TXDL).
 	
-	-- Tổng thời gian truyển tải: Tổng chi phí thời gian truyền tải dữ liệu giữa client, web service và server xử lý cho một truy vấn cơ bản
+	-- Tổng thời gian truyển tải: Tổng chi phí thời gian truyền tải dữ liệu giữa client, web service và server xử lý cho một truy vấn cơ bản.
 	
-	-- Tổng dung lượng kết quả trả về	
+	-- Tổng dung lượng kết quả trả về.
 	
 \begin{figure}[!htbp]
   \begin{center}
     \leavevmode
     \ifpdf
-      \includegraphics[scale=0.17]{app_experimental}
+      \includegraphics[scale=0.3]{app_experimental}
     \else
-      \includegraphics[scale=0.17]{app_experimental}
+      \includegraphics[scale=0.3]{app_experimental}
     \fi
     \caption[Kết quả thực nghiệm hiệu suất của hệ thống tìm kiếm đối tượng trên ảnh.]{Kết quả thực nghiệm hiệu suất của hệ thống tìm kiếm đối tượng trên ảnh.}
     \label{FigAppExperimental}
