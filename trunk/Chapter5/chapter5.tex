@@ -1,4 +1,4 @@
-\chapter{Xây dựng ứng dụng\\tìm kiếm đối tượng trên ảnh}
+\chapter[Xây dựng ứng dụng\\tìm kiếm đối tượng trên ảnh]{Xây dựng ứng dụng\\tìm kiếm đối tượng trên ảnh}
 \label{chapter:application}
 \ifpdf
     \graphicspath{{Chapter5/Chapter5Figs/PNG/}{Chapter5/Chapter5Figs/PDF/}{Chapter5/Chapter5Figs/}}
@@ -63,6 +63,7 @@ Chi tiết các thành phần được trình bày trong phần tiếp theo.
 Server side chính là thành phần quan trọng nhất của hệ thống, thực hiện các tác vụ xử lý truy vấn. Cấu trúc của server side gồm hai thành phần chính tương ứng với hai quá trình xử lý là quá trình training và quá trình truy vấn.
 
 -- Quá trình training: là quá trình biểu diễn lại tập dữ liệu hình ảnh, sử dụng các mô hình biểu diễn hình ảnh kết hợp với các phương pháp, kỹ thuật khác với mục đích tạo ra các dữ liệu cần thiết phục vụ quá trình truy vấn.
+
 -- Quá trình truy vấn: là quá trình tương tác trực tiếp với hệ thống tìm kiếm đối tượng trên ảnh, nhận đầu vào là một hình ảnh, thực hiện các bước xử lý truy vấn ảnh và trả về kết quả là một tập các hình ảnh được sắp xếp theo thứ tự gần giống với hình ảnh truy vấn nhất.
 
 \textbf{Quá trình training}
@@ -76,6 +77,7 @@ Như đã trình bày sơ lược trong mục trong mục \ref{sec:inverted-inde
 
 Sơ đồ xử lý cùng các thông số cài đặt được trình bày chi tiết trong phần cài đặ thí nghiệm, Hình \ref{FigInvertedFile}. Quá trình training được thực hiện độc lập trên server và là bước tiền đề cho quá trình truy vấn.
 
+
 \textbf{Quá trình truy vấn}
 Đây là quá trình tương tác trực tiếp với hệ thống tìm kiếm và chạy song song web service, nhận yêu cầu từ web service chuyển tiếp tới sau đó tiến hành truy vấn trả kết quả ngược trở lại web service.
 
@@ -85,7 +87,9 @@ Việc trả về cho client các hình ảnh thu nhỏ sẽ phát sinh thêm c�
 
 Với yêu cầu như trên, các server được chia làm 2 loại chính:
 -- Server truy vấn: tiếp nhận yêu cầu truy vấn hình ảnh, xử lý và trả về kết quả là danh sách xếp hạng cùng một phần các hình ảnh thu nhỏ giống với hình truy vấn nhất.
+
 -- Server truy xuất dữ liệu: tiếp nhận yêu cầu truy xuất hình ảnh, trả về hình ảnh được lất từ bộ nhớ.
+
 
 \begin{figure}[!htbp]
   \begin{center}
