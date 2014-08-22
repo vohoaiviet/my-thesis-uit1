@@ -176,6 +176,32 @@ Client side là một ứng dụng cung cấp giao diện để người dùng t
 \end{figure}
 
 %% trình bày chi tiết các lớp ...
+\textbf{Lớp CameraManager:} Truy xuất tới camera trên điện thoại di động, thiết lập các thông số liên quan tới camera, nhận dữ liệu hình ảnh từ camera.
+
+\textbf{Lớp WebServiceManager:} Lưu trữ thông tin kết nối và thực hiện các kết nối tới web service, gửi và nhận dữ liệu truy vấn, gọi bộ interface lắng nghe sự kiện WebServiceListener để tương tác với các thành phần khác của ứng dụng.
+
+\textbf{Lớp Decoder và Encoder:} Giải mã và mã hóa hình ảnh.
+
+\textbf{Interface WebServiceListener:} bộ lắng nghe các sự kiện liên quan tới web service. Onquerying: trong khi đang truy vấn. OnServerResponded: khi có kết quả phản hồi từ server, OnImageRecieved: khi có kết quả là các hình ảnh được trả về.
+
+\textbf{Interface ResultViewListener:} bộ lắng nghe sự kiện liên quan tới việc hiển thị kết quả truy vấn. OnRequestImage: yêu cầu tải về một hình ảnh khi chọn xem hoặc tải xuống thiết bị, tải về danh sách hình ảnh khi người dùng muốn xem thêm kết quả. OnCompleted: khi hoàn tất việc xem kết quả, kết thúc một quá trình truy vấn.
+
+\textbf{Interface ActionListener:} bộ lắng nghe các sự kiện là các chức năng trên ứng dụng. OnCameraCapture: khi có yêu cầu chụp hình. OnCameraFlashChange: khi có yêu cầu thay đổi trạng thái đèn flash. OnSelectImage: khi có yêu cầu chọn một hình ảnh trong thiết bị để truy vấn.
+
+\textbf{Interface RegionSelectionListener:} bộ lắng nghe các sự kiện liên quan tới chức năng chọn vùng đối tượng trên camera. OnRegionSelected: khi người dùng đã chọn vùng đối tượng. OnRegionConfirmed: khi vùng đối tượng đã được xác nhận và được tiến hành truy vấn. OnRegionCancelled: Khi vùng đối tượng đã bị hủy.
+
+\textbf{Lớp CameraPreview:} Hiển thị dữ liệu được lấy từ camera.
+
+\textbf{Lớp MenuView:} cung cấp các phím chức năng cho phép người dùng thao tác với ứng dụng, gọi bộ lắng nghe sự kiện ActionListener khi người dùng thực hiện các chức năng để tương tác với các thành phần khác.
+
+\textbf{RegionView:} cung cấp cho người dùng chức năng chọn vùng đối tượng trên camera. gọi bộ lắng ghe sự kiện RegionSelectionListener để tương tác với các thành phần khác.
+
+\textbf{ResultView:} cung cấp giao diện cho phép người dùng xem và thao tác trên kết quả truy vấn. Lưu trữ kết quả truy vấn và gọi bộ lắng nghe sự kiên ResultListener để thao tác với các thành phần khác.
+
+\textbf{Lớp FileManager:} đọc, ghi dữ liệu từ bộ nhớ thiết bị.
+
+\textbf{Lớp MainActitity:} cung cấp giao diện chính cho ứng dụng, là thành phần trung tâm quản lý toàn bộ các lớp khác, được cài đặt tất cả các bộ lắng nghe sự kiện để các lớp có thể giao tiếp với nhau thông qua nó.
+
 \subsubsection{Chức năng và giao diện}
 Là thành phần tương tác trực tiếp với người dùng, do đó ứng dụng cần đáp ứng các yêu cầu về giao diện thân thiện, đơn giản, tiện dụng nhưng vấn cung cấp đầy đủ các chức năng cho người dùng.
 
