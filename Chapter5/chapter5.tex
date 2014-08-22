@@ -15,9 +15,9 @@ Trong chương này, trước tiên chúng tôi sẽ giới thiệu tổng quan 
 \label{c5-tongquan}
 
 	\subsection{Mục đích và phạm vi của ứng dụng}
-Như đã giới thiệu trong mục ..., các hệ thống truy vấn ảnh có vô vàn ứng dụng khác nhau trong thực tế. Trong đề tài này, chúng tôi xây dựng ứng dụng nhằm phục vụ mục đích cơ bản là tìm kiếm đối tượng trên những kho dữ liệu ảnh với kích thước có thể lên tới hàng trăm ngàn ảnh. Đó có thể là kho dữ liệu ảnh của một tổ chức, công ty về một lĩnh vực nào đó. Hay xa hơn, ứng dụng này có thể phát triển cho việc tìm kiếm đối tượng trên kho dữ liệu video vì ta hoàn toàn có thể rút trích được hình ảnh từ các frame của video.
+Như đã giới thiệu trong mục \ref{section:intro-problem}, các hệ thống truy vấn ảnh có vô vàn ứng dụng khác nhau trong thực tế. Trong đề tài này, chúng tôi xây dựng ứng dụng nhằm phục vụ mục đích cơ bản là tìm kiếm đối tượng trên những kho dữ liệu ảnh với kích thước có thể lên tới hàng trăm ngàn ảnh. Đó có thể là kho dữ liệu ảnh của một tổ chức, công ty về một lĩnh vực nào đó. Hay xa hơn, ứng dụng này có thể phát triển cho việc tìm kiếm đối tượng trên kho dữ liệu video vì ta hoàn toàn có thể rút trích được hình ảnh từ các frame của video.
 
-Hơn nữa, ngày nay điện thoại thông minh đang dần trở lên rất phổ biến và dần trở thành vật bất ly thân của con người. Các ứng dụng trên điện thoại thông minh cũng phát triển ồ ạt, cung cấp cho người dùng rất nhiều tiện ích. Vì vậy chúng tôi hướng tới một ứng dụng giao tiếp với người dùng trên nền tảng điện thoại thông minh sử dụng hệ điều hành android.
+Hơn nữa, ngày nay điện thoại thông minh đang dần trở lên rất phổ biến và dần trở thành vật bất ly thân của con người. Các ứng dụng trên điện thoại thông minh cũng phát triển ồ ạt, cung cấp cho người dùng rất nhiều tiện ích. Vì vậy chúng tôi hướng tới một ứng dụng giao tiếp với người dùng trên nền tảng điện thoại thông minh sử dụng hệ điều hành Android.
 	
 	\subsection{Các chức năng chính}
 Ứng dụng được xây dựng với mục tiêu cung cấp một hệ thống tìm kiếm đối tượng trên ảnh, nhận đầu vào là hình ảnh chứa đối tượng truy vấn và trả về danh sách xếp hạng các hình ảnh theo mức độ tương đồng với hình truy vấn. Chi tiết các chức năng chính của ứng dụng như sau:
@@ -30,7 +30,7 @@ Hơn nữa, ngày nay điện thoại thông minh đang dần trở lên rất p
 
 -- Xem và tương tác với kết quả truy vấn: hiển thị kết quả truy vấn là danh sách các hình ảnh và cho phép người dùng tải xuống các hình ảnh này.
 
-\section{Xây dụng ứng dụng}
+\section{Xây dựng ứng dụng}
 \label{c5-thietke}
 
 	\subsection{Kiến trúc tổng quan}
@@ -64,41 +64,42 @@ Server side chính là thành phần quan trọng nhất của hệ thống, th�
 
 -- Quá trình training: là quá trình biểu diễn lại tập dữ liệu hình ảnh, sử dụng các mô hình biểu diễn hình ảnh kết hợp với các phương pháp, kỹ thuật khác với mục đích tạo ra các dữ liệu cần thiết phục vụ quá trình truy vấn.
 
--- Quá trình truy vấn: là quá trình tương tác trực tiếp với hệ thống tìm kiếm đối tượng trên ảnh, nhận đầu vào là một hình ảnh, thực hiện các bước xử lý truy vấn ảnh và trả về kết quả là một tập các hình ảnh được sắp xếp theo thứ tự gần giống với hình ảnh truy vấn nhất.
+-- Quá trình truy vấn: là quá trình tương tác trực tiếp với hệ thống tìm kiếm đối tượng trên ảnh, nhận đầu vào là một hình ảnh, thực hiện các bước xử lý truy vấn ảnh và trả về kết quả là một tập các hình ảnh được sắp xếp theo thứ tự có độ tương đồng với hình ảnh truy vấn giảm dần.
 
 \subsubsection{Quá trình training}
 Như đã trình bày sơ lược trong mục trong mục \ref{sec:inverted-index} và \ref{experimental-setting}, quá trình training bao gồm các bước sau:
 
-\textbf{Dò tìm, phát hiện và rút trích đặc trưng.} Từ kho dữ liệu hình ảnh được lưu sẵn trên server, bước đầu tiên của quá trình xử lý là sử dụng phương pháp phát hiện keypoint Hessian-Affine để xác định được vị trí các điểm keypoint trên hình ảnh. Từ thông tin đó, bộ SIFT descriptor mô tả và rút trích được 1 vector 128 chiều tương ứng với mỗi điểm keypoint. Những vector này sẽ được tính toán lại bằng phương pháp RootSIFT [***]. Các vector thu được chính là các tập đặc trưng của hình ảnh. 
+\textbf{Dò tìm, phát hiện và rút trích đặc trưng.} Từ kho dữ liệu hình ảnh được lưu sẵn trên server, bước đầu tiên của quá trình xử lý là sử dụng phương pháp phát hiện keypoint Hessian-Affine để xác định được vị trí các điểm keypoint trên hình ảnh. Từ thông tin đó, bộ SIFT descriptor mô tả và rút trích được 1 vector 128 chiều tương ứng với mỗi điểm keypoint. Những vector này sẽ được tính toán lại bằng phương pháp RootSIFT\cite{philbin2007object}. Các vector thu được chính là các tập đặc trưng của hình ảnh. 
 
 \textbf{Gom cụm đặc trưng và xây dựng từ điển.} Các vector đặc trưng sẽ được gom cụm bằng thuật toán AKM để thu được các visual word với số lượng cụm là k = 1 triệu. Kết quả ta sẽ thu được các visual word là các từ dùng để mô tả hình ảnh. Từ những visual word này, ta sẽ xây dựng thành một từ điển để phục vụ cho việc biểu diễn hình ảnh khi truy vấn.
 
-\textbf{Xây dựng chỉ mục ngược.} Theo như phương pháp đề xuất đã được đề cập chi tiết trong Chương \ref{chapter:proposed}, chúng tôi sẽ xây dựng chỉ mục ngược từ từ điển nhằm đạt được hiệu suất cao trong quá trình truy vấn. Cụ thể hơn, từ bộ từ điển và thông tin không gian của tất cả các visual word của mỗi hình ảnh trong bộ dữ liệu, với cấp độ phân cấp là 2, 21 chỉ mục ngược sẽ được xây dựng và lưu vào một file.
+\textbf{Xây dựng chỉ mục ngược.} Theo như phương pháp đề xuất đã được đề cập chi tiết trong Chương \ref{chapter:proposed}, chúng tôi sẽ xây dựng chỉ mục ngược từ từ điển nhằm đạt được hiệu suất cao trong quá trình truy vấn. Cụ thể hơn, từ bộ từ điển và thông tin không gian của tất cả các visual word của mỗi hình ảnh trong bộ dữ liệu, với cấp độ phân cấp là 2, có 21 chỉ mục ngược sẽ được tạo ra và lưu vào một file.
 
-Sơ đồ xử lý cùng các thông số cài đặt được trình bày chi tiết trong phần cài đặ thí nghiệm, Hình \ref{FigInvertedFile}. Quá trình training được thực hiện độc lập trên server và là bước tiền đề cho quá trình truy vấn.
+Sơ đồ xử lý cùng các thông số cài đặt được trình bày chi tiết trong phần cài đặt thí nghiệm và trong Hình \ref{FigInvertedFile}. Quá trình training được thực hiện độc lập trên server và là bước tiền đề cho quá trình truy vấn.
 
 \subsubsection{Quá trình truy vấn}
 \label{subsubsection:truyvan_server}
 Đây là quá trình tương tác trực tiếp với hệ thống tìm kiếm và chạy song song web service, nhận yêu cầu từ web service chuyển tiếp tới sau đó tiến hành truy vấn trả kết quả ngược trở lại web service.
 
-Ngày nay, chất lượng hình ảnh ngày càng được tăng cao, kéo theo dung lượng hình ảnh cũng rất lớn. Việc trả về cho client một lượng lớn hình ảnh chất lượng cao là không thể vì lưu lượng và tốc độ băng thông còn bị giới hạn rất nhiều. Vì vậy sau khi xử lý truy vấn, server sẽ trả về cho client một danh sách hình ảnh thu nhỏ để đảm bảo tốc độ phản hồi. Chi tiết sẽ được trình bày rõ hơn trong phần Tối ưu hóa hệ thống ...
+Ngày nay, chất lượng hình ảnh ngày càng được tăng cao, kéo theo dung lượng hình ảnh cũng rất lớn. Việc trả về cho client một lượng lớn hình ảnh chất lượng cao là không thể vì lưu lượng và tốc độ băng thông còn bị giới hạn rất nhiều. Vì vậy sau khi xử lý truy vấn, server sẽ trả về cho client một danh sách hình ảnh thu nhỏ để đảm bảo tốc độ phản hồi. Chi tiết sẽ được trình bày rõ hơn trong mục \ref{subsection:optimize}.
 
 Việc trả về cho client các hình ảnh thu nhỏ sẽ phát sinh thêm các chức năng khác như: xem hình ảnh chất lượng tốt hơn, tải hình ảnh gốc về thiết bị. Vì vậy, tại phía server cung cấp hai chức năng chính tương ứng với hai loại yêu cầu từ phía client là yêu cầu truy vấn một hình ảnh và yêu cầu tải một (hoặc một tập) các hình ảnh theo các mức chất lượng khác nhau.
 
 Với yêu cầu như trên, các server được chia làm 2 loại chính:
--- Server truy vấn: tiếp nhận yêu cầu truy vấn hình ảnh, xử lý và trả về kết quả là danh sách xếp hạng cùng một phần các hình ảnh thu nhỏ giống với hình truy vấn nhất.
--- Server truy xuất dữ liệu: tiếp nhận yêu cầu truy xuất hình ảnh, trả về hình ảnh được lấy từ bộ nhớ.
 
+-- Server truy vấn: tiếp nhận yêu cầu truy vấn hình ảnh, xử lý và trả về kết quả là danh sách xếp hạng cùng một phần các hình ảnh thu nhỏ giống với hình truy vấn nhất.
+
+-- Server truy xuất dữ liệu: tiếp nhận yêu cầu truy xuất hình ảnh, trả về hình ảnh được lấy từ bộ nhớ.
 
 \begin{figure}[!htbp]
   \begin{center}
     \leavevmode
     \ifpdf
-      \includegraphics[scale=0.14]{query-process-server}
+      \includegraphics[scale=0.35]{query-process-server}
     \else
-      \includegraphics[scale=0.14]{query-process-server}
+      \includegraphics[scale=0.35]{query-process-server}
     \fi
-    \caption[Kiến trúc tổng quan của hệ thống]{Kiến trúc tổng quan của hệ thống.}
+    \caption[Quá trình truy vấn tại server]{Quá trình truy vấn tại server.}
     \label{query-process-server}
   \end{center}
 \end{figure}
@@ -107,7 +108,7 @@ Quá trình xử lý truy vấn được đã trình bày chi tiết trong mục
 
 \subsection{Web service}
 \label{subsection:web_service}
-Web service là thành phần trung gian đóng vai trò phân phối các yêu cầu từ phía client tới các server xử lý. Thành phần này sử dụng dịch vụ web {cite\} chạy trên các máy chủ web cung cấp các phương thức giúp client và server xử lý kết nối, truyền tải các dữ liệu cần thiết.
+Web service là thành phần trung gian đóng vai trò phân phối các yêu cầu từ phía client tới các server xử lý. Thành phần này sử dụng dịch vụ web chạy trên các máy chủ web cung cấp các phương thức giúp client và server xử lý kết nối, truyền tải các dữ liệu cần thiết.
 
 Với một hệ thống tìm kiếm cơ bản sử dụng từ khóa thông thường, thành phần xử lý có thể chính là web service. Với mỗi yêu cầu tìm kiếm, nó sẽ tạo ra một tiến trình và truy xuất tới cơ sở dữ liệu để lấy thông tin một cách nhanh chóng, có thể đáp ứng nhiều yêu cầu đồng thời, phụ thuộc vào phần cứng và các thiết lập trên nó. Nhưng với một hệ thống tìm kiếm hình ảnh, chi phí tính toán và tài nguyên phục vụ quá trình tìm kiếm rất lớn, việc tạo ra nhiều tiến trình xử lý là không khả thi. Nếu giới hạn số lượng yêu cầu ở mức thấp để đảm bảo an toàn cho hệ thống thì sẽ không đáp ứng được yêu cầu thực tế, ngược lại nếu không kiểm soát các yêu cầu truy vấn thì hệ thống có thể sẽ không đáp ứng được và dễ dàng bị quá tải dẫn dến nguy hiểm cả cho phần cứng. Chính vì vậy, giải pháp tốt nhất chính là chia tải, bằng cách sử dụng nhiều server xử lý và chuyển tiếp các yêu cầu truy vấn tới các server này. Từ đó ta có hai giải pháp kết nối:
 
@@ -138,10 +139,7 @@ Sơ đồ mô hình hoạt động chi tiết của web service được thể h
 
 Trước tiên, mỗi yêu cầu do client gửi lên sẽ được đưa vào một hàng đợi. Đồng thời kết nối từ các server gửi lên cũng được đưa vào một hàng đợi để chờ client. Thành phần xử lý trung tâm là Controller sẽ lấy từng yêu cầu của client trả về cho một server đang chờ kết nối. Tiếp đó, yêu cầu của client sẽ bị giữ lại đề chờ kết quả xử lý từ phía server bằng kỹ thuật long-polling. Sau khi hoàn tất xử lý, server sẽ gửi lại web service kết quả xử lý cùng với thông tin client, từ đó web service sẽ đáp trả yêu cầu của client tương ứng.
 
-\textbf{Kỹ thuật Long-polling}
-Để client và server xử lý kết nối thời gian thực với nhau, chúng tôi xử dụng kỹ thuật long-polling là một kỹ thuật trong lập trình ứng dụng web.
-
-Một ví dụ đơn giản về kỹ thuật này là ứng dụng chat trên internet. Khi một user (1) gửi thông điệp chat tới một user khác (2) thông qua web service, nhưng web service không thể gửi thông điệp đó tới user 2. Khi đó user 2 phải liên tục gửi yêu cầu lên web service để xem có ai chat với mình hay không. Như vậy nếu muốn kết nối thời gian thực thì các user phải liên tục gửi yêu cầu liên web service, với số lượng lớn yêu cầu thì web service sẽ không thể đáp ứng nổi. Khi đó kỹ thuật long-polling được đưa ra nhằm giải quyết vấn đề này. Trong trường hợp trên, khi user 1 gửi yêu cầu lên web service, yêu cầu này sẽ không được trả về ngay lập tức mà nó bị giữ lại. Khi user 2 gửi thông điệp tới user 1 thì lúc này web service mới trả yêu cầu cùng thông điệp cho user 1. Cứ như thế 2 user có thể tương tác thời gian thực với nhau.
+\textbf{Kỹ thuật Long-polling.} Để client và server xử lý kết nối thời gian thực với nhau, chúng tôi xử dụng kỹ thuật long-polling là một kỹ thuật trong lập trình ứng dụng web. Một ví dụ đơn giản về kỹ thuật này là ứng dụng chat trên internet. Khi một user (1) gửi thông điệp chat tới một user khác (2) thông qua web service, nhưng web service không thể gửi thông điệp đó tới user 2. Khi đó user 2 phải liên tục gửi yêu cầu lên web service để xem có ai chat với mình hay không. Như vậy nếu muốn kết nối thời gian thực thì các user phải liên tục gửi yêu cầu liên web service, với số lượng lớn yêu cầu thì web service sẽ không thể đáp ứng nổi. Khi đó kỹ thuật long-polling được đưa ra nhằm giải quyết vấn đề này. Trong trường hợp trên, khi user 1 gửi yêu cầu lên web service, yêu cầu này sẽ không được trả về ngay lập tức mà nó bị giữ lại. Khi user 2 gửi thông điệp tới user 1 thì lúc này web service mới trả yêu cầu cùng thông điệp cho user 1. Cứ như thế 2 user có thể tương tác thời gian thực với nhau.
 
 Trong hệ thống của chúng tôi, kỹ thuật long-polling được sử dụng để giữ yêu cầu kết nối của các server để chờ client, và giữ yêu cầu truy vấn của client để chờ kết quả xử lý từ server.
 
@@ -187,11 +185,11 @@ Dưới đây là giao diện cùng các chứng năng của ứng dụng.
   \begin{center}
     \leavevmode
     \ifpdf
-      \includegraphics[scale=0.17]{interface_1}
+      \includegraphics[scale=0.35]{interface_1}
     \else
-      \includegraphics[scale=0.17]{interface_1}
+      \includegraphics[scale=0.35]{interface_1}
     \fi
-    \caption[Hình ảnh giao diện ứng dụng với các chức năng chính. Ứng dụng cho phép người dùng chọn vùng đối tượng trên camera, chụp hình vùng đối tượng, bật / tắt đèn flash và chọn hình ảnh trong thiết bị để truy vấn]{Hình ảnh ứng dụng với các chức năng chính.}
+    \caption[Hình ảnh ứng dụng với các chức năng chính]{Hình ảnh giao diện ứng dụng với các chức năng chính. Ứng dụng cho phép người dùng chọn vùng đối tượng trên camera, chụp hình vùng đối tượng, bật / tắt đèn flash và chọn hình ảnh trong thiết bị để truy vấn.}
     \label{FigChooseRegion}
   \end{center}
 \end{figure}
@@ -200,11 +198,11 @@ Dưới đây là giao diện cùng các chứng năng của ứng dụng.
   \begin{center}
     \leavevmode
     \ifpdf
-      \includegraphics[scale=0.17]{interface_2}
+      \includegraphics[scale=0.35]{interface_2}
     \else
-      \includegraphics[scale=0.17]{interface_2}
+      \includegraphics[scale=0.35]{interface_2}
     \fi
-    \caption[Hình ảnh ứng dụng trong khi thực hiện truy vấn. Trong khi chờ kết quả xử lý từ server, ứng dụng sẽ quét trên vùng đối tượng đã chọn để tạo cảm giác hứng thú cho người dùng. Tương tự khi chọn một hình ảnh trong thiết bị để truy vấn, ứng dụng cũng quét trên toàn bộ vùng truy vấn.]{Hình ảnh ứng dụng trong khi thực hiện truy vấn.}
+    \caption[Hình ảnh ứng dụng trong khi thực hiện truy vấn]{Hình ảnh ứng dụng trong khi thực hiện truy vấn. Trong khi chờ kết quả xử lý từ server, ứng dụng sẽ quét trên vùng đối tượng đã chọn để tạo cảm giác hứng thú cho người dùng. Tương tự khi chọn một hình ảnh trong thiết bị để truy vấn, ứng dụng cũng quét trên toàn bộ vùng truy vấn.}
     \label{FigChooseRegion}
   \end{center}
 \end{figure}
@@ -213,11 +211,11 @@ Dưới đây là giao diện cùng các chứng năng của ứng dụng.
   \begin{center}
     \leavevmode
     \ifpdf
-      \includegraphics[scale=0.17]{interface_3}
+      \includegraphics[scale=0.35]{interface_3}
     \else
-      \includegraphics[scale=0.17]{interface_3}
+      \includegraphics[scale=0.35]{interface_3}
     \fi
-    \caption[Hình ảnh ứng dụng khi có kết quả trả về. Ứng dụng cho người dùng xem vùng đối tượng vừa được truy vấn cùng danh sách các hình ảnh thu nhỏ được trả về từ server.]{Hình ảnh ứng dụng khi có kết quả trả về.}
+    \caption[Hình ảnh ứng dụng khi có kết quả trả về]{Hình ảnh ứng dụng khi có kết quả trả về. Ứng dụng cho người dùng xem vùng đối tượng vừa được truy vấn cùng danh sách các hình ảnh thu nhỏ được trả về từ server.}
     \label{FigChooseRegion}
   \end{center}
 \end{figure}
@@ -226,11 +224,11 @@ Dưới đây là giao diện cùng các chứng năng của ứng dụng.
   \begin{center}
     \leavevmode
     \ifpdf
-      \includegraphics[scale=0.17]{interface_4}
+      \includegraphics[scale=0.35]{interface_4}
     \else
-      \includegraphics[scale=0.17]{interface_4}
+      \includegraphics[scale=0.35]{interface_4}
     \fi
-    \caption[Hình ảnh ứng dụng khi xem chi tiết kết quả truy vấn. Người dùng có thể chọn xem một hình ảnh trong danh sách kết quả truy vấn. Ứng dụng sẽ tải hình ảnh chất lượng cao hơn để người dùng dễ dàng xem trong khung hình lớn hơn, nhưng đây chưa phải hình ảnh với chất lượng tốt nhất. Do dó, ứng dụng cũng cho phép người dùng tải hình ảnh gốc chất lượng cao bằng cách chạm vào nút như trên hình.]{Hình ảnh ứng dụng khi xem chi tiết kết quả truy vấn.}
+    \caption[Hình ảnh ứng dụng khi xem chi tiết kết quả truy vấn]{Hình ảnh ứng dụng khi xem chi tiết kết quả truy vấn. Người dùng có thể chọn xem một hình ảnh trong danh sách kết quả truy vấn. Ứng dụng sẽ tải hình ảnh chất lượng cao hơn để người dùng dễ dàng xem trong khung hình lớn hơn, nhưng đây chưa phải hình ảnh với chất lượng tốt nhất. Do dó, ứng dụng cũng cho phép người dùng tải hình ảnh gốc chất lượng cao bằng cách chạm vào nút như trên hình.}
     \label{FigChooseRegion}
   \end{center}
 \end{figure}
@@ -239,11 +237,11 @@ Dưới đây là giao diện cùng các chứng năng của ứng dụng.
   \begin{center}
     \leavevmode
     \ifpdf
-      \includegraphics[scale=0.17]{interface_5}
+      \includegraphics[scale=0.35]{interface_5}
     \else
-      \includegraphics[scale=0.17]{interface_5}
+      \includegraphics[scale=0.35]{interface_5}
     \fi
-    \caption[Hình ảnh ứng dụng với chức năng tải thêm hình ảnh trong danh sách kết quả truy vấn. Khi hoàn tất xử lý, server chỉ trả về cho ứng dụng một số hình ảnh đứng đầu danh sách xếp hạng, người dùng có thể tải thêm các hình ảnh khác bằng cách chạm vào dấu cộng như trên hình, với số lượng hình ảnh tối đa có thể tải là 50 hình.]{Hình ảnh ứng dụng với chức năng tải thêm hình ảnh trong danh sách kết quả.}
+    \caption[Hình ảnh ứng dụng với chức năng tải thêm hình ảnh trong danh sách kết quả]{Hình ảnh ứng dụng với chức năng tải thêm hình ảnh trong danh sách kết quả truy vấn. Khi hoàn tất xử lý, server chỉ trả về cho ứng dụng một số hình ảnh đứng đầu danh sách xếp hạng, người dùng có thể tải thêm các hình ảnh khác bằng cách chạm vào dấu cộng như trên hình, với số lượng hình ảnh tối đa có thể tải là 50 hình.}
     \label{FigChooseRegion}
   \end{center}
 \end{figure}
@@ -252,16 +250,17 @@ Dưới đây là giao diện cùng các chứng năng của ứng dụng.
   \begin{center}
     \leavevmode
     \ifpdf
-      \includegraphics[scale=0.17]{interface_6}
+      \includegraphics[scale=0.35]{interface_6}
     \else
-      \includegraphics[scale=0.17]{interface_6}
+      \includegraphics[scale=0.35]{interface_6}
     \fi
-    \caption[Ứng dụng cho phép người dùng thay đổi chế độ xem hình ảnh truy vấn bằng cách kéo khung kết quả để thu nhỏ, phóng to hình ảnh đang xem.]{Hình ảnh ứng dụng với chức năng thay đổi chế độ xem ảnh.}
+    \caption[Hình ảnh ứng dụng với chức năng thay đổi chế độ xem ảnh]{Ứng dụng cho phép người dùng thay đổi chế độ xem hình ảnh truy vấn bằng cách kéo khung kết quả để thu nhỏ, phóng to hình ảnh đang xem.}
     \label{FigChooseRegion}
   \end{center}
 \end{figure}
 
 \subsection{Tối ưu hiệu suất hệ thống}
+\label{subsection:optimize}
 Việc xử lý truy vấn hình ảnh đòi hỏi chi phí tính toán rất lớn, vì vậy một hệ thống tìm kiếm hình ảnh muốn đáp ứng được các yêu cầu thực tế cần phải tối ưu hóa hiệu suất trong quá trình xử lý cũng như truyền dẫn. Trong hệ thống đã xây dựng, chúng tôi đưa ra các giải pháp đề tối ưu hoạt động tại cả ba thành phần của hệ thống là client side, web service và sever side.
 
 \textbf{Tại client side - giảm tối đa dung lượng hình ảnh truy vấn}
