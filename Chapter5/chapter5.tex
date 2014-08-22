@@ -215,9 +215,9 @@ Dưới đây là giao diện cùng các chức năng của ứng dụng đượ
   \begin{center}
     \leavevmode
     \ifpdf
-      \includegraphics[scale=0.4]{interface_1}
+      \includegraphics[scale=0.3]{interface_1}
     \else
-      \includegraphics[scale=0.4]{interface_1}
+      \includegraphics[scale=0.3]{interface_1}
     \fi
     \caption[Hình ảnh ứng dụng với các chức năng chính]{Hình ảnh giao diện ứng dụng với các chức năng chính. Ứng dụng cho phép người dùng chọn vùng đối tượng trên camera, chụp hình vùng đối tượng, bật / tắt đèn flash và chọn hình ảnh trong thiết bị để truy vấn.}
     \label{FigInterface1}
@@ -369,7 +369,7 @@ Như vậy, với việc tối ưu tất cả các thành phần trên, hệ th�
   \end{center}
 \end{figure}
 		
-	Bảng \ref{FigAppExperimental} thể hiện kết quả thực nghiệm trên 10 truy vấn với các hình ảnh khác nhau. Có thể thấy tổng thời gian phản hồi của một truy vấn phụ thuộc rất lớn vào thời gian xử lý tại server, cụ thể hơn là thời gian trích xuất đặc trưng. Với kết quả trên, thời gian trích xuất đặc trưng trung bình là 4.542 giây, chiếm 79.6\% tổng thời gian phản hồi. Trong khi đó, thời gian truyền tải cho toàn bộ quá trình là 1.164 giây, với dữ liệu gồm nhiều hình ảnh thì kết quả này là rất tốt, thể hiện hiệu suất của ứng dụng tại các bước nén và mã hóa hình ảnh, tối ưu quá trình truyền dẫn. Với tổng lưu lượng truyền dẫn cho cả quá trình là 85.6kB (dung lượng hình ảnh truy vấn và tổng dung lượng kết quả trả về) hoàn toàn có thể đáp ứng những kết nối chậm, chẳng hạn mạng EDGE với tốc độ 236kb/s.
+	Bảng \ref{FigAppExperimental} thể hiện kết quả thực nghiệm trên 10 truy vấn với các hình ảnh khác nhau. Có thể thấy tổng thời gian phản hồi của một truy vấn phụ thuộc rất lớn vào thời gian xử lý tại server, cụ thể hơn là thời gian trích xuất đặc trưng. Với kết quả trên, thời gian trích xuất đặc trưng trung bình là 4.542 giây, chiếm 79.6\% tổng thời gian phản hồi. Trong khi đó, thời gian truyền tải cho toàn bộ quá trình là 1.164 giây, với dữ liệu gồm nhiều hình ảnh thì kết quả này là khá tốt, thể hiện hiệu suất của ứng dụng tại các bước nén và mã hóa hình ảnh, tối ưu quá trình truyền dẫn. Với tổng lưu lượng truyền dẫn cho cả quá trình là 85.6kB (dung lượng hình ảnh truy vấn và tổng dung lượng kết quả trả về) hoàn toàn có thể đáp ứng những kết nối chậm, chẳng hạn mạng EDGE với tốc độ 236kb/s.
 	
 	Ngoài ra, một yếu tố quan trọng để đánh giá hiệu suất của ứng dụng là độ chính xác truy vấn. Ứng dụng sử dụng phương pháp đề xuất đã được trình bày trong mục \ref{chapter:proposed} và kết quả đã được thí nghiệm trên các bộ dữ liệu chuẩn tại mục \ref{chapter:experiment}. 
 	
