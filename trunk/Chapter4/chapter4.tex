@@ -36,15 +36,15 @@ Bộ dữ liệu gồm 55 truy vấn trong đó mỗi landmark sẽ có 5 truy v
   \end{center}
 \end{figure}
 
-\subsubsection{Paris 6k}
-Tương tự như bộ dữ liệu Oxford 5k, Paris 6k bao gồm 6,392 hình ảnh chất lượng cao (1366 $\times$ 768) của các địa danh nổi tiếng ở Paris được lấy về từ Flickr với các câu truy vấn như "Paris Eiffel Tower" hay "Paris Triomphe". Paris 6k cũng có 55 hình ảnh truy vấn cho 11 landmark (5 truy vấn cho mỗi landmark) \cite{philbin2008lost}.
+\subsubsection{Paris 6K}
+Tương tự như bộ dữ liệu Oxford 5K, Paris 6K bao gồm 6,392 hình ảnh chất lượng cao (1366 $\times$ 768) của các địa danh nổi tiếng ở Paris được lấy về từ Flickr với các câu truy vấn như "Paris Eiffel Tower" hay "Paris Triomphe". Paris 6K cũng có 55 hình ảnh truy vấn cho 11 landmark (5 truy vấn cho mỗi landmark) \cite{philbin2008lost}.
 
-Paris 6k được đánh giá là một bộ dữ liệu hoàn toàn độc lập so với Oxford 5k và thường được dùng để kiểm tra các tác động của việc tính toán từ trực quan trong khi Oxford 5k thường được dùng để kiểm tra hiệu suất.
+Paris 6K được đánh giá là một bộ dữ liệu hoàn toàn độc lập so với Oxford 5K và thường được dùng để kiểm tra các tác động của việc tính toán visual word trong khi Oxford 5K thường được dùng để kiểm tra hiệu suất.
 
 \subsubsection{Oxford 5K+100K}
-%Bộ Holidays bao gồm 1,491 hình ảnh chất lượng cao về các lễ hội với 500 truy vấn mà mỗi truy vấn chứa một vài hình ảnh chính xác về đối tượng truy vấn \cite{JDS08}. Bộ dữ liệu này nhằm hướng tới mục đích truy vấn ảnh trên tập dữ liệu lớn vì các hình ảnh không phải về một đối tượng đặc biệt như trong Oxford 5k và Paris 6k, đồng thời các thay đổi trên hình ảnh của đối tượng cũng đa dạng hơn với nhiều loại thay đổi khác nhau và truy vấn được thực hiện với toàn bộ hình ảnh chứ không phải với một vùng hình ảnh có chứa đối tượng được chỉ định trước.
+%Bộ Holidays bao gồm 1,491 hình ảnh chất lượng cao về các lễ hội với 500 truy vấn mà mỗi truy vấn chứa một vài hình ảnh chính xác về đối tượng truy vấn \cite{JDS08}. Bộ dữ liệu này nhằm hướng tới mục đích truy vấn ảnh trên tập dữ liệu lớn vì các hình ảnh không phải về một đối tượng đặc biệt như trong Oxford 5K và Paris 6K, đồng thời các thay đổi trên hình ảnh của đối tượng cũng đa dạng hơn với nhiều loại thay đổi khác nhau và truy vấn được thực hiện với toàn bộ hình ảnh chứ không phải với một vùng hình ảnh có chứa đối tượng được chỉ định trước.
 %
-%Tập dữ liệu bao gồm 500 nhóm hình ảnh, mỗi nhóm là một cảnh khác nhau và bao gồm rất nhiều loại hình ảnh khác nhau như tự nhiên, nhân tạo, hiệu ứng nước và lửa,... Hình ảnh đầu tiên của mỗi nhóm là hình truy vấn và các hình còn lại trong nhóm là kết quả chính xác cho truy vấn. Và các hình ảnh truy vấn không được xem xét tới trong kết quả trả về chứ không phải được xem là một kết quả chính xác như trong Oxford 5k và Paris 6k.
+%Tập dữ liệu bao gồm 500 nhóm hình ảnh, mỗi nhóm là một cảnh khác nhau và bao gồm rất nhiều loại hình ảnh khác nhau như tự nhiên, nhân tạo, hiệu ứng nước và lửa,... Hình ảnh đầu tiên của mỗi nhóm là hình truy vấn và các hình còn lại trong nhóm là kết quả chính xác cho truy vấn. Và các hình ảnh truy vấn không được xem xét tới trong kết quả trả về chứ không phải được xem là một kết quả chính xác như trong Oxford 5K và Paris 6K.
 %
 %Thông thường bô dữ liệu Holidays thường được ghép với khoảng 1 triệu hình ảnh từ Flickr khác để kiểm tra truy vấn trên tập dữ liệu lớn, thường được gọi là bộ dữ liệu \textit{Holidays + Flickr1M}.
 
@@ -88,11 +88,11 @@ Dưới đây là chi tiết cài đặt và các thông số cho phương pháp
 
 \textbf{Phát hiện và mô tả các điểm đặc trưng.} Để phát hiện các điểm đặc trưng cho từng hình ảnh, chúng tôi sử dụng bộ phát hiện đặc trưng Hessian-Affine \cite{mikolajczyk2005comparison}. Đây là một bộ phát hiện bất biến dùng để thu thập các điểm quan tâm trong hình ảnh. Với mỗi điểm đặc trưng, một vector 128 chiều được tạo ra từ bộ mô tả SIFT. Từ vector này, chúng tôi sẽ tính RootSIFT \cite{arandjelovic2012three} để đạt được hiệu suất tốt hơn.
 
-\textbf{Gom cụm các đặc trưng.} Khi gom cụm một tập dữ liệu lớn, ta không thể dùng k-Means bởi vì chi phí tính toán quá lớn. Theo như \cite{philbin2007object}, Approximate K-Means (AKM) có thể được sử dụng để thay thế cho k-Means với một chi phí tính toán chấp nhận được. Ở đây chúng tôi sử dụng AKM để gom cụm thành 1 triệu từ trực quan.
+\textbf{Gom cụm các đặc trưng.} Khi gom cụm một tập dữ liệu lớn, ta không thể dùng k-Means bởi vì chi phí tính toán quá lớn. Theo như \cite{philbin2007object}, Approximate K-Means (AKM) có thể được sử dụng để thay thế cho k-Means với một chi phí tính toán chấp nhận được. Ở đây chúng tôi sử dụng AKM để gom cụm thành 1 triệu visual word.
 
 \textbf{Tạo chỉ mục ngược.} Như phương pháp đã được trình bày ở trên, số tập chỉ mục ngược sinh ra sẽ bằng với số ô của không gian phân cấp. Mỗi tập chỉ mục sẽ lưu thông tin cho một ô. Tất cả các tập chỉ mục đó sẽ được lưu thành 1 một tập tin duy nhất.
 
-\textbf{Quá trình truy vấn.} Mỗi hình ảnh truy vấn trong tập dữ liệu đánh giá chuẩn sẽ được rút trích các đặc trưng, tính toán ra các từ trực quan từ từ điển rồi sau đó lấy ra danh sách hình ảnh ứng viên từ các tập chỉ mục ngược. Cuối cùng, các hình ảnh ứng viên được xếp hạng bằng phương pháp bầu chọn.
+\textbf{Quá trình truy vấn.} Mỗi hình ảnh truy vấn trong tập dữ liệu đánh giá chuẩn sẽ được rút trích các đặc trưng, tính toán ra các visual word từ từ điển rồi sau đó lấy ra danh sách hình ảnh ứng viên từ các tập chỉ mục ngược. Cuối cùng, các hình ảnh ứng viên được xếp hạng bằng phương pháp bầu chọn.
 
 \section{Kết quả thí nghiệm và đánh giá kết quả}
 \label{experimental-result}
@@ -101,37 +101,37 @@ Dưới đây là chi tiết cài đặt và các thông số cho phương pháp
 \begin{center}
 	\begin{tabular}{l c c c}
 	\hline
-	\begin{tabular}[l]{@{}l@{}}Phương pháp\\(trên Oxford 5k)\end{tabular} & mAP & \begin{tabular}[l]{@{}c@{}}Thời gian truy vấn\\(55 truy vấn)\end{tabular} & Bộ nhớ sử dụng\\ \hline
+	\begin{tabular}[l]{@{}l@{}}Phương pháp\\(trên Oxford 5K)\end{tabular} & mAP & \begin{tabular}[l]{@{}c@{}}Thời gian truy vấn\\(55 truy vấn)\end{tabular} & Bộ nhớ sử dụng\\ \hline
     \begin{tabular}[l]{@{}l@{}}Phương pháp\\cơ sở 1\end{tabular} & 0.5678 & 0.0788 (s)  & 68.31MB \\ 
     \begin{tabular}[l]{@{}l@{}}Phương pháp\\cơ sở 2\end{tabular} & 0.6204 & 30.1153 (s) & 68.31MB\\ 
     \begin{tabular}[l]{@{}l@{}}\textbf{Phương pháp}\\\textbf{đề xuất} ($L=2$)\end{tabular} & \textbf{0.5851} & \textbf{0.1651} (s) & \textbf{481.69MB} \\
 	\hline
 	\end{tabular} \\
 \end{center}
-\caption[Hiệu suất của các phương pháp trên bộ dữ liệu Oxford 5k]{Hiệu suất của các phương pháp trên bộ dữ liệu Oxford 5k.}
+\caption[Hiệu suất của các phương pháp trên bộ dữ liệu Oxford 5K]{Hiệu suất của các phương pháp trên bộ dữ liệu Oxford 5K.}
 \label{table:oxford5k}
 \end{table}
 
-Bảng \ref{table:oxford5k} thể hiện kết quả chi tiết khi chạy thí nghiệm trên bộ dữ liệu Oxford 5k. Có thể thấy rằng phương pháp cơ sở 1 (sử dụng chỉ mục ngược căn bản và xếp hạng bằng bầu chọn) cho độ chính xác thấp với chỉ số mAP = 0.5678 nhưng tốc độ truy vấn rất nhanh với tổng thời gian truy vấn là 0.0788 giây.
+Bảng \ref{table:oxford5k} thể hiện kết quả chi tiết khi chạy thí nghiệm trên bộ dữ liệu Oxford 5K. Có thể thấy rằng phương pháp cơ sở 1 (sử dụng chỉ mục ngược căn bản và xếp hạng bằng bầu chọn) cho độ chính xác thấp với chỉ số mAP = 0.5678 nhưng tốc độ truy vấn rất nhanh với tổng thời gian truy vấn là 0.0788 giây.
 
 Trong khi đó, với việc tích hợp thông tin không gian ảnh vào trong chỉ mục ngược, phương pháp đề xuất cho độ chính xác mAP = 0.5851. Ở đây chúng tôi sử dụng mô hình không gian phân cấp ở cấp 2 ($L = 2$, bao gồm 21 tâp chỉ mục ngược). Thời gian truy vấn cho 55 truy vấn từ tập dữ liệu đánh giá chuẩn là 0.1651s (khoảng 3ms cho mỗi truy vấn) cũng không quá chênh lệch so với phương pháp cơ sở 1.
 
 Phương pháp cho độ chính xác cao nhất (mAP = 0.6204) là phương pháp cơ sở 2. Phương pháp này tốn rất nhiều chi phí cho quá trình xếp hạng. Để xếp hạng các ứng viên, phương pháp này tính và so sánh khoảng cách L2 (khoảng cách Euclidean) giữa hình ảnh truy vấn và từng hình ảnh ứng viên, các hình ảnh này được biểu diễn bằng mô hình SPM. Do đó, phương pháp này cho thời gian truy vấn rất lâu, \textbf{gấp khoảng 182 lần} so với phương pháp đề xuất.
 
-Kết quả trên cho thấy phương pháp của chúng tôi đã cân bằng được độ chính xác và thời gian truy vấn so với các phương pháp khác. Ta có thể thấy kết quả tương tự khi thử nghiệm với bộ Paris 6k. Kết quả được thể hiện trong Bảng \ref{table:paris6k}. Biểu đồ trong Hình \ref{Fig2Charts} cho thấy sự so sánh tương quan giữa các phương pháp khi thử nghiệm trên bộ dữ liệu Oxford 5k.
+Kết quả trên cho thấy phương pháp của chúng tôi đã cân bằng được độ chính xác và thời gian truy vấn so với các phương pháp khác. Ta có thể thấy kết quả tương tự khi thử nghiệm với bộ Paris 6K. Kết quả được thể hiện trong Bảng \ref{table:paris6k}. Biểu đồ trong Hình \ref{Fig2Charts} cho thấy sự so sánh tương quan giữa các phương pháp khi thử nghiệm trên bộ dữ liệu Oxford 5k.
 
 \begin{table}
 \begin{center}
 	\begin{tabular}{l c c c}
 	\hline
-	\begin{tabular}[l]{@{}l@{}}Phương pháp\\(trên Paris 6k)\end{tabular} & mAP & \begin{tabular}[l]{@{}c@{}}Thời gian truy vấn\\(55 truy vấn)\end{tabular} & Bộ nhớ sử dụng\\ \hline
+	\begin{tabular}[l]{@{}l@{}}Phương pháp\\(trên Paris 6K)\end{tabular} & mAP & \begin{tabular}[l]{@{}c@{}}Thời gian truy vấn\\(55 truy vấn)\end{tabular} & Bộ nhớ sử dụng\\ \hline
     \begin{tabular}[l]{@{}l@{}}Phương pháp\\cơ sở 1\end{tabular} & 0.5762  & 0.1137 (s)  & 80.37MB \\
     \begin{tabular}[l]{@{}l@{}}Phương pháp\\cơ sở 2\end{tabular} & 0.6421 & 40.5526 (s) & 80.37MB \\
     \begin{tabular}[l]{@{}l@{}}\textbf{Phương pháp}\\\textbf{đề xuất} ($L=2$)\end{tabular} & \textbf{0.5967} & \textbf{0.2158} (s) & \textbf{519.10MB} \\
 	\hline
 	\end{tabular} \\
 \end{center}
-\caption[Hiệu suất của các phương pháp trên bộ dữ liệu Paris 6k]{Hiệu suất của các phương pháp trên bộ dữ liệu Paris 6k.}
+\caption[Hiệu suất của các phương pháp trên bộ dữ liệu Paris 6K]{Hiệu suất của các phương pháp trên bộ dữ liệu Paris 6K.}
 \label{table:paris6k}
 \end{table}
 
@@ -215,7 +215,7 @@ Kết quả thí nghiệm trên cả ba bộ dữ liệu đều cho thấy hiệ
 \label{table:paris6k-test-level}	
 \end{table}
 
-Hình \ref{FigResultsOxf} cho thấy ví dụ về hình ảnh truy vấn và thể hiện các kết quả trả về với các phương pháp khác nhau trên bộ Oxford 5k. 10 hình ảnh có đứng đầu trong kết quả trả về của các phương pháp được hiển thị. Có thể thấy rằng phương pháp đề xuất của chúng tôi có độ chính xác tương đương với phương pháp cơ sở 2 trong khi kết quả của phương pháp cơ sở 1 vẫn chứa một vài hình ảnh sai.
+Hình \ref{FigResultsOxf} cho thấy ví dụ về hình ảnh truy vấn và thể hiện các kết quả trả về với các phương pháp khác nhau trên bộ Oxford 5K. 10 hình ảnh có đứng đầu trong kết quả trả về của các phương pháp được hiển thị. Có thể thấy rằng phương pháp đề xuất của chúng tôi có độ chính xác tương đương với phương pháp cơ sở 2 trong khi kết quả của phương pháp cơ sở 1 vẫn chứa một vài hình ảnh sai.
 
 
 \begin{figure}[!htbp]
@@ -226,12 +226,12 @@ Hình \ref{FigResultsOxf} cho thấy ví dụ về hình ảnh truy vấn và th
     \else
       \includegraphics[scale=0.25]{resOxford5k}
     \fi
-    \caption[Ví dụ thể hiện kết quả khi tìm kiếm một hình ảnh trên bộ dữ liệu Oxford 5k]{Ví dụ thể hiện kết quả khi tìm kiếm một hình ảnh trên bộ dữ liệu Oxford 5k. Những kết quả sai được đánh dấu bằng ô có viền màu đỏ.}
+    \caption[Ví dụ thể hiện kết quả khi tìm kiếm một hình ảnh trên bộ dữ liệu Oxford 5K]{Ví dụ thể hiện kết quả khi tìm kiếm một hình ảnh trên bộ dữ liệu Oxford 5K. Những kết quả sai được đánh dấu bằng ô có viền màu đỏ.}
     \label{FigResultsOxf}
   \end{center}
 \end{figure}
 
-Tương tự, trong hình \ref{FigResultsParis}, phương pháp đề xuất cũng cho thấy độ chính xác tốt tương đương với phương pháp cơ sở 2 khi chạy trên bộ dữ liệu Paris 6k.
+Tương tự, trong hình \ref{FigResultsParis}, phương pháp đề xuất cũng cho thấy độ chính xác tốt tương đương với phương pháp cơ sở 2 khi chạy trên bộ dữ liệu Paris 6K.
 
 
 \begin{figure}[!htbp]
@@ -242,7 +242,7 @@ Tương tự, trong hình \ref{FigResultsParis}, phương pháp đề xuất cũ
     \else
       \includegraphics[scale=0.2]{resParis6k}
     \fi
-    \caption[Ví dụ thể hiện kết quả khi tìm kiếm một hình ảnh trên bộ dữ liệu Paris 6k]{Ví dụ thể hiện kết quả khi tìm kiếm một hình ảnh trên bộ dữ liệu Paris 6k. Những kết quả sai được đánh dấu bằng ô có viền màu đỏ.}
+    \caption[Ví dụ thể hiện kết quả khi tìm kiếm một hình ảnh trên bộ dữ liệu Paris 6K]{Ví dụ thể hiện kết quả khi tìm kiếm một hình ảnh trên bộ dữ liệu Paris 6K. Những kết quả sai được đánh dấu bằng ô có viền màu đỏ.}
     \label{FigResultsParis}
   \end{center}
 \end{figure}
@@ -266,7 +266,7 @@ Tương tự, trong hình \ref{FigResultsParis}, phương pháp đề xuất cũ
 Một hệ thống truy vấn ảnh dựa trên mô hình BoW căn bản phải đối mặt với rất nhiều vấn đề như độ chính xác của quá trình gom cụm các đặc trưng, quá trình so khớp bị "gây nhiễu" bởi các stop word, lựa chọn độ đo khoảng cách phù hợp giữa các histogram,... Để tăng hiệu suất của quá trình truy vấn, dưới đây chúng tôi sẽ đề xuất các kỹ thuật cải tiến và thử nghiệm để so sánh kết quả.
 
 \subsection{Tăng độ chính xác của quá trình gom cụm}
-Quá trình gom cụm các đặc trưng tạo thành các từ trực quan càng chính xác thì độ chính xác của quá trình truy vấn càng cao. Như đã trình bày trong mục \ref{bag-of-words}, mặc dù đạt được độ chính xác cao nhưng thuật toán k-means đòi hỏi chi phí tính toán vô cùng lớn nên ta không thể áp dụng k-means cho bài toán này. Trong công trình \cite{philbin2007object}, tác giả đã chứng minh lợi thế vượt trội về chi phí tính toán của thuât toán gom cụm AKM so với k-means trong khi độ chính xác gần như nhau. Trong thuật toán k-means, quá trình gom cụm sẽ lặp đi lặp lại cho tới khi đạt được độ chính xác tuyệt đối. Còn AKM sẽ lặp lại quá trình gom cụm với một số lần lặp (iteration) đã được định trước. Độ phức tạp của thuật toán k-means luôn lớn hơn $O(N^2_w)$ còn của AKM là $O(N_d log(N_w))$. Tuy nhiên, để đạt hiệu suất cao nhất, ta cần phải điều chỉnh số lượng vòng lặp của AKM sao cho phù hợp với lượng tài nguyên giới hạn và đảm bảo kết quả tốt. Trong bảng \ref{table:iteration}, chúng tôi điều chỉnh số lượng vòng lặp (iteration) khác nhau của thuật toán AKM và thử nghiệm trên bộ dữ liệu Oxford 5k để theo dõi sự thay đổi của kết quả trả về.
+Quá trình gom cụm các đặc trưng tạo thành các visual word càng chính xác thì độ chính xác của quá trình truy vấn càng cao. Như đã trình bày trong mục \ref{bag-of-words}, mặc dù đạt được độ chính xác cao nhưng thuật toán k-means đòi hỏi chi phí tính toán vô cùng lớn nên ta không thể áp dụng k-means cho bài toán này. Trong công trình \cite{philbin2007object}, tác giả đã chứng minh lợi thế vượt trội về chi phí tính toán của thuât toán gom cụm AKM so với k-means trong khi độ chính xác gần như nhau. Trong thuật toán k-means, quá trình gom cụm sẽ lặp đi lặp lại cho tới khi đạt được độ chính xác tuyệt đối. Còn AKM sẽ lặp lại quá trình gom cụm với một số lần lặp (iteration) đã được định trước. Độ phức tạp của thuật toán k-means luôn lớn hơn $O(N^2_w)$ còn của AKM là $O(N_d log(N_w))$. Tuy nhiên, để đạt hiệu suất cao nhất, ta cần phải điều chỉnh số lượng vòng lặp của AKM sao cho phù hợp với lượng tài nguyên giới hạn và đảm bảo kết quả tốt. Trong bảng \ref{table:iteration}, chúng tôi điều chỉnh số lượng vòng lặp (iteration) khác nhau của thuật toán AKM và thử nghiệm trên bộ dữ liệu Oxford 5K để theo dõi sự thay đổi của kết quả trả về.
 
 \begin{table}
 \begin{center}
@@ -288,7 +288,7 @@ Quá trình gom cụm các đặc trưng tạo thành các từ trực quan càn
 Bảng \ref{table:iteration} cho thấy hiệu suất tăng mạnh khi số lần lặp tăng từ 5 lên 10 và giảm một chút khi tăng từ 10 lên 20 mặc dù chi phí tính toán vẫn tăng đáng kể. Khi số lần lặp tăng từ 20 lên 30, chi phí tính toán vẫn tăng nhưng hiệu suất không tăng nhiều. Điều đó cho thấy, càng về sau, khi ta tăng số lần lặp thì chi phí tính toán vẫn tăng nhưng hiệu suất tăng rất ít. Do đó, trong các thí nghiệm của mình, chúng tôi sử dụng thông số $iterations = 30$ để đạt được kết quả tốt nhất và giữ chi phí tính toán ở mức cho phép.
 
 \subsection{Lọc bỏ các stop word}
-Trong truy vấn văn bản, các từ phổ biến và xuất hiện thường xuyên trong văn bản với tần suất cao được gọi là stop word. Các stop word này làm giảm độ chính xác của quá trình truy vấn do không có giá trị nhiều trong việc phân biệt các văn bản. Tương tự, trong mô hình BoW, ta cũng bắt gặp rất nhiều stop word làm giảm độ chính xác của truy vấn, gây tốn không gian lưu trữ và chi phí tính toán. Do đó, chúng tôi tiến hành thêm một bước sàng lọc các từ trực quan bằng cách đếm số lần xuất hiện của các từ trong các văn bản và lọc bỏ một nhóm các từ có số lần xuất hiện nhiều nhất. Kết quả thí nghiệm được tiến hành trên bộ Oxford 5k và được trình bày trong bảng \ref{table:stop-words}.
+Trong truy vấn văn bản, các từ phổ biến và xuất hiện thường xuyên trong văn bản với tần suất cao được gọi là stop word. Các stop word này làm giảm độ chính xác của quá trình truy vấn do không có giá trị nhiều trong việc phân biệt các văn bản. Tương tự, trong mô hình BoW, ta cũng bắt gặp rất nhiều stop word làm giảm độ chính xác của truy vấn, gây tốn không gian lưu trữ và chi phí tính toán. Do đó, chúng tôi tiến hành thêm một bước sàng lọc các visual word bằng cách đếm số lần xuất hiện của các visual word trong các hình ảnh và lọc bỏ một nhóm các visual word có số lần xuất hiện nhiều nhất. Kết quả thí nghiệm được tiến hành trên bộ Oxford 5K và được trình bày trong bảng \ref{table:stop-words}.
 
 \begin{table}
 \begin{center}
@@ -302,8 +302,8 @@ Trong truy vấn văn bản, các từ phổ biến và xuất hiện thường 
 	%\label{table:datasets}
 	\end{tabular}
 \end{center}
-\caption[Kết quả lọc bỏ các stop words]{Thí nghiệm lọc bỏ các stop words (các từ có tần số xuất hiện cao nhất trong bộ dữ liệu).}
+\caption[Kết quả lọc bỏ các stop words]{Thí nghiệm lọc bỏ các stop words (các visual word có tần số xuất hiện cao nhất trong bộ dữ liệu).}
 \label{table:stop-words}
 \end{table}
 
-Kết quả thí nghiệm trong bảng \ref{table:stop-words} cho thấy khi lọc bỏ stop word, độ chính xác của truy vấn tăng lên rõ rệt. Khi lọc bỏ 5\% số từ có tần suất xuất hiện cao nhất, độ chính xác tăng mạnh. Tuy nhiên, nếu ta loại bỏ quá nhiều thì độ chính xác lại giảm xuống do với bộ dữ liệu này, lượng stop word chỉ giới hạn ở mức trong khoảng 5\%. Với kết quả trên, chúng tôi sẽ tiến hành tiền xử lý loại bỏ 5\% các từ có tần suất xuất hiện cao nhất ở các thí nghiệm tiếp theo để hệ thống đạt được hiệu suất tốt nhất.
+Kết quả thí nghiệm trong bảng \ref{table:stop-words} cho thấy khi lọc bỏ stop word, độ chính xác của truy vấn tăng lên rõ rệt. Khi lọc bỏ 5\% số visual word có tần suất xuất hiện cao nhất, độ chính xác tăng mạnh. Tuy nhiên, nếu ta loại bỏ quá nhiều thì độ chính xác lại giảm xuống do với bộ dữ liệu này, lượng stop word chỉ giới hạn ở mức trong khoảng 5\%. Với kết quả trên, chúng tôi sẽ tiến hành tiền xử lý loại bỏ 5\% các visual word có tần suất xuất hiện cao nhất ở các thí nghiệm tiếp theo để hệ thống đạt được hiệu suất tốt nhất.
