@@ -176,12 +176,13 @@ Client side là một ứng dụng cung cấp giao diện để người dùng t
 \end{figure}
 
 %% trình bày chi tiết các lớp ...
+\textbf{Lớp CameraManager:} truy xuất tới camera trên điện thoại di động, thiết lập các thông số liên quan tới camera, nhận dữ liệu hình ảnh từ camera.
 \begin{itemize}
 \item \textbf{Lớp CameraManager:} truy xuất tới camera trên điện thoại di động, thiết lập các thông số liên quan tới camera, nhận dữ liệu hình ảnh từ camera.
 
 \item \textbf{Lớp WebServiceManager:} lưu trữ thông tin kết nối và thực hiện các kết nối tới web service, gửi và nhận dữ liệu truy vấn, gọi bộ interface lắng nghe sự kiện WebServiceListener để tương tác với các thành phần khác của ứng dụng.
 
-\item \textbf{Lớp Decoder và Encoder:} giải mã và mã hóa hình ảnh.
+\item \textbf{Lớp Decoder và Encoder:} giải mã và mã hóa hình ảnh. Để dễ dàng cho quá trình truyền dẫn dữ liệu giữa client, web service và server thì mỗi hình ảnh sẽ được mã hóa dưới dạng Base64 String.
 
 \item \textbf{Interface WebServiceListener:} bộ lắng nghe các sự kiện liên quan tới web service. Onquerying: trong khi đang truy vấn. OnServerResponded: khi có kết quả phản hồi từ server, OnImageRecieved: khi có kết quả là các hình ảnh được trả về.
 
@@ -193,7 +194,7 @@ Client side là một ứng dụng cung cấp giao diện để người dùng t
 
 \item \textbf{Lớp CameraPreview:} hiển thị dữ liệu được lấy từ camera.
 
-\item \textbf{Lớp MenuView:} cung cấp các phím chức năng cho phép người dùng thao tác với ứng dụng, gọi bộ lắng nghe sự kiện ActionListener khi người dùng thực hiện các chức năng để tương tác với các thành phần khác.
+\item \textbf{Lớp MenuView:} cung cấp các phím chức năng cho phép người dùng thao tác với ứng dụng, bao gồm phím chụp hình cho phép người dùng chụp hình ảnh để truy vấn, phím flash để người dùng thay đổi trạng thái đèn flash, phím chọn hình ảnh để người dùng chọn một hình ảnh trong thiết bị dùng làm hình ảnh truy vấn; gọi bộ lắng nghe sự kiện ActionListener khi người dùng thực hiện các chức năng để tương tác với các thành phần khác.
 
 \item \textbf{RegionView:} cung cấp cho người dùng chức năng chọn vùng đối tượng trên camera. gọi bộ lắng ghe sự kiện RegionSelectionListener để tương tác với các thành phần khác.
 
