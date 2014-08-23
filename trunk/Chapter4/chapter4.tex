@@ -84,15 +84,28 @@ Tùy theo từng mục đích mà người ta sẽ tập trung vào việc nâng
 -- \textbf{Phương pháp cơ sở 2:} Sử dụng mô hình BoW + phương pháp chỉ mục ngược cơ bản với xếp hạng bằng việc tính toán khoảng cách giữa hình ảnh truy vấn với mỗi hình ảnh ứng viên. Các hình ảnh được biểu diễn bằng mô hình SPM \cite{lazebnik2006beyond}.\\
 -- \textbf{Phương pháp đề xuất:} Sử dụng mô hình BoW + phương pháp chỉ mục ngược được tính hợp thông tin không gian ảnh do chúng tôi đề xuất cho việc lập chỉ mục và xếp hạng.
 
-Dưới đây là chi tiết cài đặt và các thông số cho phương pháp đề xuất.
+Dưới đây là chi tiết cài đặt thí nghiệm và các thông số cho mô hình BoW của cả ba phương pháp (Hình \ref{FigExperimentSetting}) :
 
-\textbf{Phát hiện và mô tả các điểm đặc trưng.} Để phát hiện các điểm đặc trưng cho từng hình ảnh, chúng tôi sử dụng bộ phát hiện đặc trưng Hessian-Affine \cite{mikolajczyk2005comparison}. Đây là một bộ phát hiện bất biến dùng để thu thập các điểm quan tâm trong hình ảnh. Với mỗi điểm đặc trưng, một vector 128 chiều được tạo ra từ bộ mô tả SIFT. Từ vector này, chúng tôi sẽ tính RootSIFT \cite{arandjelovic2012three} để đạt được hiệu suất tốt hơn.
+\textbf{Phát hiện và mô tả các điểm đặc trưng.} Để phát hiện các điểm đặc trưng cho từng hình ảnh, chúng tôi sử dụng bộ phát hiện đặc trưng Hessian-Affine\cite{mikolajczyk2005comparison}. Đây là một bộ phát hiện bất biến dùng để thu thập các điểm quan tâm trong hình ảnh. Với mỗi điểm đặc trưng, một vector 128 chiều được tạo ra từ bộ mô tả SIFT. Từ vector này, chúng tôi sẽ tính RootSIFT\cite{arandjelovic2012three} để đạt được hiệu suất tốt hơn.
 
 \textbf{Gom cụm các đặc trưng.} Khi gom cụm một tập dữ liệu lớn, ta không thể dùng k-Means bởi vì chi phí tính toán quá lớn. Theo như \cite{philbin2007object}, Approximate K-Means (AKM) có thể được sử dụng để thay thế cho k-Means với một chi phí tính toán chấp nhận được. Ở đây chúng tôi sử dụng AKM để gom cụm thành 1 triệu visual word.
 
 \textbf{Tạo chỉ mục ngược.} Như phương pháp đã được trình bày ở trên, số tập chỉ mục ngược sinh ra sẽ bằng với số ô của không gian phân cấp. Mỗi tập chỉ mục sẽ lưu thông tin cho một ô. Tất cả các tập chỉ mục đó sẽ được lưu thành 1 một tập tin duy nhất.
 
 \textbf{Quá trình truy vấn.} Mỗi hình ảnh truy vấn trong tập dữ liệu đánh giá chuẩn sẽ được rút trích các đặc trưng, tính toán ra các visual word từ từ điển rồi sau đó lấy ra danh sách hình ảnh ứng viên từ các tập chỉ mục ngược. Cuối cùng, các hình ảnh ứng viên được xếp hạng bằng phương pháp bầu chọn.
+
+\begin{figure}[!htbp]
+  \begin{center}
+    \leavevmode
+    \ifpdf
+      \includegraphics[scale=0.23]{experiment_setting}
+    \else
+      \includegraphics[scale=0.23]{experiment_setting}
+    \fi
+    \caption[Thông số cài đặt thí nghiệm của mô hình BoW]{Thông số cài đặt thí nghiệm của mô hình BoW}
+    \label{FigExperimentSetting}
+  \end{center}
+\end{figure}
 
 \section{Kết quả thí nghiệm và đánh giá kết quả}
 \label{experimental-result}

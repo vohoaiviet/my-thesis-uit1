@@ -17,7 +17,7 @@ Trong chương này, trước tiên chúng tôi sẽ giới thiệu tổng quan 
 	\subsection{Mục đích và phạm vi của ứng dụng}
 Như đã giới thiệu trong mục \ref{section:intro-problem}, các hệ thống truy vấn ảnh có vô vàn ứng dụng khác nhau trong thực tế. Trong đề tài này, chúng tôi xây dựng ứng dụng nhằm phục vụ mục đích cơ bản là tìm kiếm đối tượng trên những kho dữ liệu ảnh với kích thước có thể lên tới hàng trăm ngàn ảnh. Đó có thể là kho dữ liệu ảnh của một tổ chức, công ty về một lĩnh vực nào đó. Hay xa hơn, ứng dụng này có thể phát triển cho việc tìm kiếm đối tượng trên kho dữ liệu video vì ta hoàn toàn có thể rút trích được hình ảnh từ các frame của video.
 
-Hơn nữa, ngày nay điện thoại thông minh đang dần trở lên rất phổ biến và dần trở thành vật bất ly thân của con người. Các ứng dụng trên điện thoại thông minh cũng phát triển ồ ạt, cung cấp cho người dùng rất nhiều tiện ích. Vì vậy chúng tôi hướng tới một ứng dụng giao tiếp với người dùng trên nền tảng điện thoại thông minh sử dụng hệ điều hành Android.
+Hơn nữa, ngày nay điện thoại thông minh đang dần trở lên rất phổ biến và dần trở thành vật bất ly thân của con người. Các ứng dụng trên điện thoại thông minh cũng phát triển ồ ạt, cung cấp cho người dùng rất nhiều tiện ích. Vì vậy chúng tôi hướng tới một ứng dụng giao tiếp với người dùng trên nền tảng điện thoại thông minh sử dụng hệ điều hành Android. Và để gần hơn với các yêu cầu thực tế khi số lượng người dùng ngày càng tăng, chúng tôi đề xuất xây dựng một hệ thống xử lý đám mây với nhiều server xử lý, kết nối với nhau thông qua dịch vụ web (web service).
 	
 	\subsection{Các chức năng chính}
 Ứng dụng được xây dựng với mục tiêu cung cấp một hệ thống tìm kiếm đối tượng trên ảnh, nhận đầu vào là hình ảnh chứa đối tượng truy vấn và trả về danh sách xếp hạng các hình ảnh theo mức độ tương đồng với hình truy vấn. Chi tiết các chức năng chính của ứng dụng như sau:
@@ -28,7 +28,7 @@ Hơn nữa, ngày nay điện thoại thông minh đang dần trở lên rất p
 
 -- Chọn vùng đối tượng: để nâng cao độ chính xác của việc tìm kiếm, người dùng có thể khoanh vùng đối tượng cần tìm trên ảnh.
 
--- Xem và tương tác với kết quả truy vấn: hiển thị kết quả truy vấn là danh sách các hình ảnh và cho phép người dùng tải xuống các hình ảnh này.
+-- Xem và tương tác với kết quả truy vấn: hiển thị kết quả truy vấn là danh sách các hình ảnh và cho phép người dùng xem và tải xuống các hình ảnh này.
 
 \section{Xây dựng ứng dụng}
 \label{c5-thietke}
@@ -44,7 +44,7 @@ Kiến trúc của hệ thống gồm làm 3 thành phần chính:
 
 Hình \ref{FigArchitecture} minh họa cho mô hình hoạt động tổng quan của hệ thống.
 
-Chi tiết các thành phần được trình bày trong phần tiếp theo.
+Chi tiết các thành phần được trình bày trong các phần tiếp theo (\ref{subsubsection:server_side}, \ref{subsection:web_service} \ref{subsection:client_side}).
 
 \begin{figure}[!htbp]
   \begin{center}
@@ -60,6 +60,7 @@ Chi tiết các thành phần được trình bày trong phần tiếp theo.
 \end{figure}
 
 \subsection{Server side}
+\label{subsection:server_side}
 Server side chính là thành phần quan trọng nhất của hệ thống, thực hiện các tác vụ xử lý truy vấn. Cấu trúc của server side gồm hai thành phần chính tương ứng với hai quá trình xử lý là quá trình training và quá trình truy vấn.
 
 -- Quá trình training: là quá trình biểu diễn lại tập dữ liệu hình ảnh, sử dụng các mô hình biểu diễn hình ảnh kết hợp với các phương pháp, kỹ thuật khác với mục đích tạo ra các dữ liệu cần thiết phục vụ quá trình truy vấn.
@@ -71,17 +72,17 @@ Như đã trình bày sơ lược trong mục trong mục \ref{sec:inverted-inde
 
 \textbf{Dò tìm, phát hiện và rút trích đặc trưng.} Từ kho dữ liệu hình ảnh được lưu sẵn trên server, bước đầu tiên của quá trình xử lý là sử dụng phương pháp phát hiện keypoint Hessian-Affine để xác định được vị trí các điểm keypoint trên hình ảnh. Từ thông tin đó, bộ SIFT descriptor mô tả và rút trích được 1 vector 128 chiều tương ứng với mỗi điểm keypoint. Những vector này sẽ được tính toán lại bằng phương pháp RootSIFT\cite{philbin2007object}. Các vector thu được chính là các tập đặc trưng của hình ảnh. 
 
-\textbf{Gom cụm đặc trưng và xây dựng từ điển.} Các vector đặc trưng sẽ được gom cụm bằng thuật toán AKM để thu được các visual word với số lượng cụm là k = 1 triệu. Kết quả ta sẽ thu được các visual word là các từ dùng để mô tả hình ảnh. Từ những visual word này, ta sẽ xây dựng thành một từ điển để phục vụ cho việc biểu diễn hình ảnh khi truy vấn.
+\textbf{Gom cụm đặc trưng và xây dựng từ điển.} Các vector đặc trưng sẽ được gom cụm bằng thuật toán Approximate K-Means\cite{philbin2007object} để thu được các visual word với số lượng cụm là k = 1 triệu. Kết quả ta sẽ thu được các visual word để mô tả hình ảnh. Từ những visual word này, ta sẽ xây dựng thành một từ điển để phục vụ cho việc biểu diễn hình ảnh khi truy vấn.
 
 \textbf{Xây dựng chỉ mục ngược.} Theo như phương pháp đề xuất đã được đề cập chi tiết trong Chương \ref{chapter:proposed}, chúng tôi sẽ xây dựng chỉ mục ngược từ từ điển nhằm đạt được hiệu suất cao trong quá trình truy vấn. Cụ thể hơn, từ bộ từ điển và thông tin không gian của tất cả các visual word của mỗi hình ảnh trong bộ dữ liệu, với cấp độ phân cấp là 2, có 21 chỉ mục ngược sẽ được tạo ra và lưu vào một file.
 
-Sơ đồ xử lý cùng các thông số cài đặt được trình bày chi tiết trong phần cài đặt thí nghiệm và trong Hình \ref{FigInvertedFile}. Quá trình training được thực hiện độc lập trên server và là bước tiền đề cho quá trình truy vấn.
+Sơ đồ xử lý cùng các thông số cài đặt được trình bày chi tiết trong phần cài đặt thí nghiệm (Mục \ref{experimental-setting}) và trong Hình \ref{FigInvertedFile}. Quá trình training được thực hiện độc lập trên server và là bước tiền đề, tạo dữ liệu phục vụ cho quá trình truy vấn.
 
 \subsubsection{Quá trình truy vấn}
 \label{subsubsection:truyvan_server}
 Đây là quá trình tương tác trực tiếp với hệ thống tìm kiếm và chạy song song web service, nhận yêu cầu từ web service chuyển tiếp tới sau đó tiến hành truy vấn trả kết quả ngược trở lại web service.
 
-Ngày nay, chất lượng hình ảnh ngày càng được tăng cao, kéo theo dung lượng hình ảnh cũng rất lớn. Việc trả về cho client một lượng lớn hình ảnh chất lượng cao là không thể vì lưu lượng và tốc độ băng thông còn bị giới hạn rất nhiều. Vì vậy sau khi xử lý truy vấn, server sẽ trả về cho client một danh sách hình ảnh thu nhỏ để đảm bảo tốc độ phản hồi. Chi tiết sẽ được trình bày rõ hơn trong mục \ref{subsection:optimize}.
+Ngày nay, chất lượng hình ảnh ngày càng được tăng cao, kéo theo dung lượng hình ảnh cũng rất lớn. Việc trả về cho client một lượng lớn hình ảnh chất lượng cao là không thể vì lưu lượng và tốc độ băng thông còn bị giới hạn rất nhiều. Vì vậy sau khi xử lý truy vấn, server sẽ trả về cho client một danh sách hình ảnh thu nhỏ để đảm bảo tốc độ phản hồi. Chi tiết sẽ được trình bày rõ hơn trong phần tối ưu hiệu suất hệ thống (Mục \ref{subsection:optimize}).
 
 Việc trả về cho client các hình ảnh thu nhỏ sẽ phát sinh thêm các chức năng khác như: xem hình ảnh chất lượng tốt hơn, tải hình ảnh gốc về thiết bị. Vì vậy, tại phía server cung cấp hai chức năng chính tương ứng với hai loại yêu cầu từ phía client là yêu cầu truy vấn một hình ảnh và yêu cầu tải một (hoặc một tập) các hình ảnh theo các mức chất lượng khác nhau.
 
@@ -108,7 +109,7 @@ Quá trình xử lý truy vấn được đã trình bày chi tiết trong mục
 
 \subsection{Web service}
 \label{subsection:web_service}
-Web service là thành phần trung gian đóng vai trò phân phối các yêu cầu từ phía client tới các server xử lý. Thành phần này sử dụng dịch vụ web chạy trên các máy chủ web cung cấp các phương thức giúp client và server xử lý kết nối, truyền tải các dữ liệu cần thiết.
+Web service là thành phần trung gian đóng vai trò phân phối các yêu cầu từ phía client tới các server xử lý. Thành phần này sử dụng dịch vụ web chạy trên các máy chủ web cung cấp các phương thức giúp client và server xử lý kết nối, truyền tải các dữ liệu cần thiết. Có nhiều cách để kết nối ba thành phần này với nhau, chi tiết sẽ được trình bày đưới đây.
 
 Với một hệ thống tìm kiếm cơ bản sử dụng từ khóa thông thường, thành phần xử lý có thể chính là web service. Với mỗi yêu cầu tìm kiếm, nó sẽ tạo ra một tiến trình và truy xuất tới cơ sở dữ liệu để lấy thông tin một cách nhanh chóng, có thể đáp ứng nhiều yêu cầu đồng thời, phụ thuộc vào phần cứng và các thiết lập trên nó. Nhưng với một hệ thống tìm kiếm hình ảnh, chi phí tính toán và tài nguyên phục vụ quá trình tìm kiếm rất lớn, việc tạo ra nhiều tiến trình xử lý là không khả thi. Nếu giới hạn số lượng yêu cầu ở mức thấp để đảm bảo an toàn cho hệ thống thì sẽ không đáp ứng được yêu cầu thực tế, ngược lại nếu không kiểm soát các yêu cầu truy vấn thì hệ thống có thể sẽ không đáp ứng được và dễ dàng bị quá tải dẫn dến nguy hiểm cả cho phần cứng. Chính vì vậy, giải pháp tốt nhất chính là chia tải, bằng cách sử dụng nhiều server xử lý và chuyển tiếp các yêu cầu truy vấn tới các server này. Từ đó ta có hai giải pháp kết nối:
 
@@ -144,6 +145,7 @@ Trước tiên, mỗi yêu cầu do client gửi lên sẽ được đưa vào m
 Trong hệ thống của chúng tôi, kỹ thuật long-polling được sử dụng để giữ yêu cầu kết nối của các server để chờ client, và giữ yêu cầu truy vấn của client để chờ kết quả xử lý từ server.
 
 \subsection{Client side}
+\label{subsection:client_side}
 \subsubsection{Tổng quan}
 Client side là một ứng dụng cung cấp giao diện để người dùng tương tác với hệ thống tìm kiếm. Nhận đầu vào là một hình ảnh cùng vùng đối tượng cần truy vấn, ứng dụng sẽ nén và mã hóa hình ảnh này sau đó gửi tới web service thông qua giao thức HTTP. Khi có kết quả trả về, ứng dụng sẽ phân tích và giải mã kết quả sau đó hiện thị cho người dùng. Hình \ref{FigAndroidClient} sau đây cho mô hình hoạt đổng tổng quan của ứng dụng tại client side.
 
@@ -166,9 +168,9 @@ Client side là một ứng dụng cung cấp giao diện để người dùng t
   \begin{center}
     \leavevmode
     \ifpdf
-      \includegraphics[scale=0.19]{client_framework}
+      \includegraphics[scale=0.19]{client_model}
     \else
-      \includegraphics[scale=0.19]{client_framework}
+      \includegraphics[scale=0.19]{client_model}
     \fi
     \caption[Sơ đồ tổ chức các lớp của ứng dụng trên hệ hệ điều hành Android.]{Sơ đồ tổ chức các lớp của ứng dụng trên hệ hệ điều hành Android.}
     \label{FigClientFramework}
@@ -176,11 +178,12 @@ Client side là một ứng dụng cung cấp giao diện để người dùng t
 \end{figure}
 
 %% trình bày chi tiết các lớp ...
-\textbf{Lớp CameraManager:} truy xuất tới camera trên điện thoại di động, thiết lập các thông số liên quan tới camera, nhận dữ liệu hình ảnh từ camera.
 \begin{itemize}
 \item \textbf{Lớp CameraManager:} truy xuất tới camera trên điện thoại di động, thiết lập các thông số liên quan tới camera, nhận dữ liệu hình ảnh từ camera.
 
 \item \textbf{Lớp WebServiceManager:} lưu trữ thông tin kết nối và thực hiện các kết nối tới web service, gửi và nhận dữ liệu truy vấn, gọi bộ interface lắng nghe sự kiện WebServiceListener để tương tác với các thành phần khác của ứng dụng.
+
+\item \textbf{Lớp ResultManager:} nhận, lưu trữ và quản lý kết quả truy vấn.
 
 \item \textbf{Lớp Decoder và Encoder:} giải mã và mã hóa hình ảnh. Để dễ dàng cho quá trình truyền dẫn dữ liệu giữa client, web service và server thì mỗi hình ảnh sẽ được mã hóa dưới dạng Base64 String.
 
@@ -190,7 +193,7 @@ Client side là một ứng dụng cung cấp giao diện để người dùng t
 
 \item \textbf{Interface ActionListener:} bộ lắng nghe các sự kiện là các chức năng trên ứng dụng. OnCameraCapture: khi có yêu cầu chụp hình. OnCameraFlashChange: khi có yêu cầu thay đổi trạng thái đèn flash. OnSelectImage: khi có yêu cầu chọn một hình ảnh trong thiết bị để truy vấn.
 
-\item \textbf{Interface RegionSelectionListener:} bộ lắng nghe các sự kiện liên quan tới chức năng chọn vùng đối tượng trên camera. OnRegionSelected: khi người dùng đã chọn vùng đối tượng. OnRegionConfirmed: khi vùng đối tượng đã được xác nhận và được tiến hành truy vấn. OnRegionCancelled: Khi vùng đối tượng đã bị hủy.
+\item \textbf{Interface RegionListener:} bộ lắng nghe các sự kiện liên quan tới chức năng chọn vùng đối tượng trên camera. OnRegionSelected: khi người dùng đã chọn vùng đối tượng. OnRegionConfirmed: khi vùng đối tượng đã được xác nhận và được tiến hành truy vấn. OnRegionCancelled: Khi vùng đối tượng đã bị hủy.
 
 \item \textbf{Lớp CameraPreview:} hiển thị dữ liệu được lấy từ camera.
 
@@ -198,7 +201,7 @@ Client side là một ứng dụng cung cấp giao diện để người dùng t
 
 \item \textbf{RegionView:} cung cấp cho người dùng chức năng chọn vùng đối tượng trên camera. gọi bộ lắng ghe sự kiện RegionSelectionListener để tương tác với các thành phần khác.
 
-\item \textbf{ResultView:} cung cấp giao diện cho phép người dùng xem và thao tác trên kết quả truy vấn. Lưu trữ kết quả truy vấn và gọi bộ lắng nghe sự kiên ResultListener để thao tác với các thành phần khác.
+\item \textbf{ResultView:} cung cấp giao diện cho phép người dùng xem và thao tác trên kết quả truy vấn, gọi bộ lắng nghe sự kiên ResultListener để thao tác với các thành phần khác.
 
 \item \textbf{Lớp FileManager:} đọc, ghi dữ liệu từ bộ nhớ thiết bị.
 
@@ -300,21 +303,21 @@ Như đã trình bày trong mục \ref{subsection:web_service}, thời gian truy
 
 Dung lượng hình ảnh phụ thuộc vào ba yếu tố chính là kích thước ảnh, định dạng ảnh và chất lượng hình ảnh. Khi nhận được dữ liệu từ camera của điện thoại, hình ảnh sẽ được nén dưới định dạng JPEG ở mức chất lượng là 30\%, sau đó nó sẽ được điều chỉnh lại với kích thước tối đa là 500 x 500 pixel. Ví dụ, một hình ảnh được chụp từ điện thoại với độ phân giải 2 Megapixel (1920x1080) có dung lượng khoảng 500 kilobytes (kB), sau khi được nén dưới định dạng JPEG ở mức chất lượng 30\% và điều chỉnh kích thước xuống 500x281 pixel, dung lượng hình ảnh giảm chỉ còn khoảng 15kB, tức là giảm 97\%. Như vậy, việc truyền tải sẽ rất nhanh chóng, có thể đáp ứng được trên mạng EDGE với tốc độ 236kb/s. Nhưng với chất lượng hình ảnh như vậy sẽ ảnh hưởng tới kết quả truy vấn.
 
-Kết quả truy vấn phụ thuộc phần lớn vào quá trình trích xuất đặc trưng tại server xử lý, và chất lượng hình ảnh sẽ ảnh hưởng trực tiếp tới quá trình này. Tại bước trích xuất đặc trưng, server xử lý sử dụng bộ phát hiện đặc trưng Hessian-affine detector và bộ mô tả đặc trưng SIFT descriptor, cả hai đều phụ thuộc phần lớn vào texture trên hình ảnh là các góc cạnh, đường viền. Việc giảm dung lượng hình ảnh như đã trình bày ở trên không làm mất các góc cạnh đường viền trên hình, vì vậy không ảnh hưởng nhiều tới kết quả truy vấn, mặt khác nó còn giúp tăng tốc độ xử lý trích xuất đặc trưng tại phía server.
+Kết quả truy vấn phụ thuộc phần lớn vào quá trình trích xuất đặc trưng tại server xử lý, và chất lượng hình ảnh sẽ ảnh hưởng trực tiếp tới quá trình này. Tại bước trích xuất đặc trưng, server xử lý sử dụng bộ phát hiện đặc trưng Hessian-Affine\cite{mikolajczyk2005comparison} detector và bộ mô tả đặc trưng SIFT descriptor\cite{lowe2004distinctive}, cả hai đều phụ thuộc phần lớn vào texture trên hình ảnh là các góc cạnh, đường viền. Việc giảm dung lượng hình ảnh như đã trình bày ở trên không làm mất các góc cạnh đường viền trên hình, vì vậy không ảnh hưởng nhiều tới kết quả truy vấn, mặt khác nó còn giúp tăng tốc độ xử lý trích xuất đặc trưng tại phía server.
 
 \item \textbf{Tại web service: giảm số lượng request bằng kỹ thuật long-polling}
 
-Kỹ thuật long-polling như đã trình bày trong mục \ref{subsection:web_service} giúp giảm lượng request từ mỗi client khi có yêu cầu truy vấn hình ảnh. Vì vậy hệ thống có thể đáp ứng được nhiều client hơn, tốc độ phản hồi tới client vì thế cũng sẽ nhanh hơn.
+Kỹ thuật long-polling như đã trình bày trong mục \ref{subsection:web_service} giúp giảm lượng request từ mỗi client khi có yêu cầu truy vấn hình ảnh. Vì vậy hệ thống có thể đáp ứng được nhiều request hơn, tốc độ phản hồi tới client vì thế cũng sẽ nhanh hơn.
 
 \item \textbf{Tại server xử lý: tối ưu kết quả trả về}
 
 Kết quả của quá trình truy vấn là một danh sách các hình ảnh và việc trả về những hình ảnh này cho client cũng sẽ chịu ảnh hưởng rất lớn từ tốc độ băng thông. Với một yêu cầu truy vấn, server chỉ cần trả về một số hình ảnh đầu trong danh sách xếp hạng là đủ, và chỉ trả về các hình ảnh thu nhỏ dể giảm tối đa thời gian phản hồi về client. Cụ thể hơn, khi có kết quả truy vấn, server sẽ trả về cho client 15 hình ảnh thu nhỏ đứng đầu danh sách xếp hạng, mỗi hình thu nhỏ này có kích thước tối đa là 150 x 150 pixel và kích cỡ trung bình khoảng 5kB mỗi hình. Như vậy, tổng dung lượng cần gửi về client cho mỗi lần truy vấn là khoảng 75kB, vẫn có thể đáp ứng trên những kết nối chậm. 
 
-Thêm vào đó, việc sử dụng các server truy xuất dữ liệu độc lập với quá trình xử lý truy vấn cũng giúp tăng hiệu suất của hệ thống bằng cách phàn hồi từng phần dữ liệu về client. Với chức năng xem cụ thể hình ảnh trả về, các server truy xuất dữ liệu sẽ nhận yêu cầu xem hình ảnh từ client và gửi về một hình ảnh thu nhỏ với kích thước tối đã là 500 x 500 pixel, với dung lượng khoảng 30kB mỗi hình, vẫn có thể hiển thị tốt trên điện thoại di động màn hình full hd (1920x1080) trong khi dung lượng giảm tới 95\% (với bộ dữ liệu oxford 5k, mỗi hình ảnh gốc nặng trung bình 500kB).
+Thêm vào đó, việc sử dụng các server truy xuất dữ liệu độc lập với quá trình xử lý truy vấn cũng giúp tăng hiệu suất của hệ thống bằng cách phàn hồi từng phần dữ liệu về client. Với chức năng xem cụ thể hình ảnh trả về, các server truy xuất dữ liệu sẽ nhận yêu cầu xem hình ảnh từ client và gửi về một hình ảnh thu nhỏ với kích thước tối đã là 500 x 500 pixel, với dung lượng khoảng 30kB mỗi hình, vẫn có thể hiển thị tốt trên điện thoại di động màn hình Full HD (1920x1080) trong khi dung lượng giảm tới 95\% (với bộ dữ liệu oxford 5k, mỗi hình ảnh gốc nặng trung bình 500kB).
 
 \end{itemize}
 
-Như vậy, với việc tối ưu tất cả các thành phần trên, hệ thống có thể cung cấp một ứng dụng đáp ứng được các yêu cầu thực tế đối với một hệ thống tìm kiếm đối tượng trên ảnh.
+Hiệu quả của việc tối ưu các thành phần trên sẽ được kiểm chứng trong phần tiếp theo.
 
 \section{Cài đặt và thực nghiệm}
 \label{c5-caidat}
