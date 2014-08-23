@@ -8,28 +8,29 @@
 \fi
 
 \section{Kết luận}
-Với những kiến thức cơ sở và sự tìm hiểu, nghiên cứu các công trình trong lĩnh vực truy vấn ảnh, chúng tôi đã hệ thống lại những nền tảng kiến thức quan trọng. Từ đó, đề xuất phương pháp phương pháp nhằm nâng hiệu suất của các hệ thống truy vấn ảnh trên tập dữ liệu lớn phục vụ cho các ứng dụng yêu cầu thời gian thực.
+Với những kiến thức cơ sở và sự tìm hiểu, nghiên cứu các công trình trong lĩnh vực truy vấn ảnh, chúng tôi đã hệ thống lại những nền tảng kiến thức quan trọng. Từ đó, đề xuất phương pháp cải tiến nhằm nâng cao hiệu suất của hệ thống truy vấn ảnh trên tập dữ liệu lớn phục vụ cho các ứng dụng thời gian thực.
 
 Để đánh giá hiệu quả của phương pháp đề xuất, chúng tôi đã tiến hành cài đặt và thử nghiệm với ba bộ dữ liệu chuẩn là Oxford 5K, Paris 6K và Oxford 100K đồng thời so sánh với các phương pháp cơ bản phổ biến hiện nay. Kết quả thí nghiệm được đánh giá theo quy trình đánh giá chuẩn được dùng cho các hệ thống truy vấn ảnh. Kết quả đạt được cho thấy phương pháp đề xuất đã giúp nâng cao hiệu suất của hệ thống truy vấn và đạt được sự cân bằng giữa độ chính xác và thời gian truy vấn.
 
 Kết quả nghiên cứu này đã được tổng hợp thành bài báo gửi đăng tại hội nghị \textit{The IEEE International Symposium on Multimedia} (ISM2014):  Bien-Van Nguyen, Duy Pham, Thanh Duc Ngo, Duy-Dinh Le and Anh Duc Duong, \textbf{``Integrating Spatial Information into Inverted Index for Large-Scale Image Retrieval''}.
 
-Mặc dù công trình nghiên cứu còn giới hạn và nhiều hạn chế song đã đạt được những thành quả bước đầu đáng khích lệ, làm nền tảng cho những nghiên cứu sau này.
+Cùng với đó, từ những kiến thức nền tảng và phương pháp cải tiến, chúng tôi đã xây dựng được một ứng dụng thực nghiệm đáp ứng được các yêu cầu về độ chính xác và thời gian phản hồi, là tiền đề để xây dựng những ứng dụng giải quyết những vấn đề cụ thể trong thực tế.
+
+%Mặc dù công trình nghiên cứu còn giới hạn và nhiều hạn chế song đã đạt được những thành quả bước đầu đáng khích lệ, làm nền tảng cho những nghiên cứu sau này.
 
 \section{Hướng phát triển}
 \subsection{Mở rộng phương pháp đề xuất}
 Để có thể xây dựng được những hệ thống truy vấn ảnh ứng dụng trong thực tế có khả năng truy vấn trên cơ sở dữ liệu gồm hàng triệu hoặc thâm chí hàng tỉ hình ảnh trong thời gian thực, sẽ cần rất nhiều thứ cần làm và ta cũng không thể nào biết được như thế nào sẽ là đủ để cho ra đời một hệ thống đáp ứng được các yêu cầu trong thực tế. Dưới đây chúng tôi chỉ nêu ra một vài hướng mở rộng cho công trình này.\\
 \textbf{Cải tiến phương pháp xếp hạng.} Phương pháp xếp hạng bầu chọn (voting) chúng tôi dùng trong công trình này vẫn còn khá sơ khai và chưa tận dụng hết được thông tin không gian ảnh của chỉ mục ngược. Cụ thể, phương pháp bầu chọn mới chỉ quan tâm tới việc hai ô vuông trong không gian phân cấp có chứa cùng một visual word hay không chứ không quan tâm tới con số của visual word đó chứa trong mỗi ô. Đồng thời cũng phải quan tâm tới việc đánh trọng số cho trường hợp này để tránh rơi vào trường hợp có quá nhiều visual word giống nhau tập trung trong một ô cục bộ.\\
-\textbf{Thay đổi cấu trúc của chỉ mục ngược.} Cấu trúc của chỉ mục ngược vẫn chỉ dừng lại ở việc lưu trữ danh sách hình ảnh có chứa một visual word nào đó, do đó vẫn chưa tận dụng hết được khả năng của chỉ mục ngược. Ta có thể mở rộng cấu trúc của chỉ mục ngược để phục vụ cho việc lưu trữ các thông tin khác như trọng số tương ứng của từng visual word, số lượng của visual word đó trong ảnh,...
-
+\textbf{Kết hợp với các phương pháp xếp hạng khác.} Phương pháp của chúng tôi hoàn toàn có thể kết hợp với những phương pháp xếp hạng khác như \textbf{tf-idf} để tăng kết quả truy vấn bằng cách xếp hạng lại một phần hoặc thậm chí dùng làm trọng số để xếp hạng lại toàn bộ kết quả. Chẳng hạn phương pháp Spatial Pyramid Matching thường dùng để xếp hạng lại kết quả của \textbf{tf-idf}.\\ 
+\textbf{Thay đổi cấu trúc của chỉ mục ngược.} Cấu trúc của chỉ mục ngược vẫn chỉ dừng lại ở việc lưu trữ danh sách hình ảnh có chứa một visual word nào đó, do đó vẫn chưa tận dụng hết được khả năng của chỉ mục ngược. Ta có thể mở rộng cấu trúc của chỉ mục ngược để phục vụ cho việc lưu trữ các thông tin khác như trọng số tương ứng của từng visual word, số lượng của visual word đó trong ảnh,...\\
 
 \subsection{Phát triển ứng dụng thực tế}
-Ứng dụng tìm kiếm đối tượng trên ảnh nhóm đã xây dựng đã chứng minh được tính thực tế của nghiên cứu, đồng thời mở ra hướng ứng dụng trên nhiều lĩnh vực khác nhau trong thực tế.
+Ứng dụng tìm kiếm đối tượng trên ảnh chúng tôi xây dựng đã chứng minh được tính thực tiễn của công trình nghiên cứu này, đồng thời mở ra hướng ứng dụng trên nhiều lĩnh vực khác nhau trong thực tế.
 
-Để ứng dụng đáp ứng được các yêu cầu khác nhau của từng lĩnh vực, ta có thể thay đổi cơ sở dữ liệu và nội dung của kết quả trả về có thể là các thông tin liên quan đến đối tượng cần truy vấn,... Tùy theo yêu cầu cụ thế.
+Phát triển một ứng dụng giải quyết một vấn đề cụ thể trong đời sống. Chúng tôi hương tới một ứng dụng cụ thể hơn, có thể là ứng dụng tìm kiếm thông tin sản phẩm, quảng bá sản phẩm theo ngữ cảnh, bảo vệ thương hiệu hay một ứng dụng tìm kiếm địa điểm du lịch... Sử dụng kết quả của hệ thống cơ bản làm nền tảng để phân tích, kết hợp với nhiều thông tin khác nhau trong từng lĩnh vực, từ đó đưa ra được kết quả cần thiết cho từng bài toán cụ thể.
 
-Ngoài ra để đáp ứng được lượng request lớn, hệ thống hoàn toàn có khả năng mở rộng, scale trên nhiều server và đảm bảo được cân bằng tải giữa các server. Như vậy sẽ tăng hiệu năng của hệ thống và giảm chi phí về tài nguyên cho doanh nghiệp.
-
+Hơn nữa, với việc thiết kế một ứng dụng thân thiện với người dùng và việc tối ưu hệ thống để đáp ứng được nhiều yêu cầu cùng lúc, cùng với khả năng chia tải để xử lý, chúng tôi hướng tới một ứng dụng thực tế đáp ứng được lượng người dùng lớn với thời gian phản hồi nhanh.
 %\def\baselinestretch{1.66} 
 
 %%% ----------------------------------------------------------------------

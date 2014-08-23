@@ -309,7 +309,9 @@ Kết quả truy vấn phụ thuộc phần lớn vào quá trình trích xuất
 
 Kỹ thuật long-polling như đã trình bày trong mục \ref{subsection:web_service} giúp giảm lượng request từ mỗi client khi có yêu cầu truy vấn hình ảnh. Vì vậy hệ thống có thể đáp ứng được nhiều request hơn, tốc độ phản hồi tới client vì thế cũng sẽ nhanh hơn.
 
-\item \textbf{Tại server xử lý: tối ưu kết quả trả về}
+\item \textbf{Tại server xử lý: sử dụng phương pháp đề xuất và tối ưu kết quả trả về}
+
+Để tăng tốc độ truy vấn, hệ thống xử dụng phương pháp đề xuất đã trình bày trong mục \ref{sec:intergrated} cùng những kết quả thí nghiệm chứng minh tính hiệu quả của phương pháp trong chương \ref{chapter:experiment}. Cùng với đó là việc tối ưu kết quả trả về để giảm tối đa thời gian phản hồi tới client.
 
 Kết quả của quá trình truy vấn là một danh sách các hình ảnh và việc trả về những hình ảnh này cho client cũng sẽ chịu ảnh hưởng rất lớn từ tốc độ băng thông. Với một yêu cầu truy vấn, server chỉ cần trả về một số hình ảnh đầu trong danh sách xếp hạng là đủ, và chỉ trả về các hình ảnh thu nhỏ dể giảm tối đa thời gian phản hồi về client. Cụ thể hơn, khi có kết quả truy vấn, server sẽ trả về cho client 15 hình ảnh thu nhỏ đứng đầu danh sách xếp hạng, mỗi hình thu nhỏ này có kích thước tối đa là 150 x 150 pixel và kích cỡ trung bình khoảng 5kB mỗi hình. Như vậy, tổng dung lượng cần gửi về client cho mỗi lần truy vấn là khoảng 75kB, vẫn có thể đáp ứng trên những kết nối chậm. 
 
