@@ -21,6 +21,145 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{young1974analysis}
+I.~T. Young, J.~E. Walker, and J.~E. Bowie, ``An analysis technique for
+  biological shape. i,'' \emph{Information and control}, vol.~25, no.~4, pp.
+  357--370, 1974.
+
+\bibitem{peura1997efficiency}
+M.~Peura and J.~Iivarinen, ``Efficiency of simple shape descriptors,'' in
+  \emph{Proceedings of the third international workshop on visual form}, vol.
+  443.\hskip 1em plus 0.5em minus 0.4em\relax Citeseer, 1997, p. 451.
+
+\bibitem{chetverikov1999matching}
+D.~Chetverikov and Y.~Khenokh, ``Matching for shape defect detection,'' in
+  \emph{Computer Analysis of Images and Patterns}.\hskip 1em plus 0.5em minus
+  0.4em\relax Springer, 1999, pp. 367--374.
+
+\bibitem{davies2004machine}
+E.~R. Davies, \emph{Machine vision: theory, algorithms, practicalities}.\hskip
+  1em plus 0.5em minus 0.4em\relax Elsevier, 2004.
+
+\bibitem{van1991contour}
+P.~J. Van~Otterloo, \emph{A contour-oriented approach to shape analysis}.\hskip
+  1em plus 0.5em minus 0.4em\relax Prentice Hall International (UK) Ltd., 1991.
+
+\bibitem{zhang2002comparative}
+D.~Zhang, G.~Lu \emph{et~al.}, ``A comparative study of fourier descriptors for
+  shape representation and retrieval,'' in \emph{Proc. of 5th Asian Conference
+  on Computer Vision (ACCV)}.\hskip 1em plus 0.5em minus 0.4em\relax Citeseer,
+  2002, pp. 652--657.
+
+\bibitem{sonka2014image}
+M.~Sonka, V.~Hlavac, and R.~Boyle, \emph{Image processing, analysis, and
+  machine vision}.\hskip 1em plus 0.5em minus 0.4em\relax Cengage Learning,
+  2014.
+
+\bibitem{gonzalez2002digital}
+R.~C. Gonzalez and R.~E. Woods, ``Digital image processing,'' pp. 502--503,
+  2002.
+
+\bibitem{del1997visual}
+A.~Del~Bimbo and P.~Pala, ``Visual image retrieval by elastic matching of user
+  sketches,'' \emph{Pattern Analysis and Machine Intelligence, IEEE
+  Transactions on}, vol.~19, no.~2, pp. 121--132, 1997.
+
+\bibitem{asada1986curvature}
+H.~Asada and M.~Brady, ``The curvature primal sketch,'' \emph{Pattern Analysis
+  and Machine Intelligence, IEEE Transactions on}, no.~1, pp. 2--14, 1986.
+
+\bibitem{pavlidis1982algorithms}
+T.~Pavlidis, \emph{Algorithms for graphics and image processing}.\hskip 1em
+  plus 0.5em minus 0.4em\relax Computer science press, 1982.
+
+\bibitem{hu1962visual}
+M.-K. Hu, ``Visual pattern recognition by moment invariants,''
+  \emph{Information Theory, IRE Transactions on}, vol.~8, no.~2, pp. 179--187,
+  1962.
+
+\bibitem{taubin1991recognition}
+G.~Taubin and D.~B. Cooper, ``Recognition and positioning of rigid objects
+  using algebraic moment invariants,'' in \emph{San Diego,'91, San Diego,
+  CA}.\hskip 1em plus 0.5em minus 0.4em\relax International Society for Optics
+  and Photonics, 1991, pp. 175--186.
+
+\bibitem{taubin1991object}
+------, \emph{Object recognition based on moment (or algebraic)
+  invariants}.\hskip 1em plus 0.5em minus 0.4em\relax IBM TJ Watson Research
+  Center, 1991.
+
+\bibitem{teague1980image}
+M.~R. Teague, ``Image analysis via the general theory of moments*,''
+  \emph{JOSA}, vol.~70, no.~8, pp. 920--930, 1980.
+
+\bibitem{meier1998automatic}
+T.~Meier and K.~N. Ngan, ``Automatic segmentation of moving objects for video
+  object plane generation,'' \emph{Circuits and Systems for Video Technology,
+  IEEE Transactions on}, vol.~8, no.~5, pp. 525--538, 1998.
+
+\bibitem{tuceryan1998texture}
+M.~Tuceryan and A.~K. Jain, ``Texture analysis,'' \emph{The handbook of pattern
+  recognition and computer vision}, vol.~2, pp. 207--248, 1998.
+
+\bibitem{manjunath1996texture}
+B.~S. Manjunath and W.-Y. Ma, ``Texture features for browsing and retrieval of
+  image data,'' \emph{Pattern Analysis and Machine Intelligence, IEEE
+  Transactions on}, vol.~18, no.~8, pp. 837--842, 1996.
+
+\bibitem{montoya2009wavelet}
+J.~A. Montoya~Zegarra, N.~J. Leite, and R.~da~Silva~Torres, ``Wavelet-based
+  fingerprint image retrieval,'' \emph{Journal of computational and applied
+  mathematics}, vol. 227, no.~2, pp. 294--307, 2009.
+
+\bibitem{xu2006evaluation}
+F.~Xu and Y.-J. Zhang, ``Evaluation and comparison of texture descriptors
+  proposed in mpeg-7,'' \emph{Journal of Visual Communication and Image
+  Representation}, vol.~17, no.~4, pp. 701--716, 2006.
+
+\bibitem{tamura1978textural}
+H.~Tamura, S.~Mori, and T.~Yamawaki, ``Textural features corresponding to
+  visual perception,'' \emph{Systems, Man and Cybernetics, IEEE Transactions
+  on}, vol.~8, no.~6, pp. 460--473, 1978.
+
+\bibitem{haralick1973textural}
+R.~M. Haralick, K.~Shanmugam, and I.~H. Dinstein, ``Textural features for image
+  classification,'' \emph{Systems, Man and Cybernetics, IEEE Transactions on},
+  no.~6, pp. 610--621, 1973.
+
+\bibitem{nevatia1982machine}
+R.~Nevatia and R.~Nevatia, \emph{Machine perception}.\hskip 1em plus 0.5em
+  minus 0.4em\relax Prentice-Hall Englewood Cliffs, NJ, 1982.
+
+\bibitem{wu2000texture}
+P.~Wu, B.~Manjunath, S.~Newsam, and H.~Shin, ``A texture descriptor for
+  browsing and similarity retrieval,'' \emph{Signal Processing: Image
+  Communication}, vol.~16, no.~1, pp. 33--43, 2000.
+
+\bibitem{swain1991color}
+M.~J. Swain and D.~H. Ballard, ``Color indexing,'' \emph{International journal
+  of computer vision}, vol.~7, no.~1, pp. 11--32, 1991.
+
+\bibitem{stricker1995similarity}
+M.~A. Stricker and M.~Orengo, ``Similarity of color images,'' in
+  \emph{IS\&T/SPIE's Symposium on Electronic Imaging: Science \&
+  Technology}.\hskip 1em plus 0.5em minus 0.4em\relax International Society for
+  Optics and Photonics, 1995, pp. 381--392.
+
+\bibitem{stehling2003cell}
+R.~O. Stehling, M.~A. Nascimento, and A.~X. Falc{\~a}o, ``Cell histograms
+  versus color histograms for image representation and retrieval,''
+  \emph{Knowledge and Information Systems}, vol.~5, no.~3, pp. 315--336, 2003.
+
+\bibitem{deng2001efficient}
+Y.~Deng, B.~Manjunath, C.~Kenney, M.~S. Moore, and H.~Shin, ``An efficient
+  color representation for image retrieval,'' \emph{Image Processing, IEEE
+  Transactions on}, vol.~10, no.~1, pp. 140--147, 2001.
+
+\bibitem{manjunath2001color}
+B.~S. Manjunath, J.-R. Ohm, V.~V. Vasudevan, and A.~Yamada, ``Color and texture
+  descriptors,'' \emph{Circuits and Systems for Video Technology, IEEE
+  Transactions on}, vol.~11, no.~6, pp. 703--715, 2001.
+
 \bibitem{lowe2004distinctive}
 D.~G. Lowe, ``Distinctive image features from scale-invariant keypoints,''
   \emph{International journal of computer vision}, vol.~60, no.~2, pp. 91--110,
@@ -81,16 +220,6 @@ R.~Arandjelovic and A.~Zisserman, ``Three things everyone should know to
   (CVPR), 2012 IEEE Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax
   IEEE, 2012, pp. 2911--2918.
 
-\bibitem{Salton:1986:IMI:576628}
-G.~Salton and M.~J. McGill, \emph{Introduction to Modern Information
-  Retrieval}.\hskip 1em plus 0.5em minus 0.4em\relax New York, NY, USA:
-  McGraw-Hill, Inc., 1986.
-
-\bibitem{manning2008introduction}
-C.~D. Manning, P.~Raghavan, and H.~Sch{\"u}tze, \emph{Introduction to
-  information retrieval}.\hskip 1em plus 0.5em minus 0.4em\relax Cambridge
-  university press Cambridge, 2008, vol.~1.
-
 \bibitem{sivic2003video}
 J.~Sivic and A.~Zisserman, ``Video google: A text retrieval approach to object
   matching in videos,'' in \emph{Computer Vision, 2003. Proceedings. Ninth IEEE
@@ -102,17 +231,36 @@ J.~Sivic and A.~Zisserman, ``Video google: A text retrieval approach to object
   \emph{Pattern Analysis and Machine Intelligence, IEEE Transactions on},
   vol.~31, no.~4, pp. 591--606, 2009.
 
+\bibitem{philbin2007object}
+J.~Philbin, O.~Chum, M.~Isard, J.~Sivic, and A.~Zisserman, ``Object retrieval
+  with large vocabularies and fast spatial matching,'' in \emph{Computer Vision
+  and Pattern Recognition, 2007. CVPR'07. IEEE Conference on}.\hskip 1em plus
+  0.5em minus 0.4em\relax IEEE, 2007, pp. 1--8.
+
 \bibitem{nister2006scalable}
 D.~Nister and H.~Stewenius, ``Scalable recognition with a vocabulary tree,'' in
   \emph{Computer Vision and Pattern Recognition, 2006 IEEE Computer Society
   Conference on}, vol.~2.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2006,
   pp. 2161--2168.
 
-\bibitem{philbin2007object}
-J.~Philbin, O.~Chum, M.~Isard, J.~Sivic, and A.~Zisserman, ``Object retrieval
-  with large vocabularies and fast spatial matching,'' in \emph{Computer Vision
-  and Pattern Recognition, 2007. CVPR'07. IEEE Conference on}.\hskip 1em plus
-  0.5em minus 0.4em\relax IEEE, 2007, pp. 1--8.
+\bibitem{manning2008introduction}
+C.~D. Manning, P.~Raghavan, and H.~Sch{\"u}tze, \emph{Introduction to
+  information retrieval}.\hskip 1em plus 0.5em minus 0.4em\relax Cambridge
+  university press Cambridge, 2008, vol.~1.
+
+\bibitem{krauss1987taxicab}
+E.~Krauss, ``Taxicab geometry: an adventure in non-euclidean geometry,'' 1987.
+
+\bibitem{deza2009encyclopedia}
+M.~M. Deza and E.~Deza, \emph{Encyclopedia of distances}.\hskip 1em plus 0.5em
+  minus 0.4em\relax Springer, 2009.
+
+\bibitem{cheng2010mammographic}
+E.~Cheng, N.~Xie, H.~Ling, P.~R. Bakic, A.~D. Maidment, and V.~Megalooikonomou,
+  ``Mammographic image classification using histogram intersection,'' in
+  \emph{Biomedical Imaging: From Nano to Macro, 2010 IEEE International
+  Symposium on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2010, pp.
+  197--200.
 
 \bibitem{zhang1995robust}
 Z.~Zhang, R.~Deriche, O.~Faugeras, and Q.-T. Luong, ``A robust technique for
@@ -167,15 +315,6 @@ J.~Philbin, O.~Chum, M.~Isard, J.~Sivic, and A.~Zisserman, ``Lost in
   databases,'' in \emph{Computer Vision and Pattern Recognition, 2008. CVPR
   2008. IEEE Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2008,
   pp. 1--8.
-
-\bibitem{JDS08}
-\BIBentryALTinterwordspacing
-H.~J\'egou, M.~Douze, and C.~Schmid, ``Hamming embedding and weak geometric
-  consistency for large scale image search,'' in \emph{European Conference on
-  Computer Vision}, ser. LNCS, A.~Z. David~Forsyth, Philip~Torr, Ed.,
-  vol.~I.\hskip 1em plus 0.5em minus 0.4em\relax Springer, oct 2008, pp.
-  304--317. [Online]. Available: \url{http://lear.inrialpes.fr/pubs/2008/JDS08}
-\BIBentrySTDinterwordspacing
 
 \bibitem{mikolajczyk2005comparison}
 K.~Mikolajczyk, T.~Tuytelaars, C.~Schmid, A.~Zisserman, J.~Matas,
