@@ -374,8 +374,14 @@ Hiệu quả của việc tối ưu các thành phần trên sẽ được kiể
   \end{center}
 \end{figure}
 		
-	Bảng \ref{FigAppExperimental} thể hiện kết quả thực nghiệm trên 10 truy vấn với các hình ảnh khác nhau. Có thể thấy tổng thời gian phản hồi của một truy vấn phụ thuộc rất lớn vào thời gian xử lý tại server, cụ thể hơn là thời gian trích xuất đặc trưng. Với kết quả trên, thời gian trích xuất đặc trưng trung bình là 4.542 giây, chiếm 79.6\% tổng thời gian phản hồi. Trong khi đó, thời gian truyền tải cho toàn bộ quá trình là 1.164 giây, với dữ liệu gồm nhiều hình ảnh thì kết quả này là khá tốt, thể hiện hiệu suất của ứng dụng tại các bước nén và mã hóa hình ảnh, tối ưu quá trình truyền dẫn. Với tổng lưu lượng truyền dẫn cho cả quá trình là 85.6kB (dung lượng hình ảnh truy vấn và tổng dung lượng kết quả trả về) hoàn toàn có thể đáp ứng những kết nối chậm, chẳng hạn mạng EDGE với tốc độ 236kb/s.
+	Bảng \ref{FigAppExperimental} thể hiện kết quả thực nghiệm trên 10 truy vấn với các hình ảnh khác nhau được chụp trực tiếp trên điện thoại di động, kết nối với server thông qua mạng wifi cá nhân. Có thể thấy tổng thời gian phản hồi của một truy vấn phụ thuộc rất lớn vào thời gian xử lý tại server, cụ thể hơn là thời gian trích xuất đặc trưng. Với kết quả trên, thời gian trích xuất đặc trưng trung bình là 2.095 giây, chiếm 66.5\% tổng thời gian phản hồi, hơn nữa với những hình ảnh có độ phức tạp đặc trưng cao như hình truy vấn thứ 10 trong bảng \ref{FigAppExperimental}, thời gian trích xuất đặc trưng chiếm tới hơn 80\%. Điều này cũng dễ hiểu vì bước trích xuất đặc trưng sử dụng giải thuật phát hiện và mô tả đặc trưng khá phức tạp, là quá trình ảnh hưởng lớn nhất tới kết quả truy vấn.
+	
+	Trong khi đó, thời gian truyền tải trung bình cho toàn bộ quá trình là 1.009 giây, phụ thuộc chủ yếu vào tốc độ mạng của người dùng. Với dữ liệu gồm nhiều hình ảnh thì kết quả này là khá tốt, thể hiện hiệu suất của ứng dụng tại các bước nén và mã hóa hình ảnh, tối ưu quá trình truyền dẫn. Với tổng lưu lượng truyền dẫn cho cả quá trình là 85.6kB (dung lượng hình ảnh truy vấn và tổng dung lượng kết quả trả về) hoàn toàn có thể đáp ứng những kết nối chậm, chẳng hạn mạng EDGE với tốc độ 236kb/s.
+	
+	Kết quả truy vấn trung bình cho mỗi hình ảnh trong thí nghiệm trên là 7.5 ms, gần như không đáng kể,  cho thấy hiệu suất trong việc cải thiện tốc độ phản hồi của phương pháp đề xuất.
+	
+	Cũng có thể thấy thời gian xử lý giải mã, mã hóa và truy xuất file tại cả client và server là không đáng kể.
 	
 	Ngoài ra, một yếu tố quan trọng để đánh giá hiệu suất của ứng dụng là độ chính xác truy vấn. Ứng dụng sử dụng phương pháp đề xuất đã được trình bày trong mục \ref{chapter:proposed} và kết quả đã được thí nghiệm trên các bộ dữ liệu chuẩn tại mục \ref{chapter:experiment}. 
 	
-	Như vậy, những thực nghiệm trên cho thấy ứng dụng có thể đáp ứng được các yêu cầu thực tế của một hệ thống tìm kiếm đối tượng trên ảnh.
+	Như vậy, những thực nghiệm trên cho thấy ứng dụng hoàn toàn có thể đáp ứng được các yêu cầu thực tế của một hệ thống tìm kiếm đối tượng trên ảnh.
