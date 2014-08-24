@@ -22,13 +22,17 @@ Hơn nữa, ngày nay điện thoại thông minh đang dần trở lên rất p
 	\subsection{Các chức năng chính}
 Ứng dụng được xây dựng với mục tiêu cung cấp một hệ thống tìm kiếm đối tượng trên ảnh, nhận đầu vào là hình ảnh chứa đối tượng truy vấn và trả về danh sách xếp hạng các hình ảnh theo mức độ tương đồng với hình truy vấn. Chi tiết các chức năng chính của ứng dụng như sau:
 
--- Chụp hình đối tượng: người dùng có thể sử dụng camera của điện thoại để chụp hình đối tượng và tìm kiếm.
+\begin{itemize}
 
--- Chọn ảnh được lưu trữ trước trong máy: người dùng có thể chọn một ảnh có chứa đối tượng được lưu trữ trong điện thoại, thẻ nhớ để tìm kiếm.
+\item Chụp hình đối tượng: người dùng có thể sử dụng camera của điện thoại để chụp hình đối tượng và tìm kiếm.
 
--- Chọn vùng đối tượng: để nâng cao độ chính xác của việc tìm kiếm, người dùng có thể khoanh vùng đối tượng cần tìm trên ảnh.
+\item Chọn ảnh được lưu trữ trước trong máy: người dùng có thể chọn một ảnh có chứa đối tượng được lưu trữ trong điện thoại, thẻ nhớ để tìm kiếm.
 
--- Xem và tương tác với kết quả truy vấn: hiển thị kết quả truy vấn là danh sách các hình ảnh và cho phép người dùng xem và tải xuống các hình ảnh này.
+\item Chọn vùng đối tượng: để nâng cao độ chính xác của việc tìm kiếm, người dùng có thể khoanh vùng đối tượng cần tìm trên ảnh.
+
+\item Xem và tương tác với kết quả truy vấn: hiển thị kết quả truy vấn là danh sách các hình ảnh và cho phép người dùng xem và tải xuống các hình ảnh này.
+
+\end{itemize}
 
 \section{Xây dựng ứng dụng}
 \label{c5-thietke}
@@ -36,15 +40,19 @@ Hơn nữa, ngày nay điện thoại thông minh đang dần trở lên rất p
 	\subsection{Kiến trúc tổng quan}
 Kiến trúc của hệ thống gồm làm 3 thành phần chính:
 
--- Client side: là một ứng dụng trên điện thoại di động sử dụng hệ điều hành Android, cung cấp giao diện để người dùng tương tác trực tiếp với hệ thống tìm kiếm đối tượng trên ảnh.
+\begin{itemize}
 
--- Web service: là thành phần trung gian, nhận các yều cầu từ phía client. Thực hiện điều phối và cân bằng tải, chuyển tiếp các yêu cầu từ người dùng tới các server xử lý, đồng thời tiếp nhận kết quả xử lý và trả về cho từng client tương ứng.
+\item \textbf{Client side:} là một ứng dụng trên điện thoại di động sử dụng hệ điều hành Android, cung cấp giao diện để người dùng tương tác trực tiếp với hệ thống tìm kiếm đối tượng trên ảnh.
 
--- Server side: là thành phần xử lý chính của hệ thống, nhận yêu cầu từ web service chuyển tiếp tới, xử lý và trả về kết quả cho web service. Chi phí xử lý truy vấn hình ảnh tại server rất lớn, do đó để đảm bảo yêu cầu thực tế, hệ thống có thể sử dụng nhiều server để xử lý đồng thời các yêu cầu.
+\item \textbf{Web service:} là thành phần trung gian, nhận các yều cầu từ phía client. Thực hiện điều phối và cân bằng tải, chuyển tiếp các yêu cầu từ người dùng tới các server xử lý, đồng thời tiếp nhận kết quả xử lý và trả về cho từng client tương ứng.
+
+\item \textbf{Server side:} là thành phần xử lý chính của hệ thống, nhận yêu cầu từ web service chuyển tiếp tới, xử lý và trả về kết quả cho web service. Chi phí xử lý truy vấn hình ảnh tại server rất lớn, do đó để đảm bảo yêu cầu thực tế, hệ thống có thể sử dụng nhiều server để xử lý đồng thời các yêu cầu.
+
+\end{itemize}
 
 Hình \ref{FigArchitecture} minh họa cho mô hình hoạt động tổng quan của hệ thống.
 
-Chi tiết các thành phần được trình bày trong các phần tiếp theo (\ref{subsubsection:server_side}, \ref{subsection:web_service} \ref{subsection:client_side}).
+Chi tiết các thành phần được trình bày trong các phần tiếp theo (\ref{subsection:server_side}, \ref{subsection:web_service} \ref{subsection:client_side}).
 
 \begin{figure}[!htbp]
   \begin{center}
@@ -217,20 +225,22 @@ Client side là một ứng dụng cung cấp giao diện để người dùng t
 Là thành phần tương tác trực tiếp với người dùng, do đó ứng dụng cần đáp ứng các yêu cầu về giao diện thân thiện, đơn giản, tiện dụng nhưng vấn cung cấp đầy đủ các chức năng cho người dùng.
 
 Dưới đây là giao diện cùng các chức năng của ứng dụng được thể hiện qua các hình \ref{FigInterface1}, \ref{FigInterface2}, \ref{FigInterface3}, \ref{FigInterface4}, \ref{FigInterface5} và \ref{FigInterface6}.
-
+\\
+\\
 \begin{figure}[!htbp]
   \begin{center}
     \leavevmode
     \ifpdf
-      \includegraphics[scale=0.35]{interface_1}
+      \includegraphics[scale=0.38]{interface_1}
     \else
-      \includegraphics[scale=0.35]{interface_1}
+      \includegraphics[scale=0.38]{interface_1}
     \fi
     \caption[Hình ảnh ứng dụng với các chức năng chính]{Hình ảnh giao diện ứng dụng với các chức năng chính. Ứng dụng cho phép người dùng chọn vùng đối tượng trên camera, chụp hình vùng đối tượng, bật / tắt đèn flash và chọn hình ảnh trong thiết bị để truy vấn.}
     \label{FigInterface1}
   \end{center}
 \end{figure}
-
+\\
+\\
 \begin{figure}[!htbp]
   \begin{center}
     \leavevmode
@@ -324,10 +334,7 @@ Thêm vào đó, việc sử dụng các server truy xuất dữ liệu độc l
 \end{itemize}
 
 Hiệu quả của việc tối ưu các thành phần trên sẽ được kiểm chứng trong phần tiếp theo.
-\\
-\\
-\\
-\\
+
 \section{Cài đặt và thực nghiệm}
 \label{c5-caidat}
 	\subsection{Môi trường cài đặt}

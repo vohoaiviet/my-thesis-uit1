@@ -358,6 +358,39 @@
   \end{center}}
 {\end{alwayssingle}}
 
+% CONTRIBUTIONS
+%
+% The acknowledgements environment puts a large, bold, centered 
+% "Acknowledgements" label at the top of the page. The acknowledgements
+% themselves appear in a quote environment, i.e. tabbed in at both sides, and
+% on its own page.
+
+\newenvironment{contributions}
+{\pagestyle{empty}
+\begin{alwayssingle}
+\begin{center}
+\vspace*{1.5cm}
+{\Large \bfseries NHỮNG ĐÓNG GÓP}
+\end{center}
+\vspace{0.5cm}
+\begin{quote}}
+{\end{quote}\end{alwayssingle}}
+
+% The acknowledgementslong environment puts a large, bold, centered 
+% "Acknowledgements" label at the top of the page. The acknowledgement itself 
+% does not appears in a quote environment so you can get more in.
+
+\newenvironment{contributionslong}
+{\pagestyle{empty}
+\begin{alwayssingle}
+\begin{center}
+\vspace*{1.5cm}
+{\Large \bfseries NHỮNG ĐÓNG GÓP}
+\end{center}
+\vspace{0.5cm}\begin{quote}}
+{\end{quote}\end{alwayssingle}}
+
+
 %ROMANPAGES
 %
 % The romanpages environment set the page numbering to lowercase roman one
