@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.28)  24 AUG 2014 21:18
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.28)  24 AUG 2014 21:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1960,7 +1960,7 @@ File: Chapter4/Chapter4Figs/experiment_setting.jpg Graphic file (type jpg)
  <use Chapter4/Chapter4Figs/experiment_setting.jpg>
 Package pdftex.def Info: Chapter4/Chapter4Figs/experiment_setting.jpg used on i
 nput line 104.
-(pdftex.def)             Requested size: 261.79257pt x 114.27452pt.
+(pdftex.def)             Requested size: 387.00073pt x 168.92888pt.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\ecircumflex'
@@ -2002,6 +2002,7 @@ Package hyperref Warning: Composite letter `\textacute+\ocircumflex'
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ocircumflex' on input line 113.
 
+[36 <./Chapter4/Chapter4Figs/experiment_setting.jpg>]
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\u' on input line 116.
@@ -2028,7 +2029,7 @@ Package hyperref Warning: Composite letter `\textdotbelow+u'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textdotbelow' on input line 116.
 
-[36 <./Chapter4/Chapter4Figs/experiment_setting.jpg>]
+[37]
 
 Package hyperref Warning: Composite letter `\textdotbelow+o'
 (hyperref)                not defined in PD1 encoding,
@@ -2038,7 +2039,6 @@ Package hyperref Warning: Composite letter `\textdotbelow+o'
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\h' on input line 138.
 
-[37]
 
 Package hyperref Warning: Composite letter `\textacute+\ecircumflex'
 (hyperref)                not defined in PD1 encoding,
@@ -2097,7 +2097,7 @@ File: Chapter4/Chapter4Figs/1_chart.png Graphic file (type png)
 <use Chapter4/Chapter4Figs/1_chart.png>
 Package pdftex.def Info: Chapter4/Chapter4Figs/1_chart.png used on input line 2
 34.
-(pdftex.def)             Requested size: 308.04802pt x 200.5474pt.
+(pdftex.def)             Requested size: 287.51218pt x 187.17802pt.
  [41]
 <Chapter4/Chapter4Figs/levels.jpg, id=871, 1099.10625pt x 702.625pt>
 File: Chapter4/Chapter4Figs/levels.jpg Graphic file (type jpg)
@@ -2314,13 +2314,8 @@ File: Chapter5/Chapter5Figs/architecture.jpg Graphic file (type jpg)
 <use Chapter5/Chapter5Figs/architecture.jpg>
 Package pdftex.def Info: Chapter5/Chapter5Figs/architecture.jpg used on input l
 ine 61.
-(pdftex.def)             Requested size: 449.67694pt x 281.04808pt.
-
-Overfull \hbox (37.11198pt too wide) in paragraph at lines 59--65
- [] 
- []
-
-[48] [49 <./Chapter5/Chapter5Figs/architecture.jpg>]
+(pdftex.def)             Requested size: 385.42337pt x 240.8896pt.
+ [48 <./Chapter5/Chapter5Figs/architecture.jpg>] [49]
 
 Package hyperref Warning: Composite letter `\textacute+\acircumflex'
 (hyperref)                not defined in PD1 encoding,
@@ -2330,15 +2325,15 @@ Package hyperref Warning: Composite letter `\textacute+\acircumflex'
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\acircumflex' on input line 91.
 
-[50]
-<Chapter5/Chapter5Figs/query-process-server.jpg, id=931, 1169.36874pt x 601.246
+
+<Chapter5/Chapter5Figs/query-process-server.jpg, id=927, 1169.36874pt x 601.246
 25pt>
 File: Chapter5/Chapter5Figs/query-process-server.jpg Graphic file (type jpg)
  <use Chapter5/Chapter5Figs/query-process-server.jpg>
 Package pdftex.def Info: Chapter5/Chapter5Figs/query-process-server.jpg used on
  input line 111.
 (pdftex.def)             Requested size: 409.28519pt x 210.43933pt.
- [51 <./Chapter5/Chapter5Figs/query-process-server.jpg>] [52]
+ [50] [51 <./Chapter5/Chapter5Figs/query-process-server.jpg>] [52]
 <Chapter5/Chapter5Figs/ws_model.jpg, id=943, 2455.1725pt x 1232.605pt>
 File: Chapter5/Chapter5Figs/ws_model.jpg Graphic file (type jpg)
 
@@ -2351,7 +2346,7 @@ Overfull \hbox (4.80885pt too wide) in paragraph at lines 142--148
  [] 
  []
 
-[53]
+[53 <./Chapter5/Chapter5Figs/ws_model.jpg>]
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\h' on input line 161.
@@ -2372,16 +2367,15 @@ Overfull \hbox (26.5746pt too wide) in paragraph at lines 166--172
  [] 
  []
 
-[54 <./Chapter5/Chapter5Figs/ws_model.jpg>]
-<Chapter5/Chapter5Figs/client_model.jpg, id=955, 1027.84pt x 770.88pt>
+<Chapter5/Chapter5Figs/client_model.jpg, id=951, 1027.84pt x 770.88pt>
 File: Chapter5/Chapter5Figs/client_model.jpg Graphic file (type jpg)
 
 <use Chapter5/Chapter5Figs/client_model.jpg>
 Package pdftex.def Info: Chapter5/Chapter5Figs/client_model.jpg used on input l
 ine 183.
 (pdftex.def)             Requested size: 411.12872pt x 308.34654pt.
- [55 <./Chapter5/Chapter5Figs/android_client.jpg>] [56 <./Chapter5/Chapter5Figs
-/client_model.jpg>] [57]
+ [54 <./Chapter5/Chapter5Figs/android_client.jpg>] [55 <./Chapter5/Chapter5Figs
+/client_model.jpg>] [56]
 
 Package hyperref Warning: Composite letter `\textacute+\uhorn'
 (hyperref)                not defined in PD1 encoding,
@@ -2404,7 +2398,7 @@ Package hyperref Warning: Composite letter `\textdotbelow+\ecircumflex'
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ecircumflex' on input line 224.
 
-<Chapter5/Chapter5Figs/interface_1.jpg, id=975, 1003.75pt x 564.1075pt>
+<Chapter5/Chapter5Figs/interface_1.jpg, id=971, 1003.75pt x 564.1075pt>
 File: Chapter5/Chapter5Figs/interface_1.jpg Graphic file (type jpg)
 
 <use Chapter5/Chapter5Figs/interface_1.jpg>
@@ -2412,7 +2406,7 @@ Package pdftex.def Info: Chapter5/Chapter5Figs/interface_1.jpg used on input li
 ne 234.
 (pdftex.def)             Requested size: 381.42897pt x 214.36307pt.
 
-<Chapter5/Chapter5Figs/interface_2.jpg, id=976, 1003.75pt x 565.11125pt>
+<Chapter5/Chapter5Figs/interface_2.jpg, id=972, 1003.75pt x 565.11125pt>
 File: Chapter5/Chapter5Figs/interface_2.jpg Graphic file (type jpg)
 
 <use Chapter5/Chapter5Figs/interface_2.jpg>
@@ -2420,7 +2414,7 @@ Package pdftex.def Info: Chapter5/Chapter5Figs/interface_2.jpg used on input li
 ne 248.
 (pdftex.def)             Requested size: 351.31776pt x 197.7919pt.
 
-<Chapter5/Chapter5Figs/interface_3.jpg, id=977, 1001.7425pt x 564.1075pt>
+<Chapter5/Chapter5Figs/interface_3.jpg, id=973, 1001.7425pt x 564.1075pt>
 File: Chapter5/Chapter5Figs/interface_3.jpg Graphic file (type jpg)
 
 <use Chapter5/Chapter5Figs/interface_3.jpg>
@@ -2428,7 +2422,7 @@ Package pdftex.def Info: Chapter5/Chapter5Figs/interface_3.jpg used on input li
 ne 261.
 (pdftex.def)             Requested size: 350.61513pt x 197.44057pt.
 
-<Chapter5/Chapter5Figs/interface_4.jpg, id=978, 1003.75pt x 566.115pt>
+<Chapter5/Chapter5Figs/interface_4.jpg, id=974, 1003.75pt x 566.115pt>
 File: Chapter5/Chapter5Figs/interface_4.jpg Graphic file (type jpg)
 
 <use Chapter5/Chapter5Figs/interface_4.jpg>
@@ -2436,7 +2430,7 @@ Package pdftex.def Info: Chapter5/Chapter5Figs/interface_4.jpg used on input li
 ne 274.
 (pdftex.def)             Requested size: 351.31776pt x 198.14322pt.
 
-<Chapter5/Chapter5Figs/interface_5.jpg, id=979, 1003.75pt x 565.11125pt>
+<Chapter5/Chapter5Figs/interface_5.jpg, id=975, 1003.75pt x 565.11125pt>
 File: Chapter5/Chapter5Figs/interface_5.jpg Graphic file (type jpg)
 
 <use Chapter5/Chapter5Figs/interface_5.jpg>
@@ -2444,7 +2438,7 @@ Package pdftex.def Info: Chapter5/Chapter5Figs/interface_5.jpg used on input li
 ne 287.
 (pdftex.def)             Requested size: 351.31776pt x 197.7919pt.
 
-<Chapter5/Chapter5Figs/interface_6.jpg, id=980, 1003.75pt x 565.11125pt>
+<Chapter5/Chapter5Figs/interface_6.jpg, id=976, 1003.75pt x 565.11125pt>
 File: Chapter5/Chapter5Figs/interface_6.jpg Graphic file (type jpg)
 
 <use Chapter5/Chapter5Figs/interface_6.jpg>
@@ -2501,10 +2495,10 @@ Package hyperref Warning: Composite letter `\textacute+\ocircumflex'
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ocircumflex' on input line 309.
 
-[58 <./Chapter5/Chapter5Figs/interface_1.jpg>] [59 <./Chapter5/Chapter5Figs/int
-erface_2.jpg> <./Chapter5/Chapter5Figs/interface_3.jpg>] [60 <./Chapter5/Chapte
-r5Figs/interface_4.jpg>] [61 <./Chapter5/Chapter5Figs/interface_5.jpg> <./Chapt
-er5/Chapter5Figs/interface_6.jpg>] [62]
+[57] [58 <./Chapter5/Chapter5Figs/interface_1.jpg> <./Chapter5/Chapter5Figs/int
+erface_2.jpg>] [59 <./Chapter5/Chapter5Figs/interface_3.jpg> <./Chapter5/Chapte
+r5Figs/interface_4.jpg>] [60 <./Chapter5/Chapter5Figs/interface_5.jpg> <./Chapt
+er5/Chapter5Figs/interface_6.jpg>] [61]
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\dj' on input line 338.
@@ -2562,7 +2556,7 @@ Package hyperref Warning: Composite letter `\textdotbelow+\abreve'
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\abreve' on input line 340.
 
-[63]
+[62]
 
 Package hyperref Warning: Composite letter `\textacute+\ecircumflex'
 (hyperref)                not defined in PD1 encoding,
@@ -2612,14 +2606,14 @@ Package hyperref Warning: Composite letter `\textdotbelow+u'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textdotbelow' on input line 363.
 
-[64]
-<Chapter5/Chapter5Figs/app_experimental.jpg, id=1018, 1293.83376pt x 782.925pt>
+[63]
+<Chapter5/Chapter5Figs/app_experimental.jpg, id=1014, 1293.83376pt x 782.925pt>
 File: Chapter5/Chapter5Figs/app_experimental.jpg Graphic file (type jpg)
 <use Chapter5/Chapter5Figs/app_experimental.jpg>
 Package pdftex.def Info: Chapter5/Chapter5Figs/app_experimental.jpg used on inp
 ut line 382.
 (pdftex.def)             Requested size: 388.15312pt x 234.8793pt.
- [65 <./Chapter5/Chapter5Figs/app_experimental.jpg>]) [66]
+ [64 <./Chapter5/Chapter5Figs/app_experimental.jpg>]) [65]
 \openout2 = `Conclusions/conclusions.aux'.
 
  (./Conclusions/conclusions.tex
@@ -2749,7 +2743,7 @@ Package hyperref Warning: Composite letter `\textacute+\acircumflex'
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\acircumflex' on input line 24.
 
-[67
+[66
 
 
 
@@ -2794,7 +2788,7 @@ Package hyperref Warning: Composite letter `\textacute+\ecircumflex'
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ecircumflex' on input line 31.
 
-[68]) [69] (./uitthesis.bbl (./uitthesis.brf)
+[67]) [68] (./uitthesis.bbl (./uitthesis.brf)
 \tf@brf=\write9
 \openout9 = `uitthesis.brf'.
 
@@ -2812,12 +2806,12 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\h' on input line 2.
 
-[70
+[69
 
 
-] [71] [72] [73] [74] [75])
+] [70] [71] [72] [73] [74])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 100.
- [76]
+ [75]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 100.
  (./uitthesis.aux
 (./Acknowledgement/acknowledgement.aux) (./Abstract/abstract.aux)
@@ -2830,12 +2824,12 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 100.
 Package rerunfilecheck Info: File `uitthesis.out' has not changed.
 (rerunfilecheck)             Checksum: 5915BA2754AC0DE45C961220A72E5909;5223.
 Package rerunfilecheck Info: File `uitthesis.brf' has not changed.
-(rerunfilecheck)             Checksum: 01B57D29AE28CB13DFE101BE26A94779;5009.
+(rerunfilecheck)             Checksum: 58E5008E620AEAB41996C3F787A2E9B5;5009.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 100.
  ) 
 Here is how much of TeX's memory you used:
- 9393 strings out of 493304
- 141145 string characters out of 6139871
+ 9392 strings out of 493304
+ 141138 string characters out of 6139871
  236615 words of memory out of 5000000
  12267 multiletter control sequences out of 15000+600000
  26594 words of font info for 58 fonts, out of 8000000 for 9000
@@ -2855,10 +2849,10 @@ texlive/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/vntex/vnr/vnr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/vn
 tex/vnr/vnr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnti12.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnti8.pfb>
-Output written on uitthesis.pdf (88 pages, 12880054 bytes).
+Output written on uitthesis.pdf (87 pages, 12879653 bytes).
 PDF statistics:
- 1270 PDF objects out of 1440 (max. 8388607)
- 1121 compressed objects within 12 object streams
- 266 named destinations out of 1000 (max. 500000)
+ 1266 PDF objects out of 1440 (max. 8388607)
+ 1118 compressed objects within 12 object streams
+ 265 named destinations out of 1000 (max. 500000)
  666 words of extra memory for PDF output out of 10000 (max. 10000000)
 
