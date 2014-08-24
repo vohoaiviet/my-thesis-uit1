@@ -63,9 +63,11 @@ Chi tiết các thành phần được trình bày trong các phần tiếp theo
 \label{subsection:server_side}
 Server side chính là thành phần quan trọng nhất của hệ thống, thực hiện các tác vụ xử lý truy vấn. Cấu trúc của server side gồm hai thành phần chính tương ứng với hai quá trình xử lý là quá trình training và quá trình truy vấn.
 
--- Quá trình training: là quá trình biểu diễn lại tập dữ liệu hình ảnh, sử dụng các mô hình biểu diễn hình ảnh kết hợp với các phương pháp, kỹ thuật khác với mục đích tạo ra các dữ liệu cần thiết phục vụ quá trình truy vấn.
+\begin{itemize}
+\item \textbf{Quá trình training:} là quá trình biểu diễn lại tập dữ liệu hình ảnh, sử dụng các mô hình biểu diễn hình ảnh kết hợp với các phương pháp, kỹ thuật khác với mục đích tạo ra các dữ liệu cần thiết phục vụ quá trình truy vấn.
 
--- Quá trình truy vấn: là quá trình tương tác trực tiếp với hệ thống tìm kiếm đối tượng trên ảnh, nhận đầu vào là một hình ảnh, thực hiện các bước xử lý truy vấn ảnh và trả về kết quả là một tập các hình ảnh được sắp xếp theo thứ tự có độ tương đồng với hình ảnh truy vấn giảm dần.
+\item \textbf{Quá trình truy vấn:} là quá trình tương tác trực tiếp với hệ thống tìm kiếm đối tượng trên ảnh, nhận đầu vào là một hình ảnh, thực hiện các bước xử lý truy vấn ảnh và trả về kết quả là một tập các hình ảnh được sắp xếp theo thứ tự có độ tương đồng với hình ảnh truy vấn giảm dần.
+\end{itemize}
 
 \subsubsection{Quá trình training}
 Như đã trình bày sơ lược trong mục trong mục \ref{sec:inverted-index} và \ref{experimental-setting}, quá trình training bao gồm các bước sau:
@@ -88,9 +90,11 @@ Việc trả về cho client các hình ảnh thu nhỏ sẽ phát sinh thêm c�
 
 Với yêu cầu như trên, các server được chia làm 2 loại chính:
 
--- Server truy vấn: tiếp nhận yêu cầu truy vấn hình ảnh, xử lý và trả về kết quả là danh sách xếp hạng cùng một phần các hình ảnh thu nhỏ giống với hình truy vấn nhất.
+\begin{itemize}
+\item \textbf{Server truy vấn:} tiếp nhận yêu cầu truy vấn hình ảnh, xử lý và trả về kết quả là danh sách xếp hạng cùng một phần các hình ảnh thu nhỏ giống với hình truy vấn nhất.
 
--- Server truy xuất dữ liệu: tiếp nhận yêu cầu truy xuất hình ảnh, trả về hình ảnh được lấy từ bộ nhớ.
+\item \textbf{Server truy xuất dữ liệu:} tiếp nhận yêu cầu truy xuất hình ảnh, trả về hình ảnh được lấy từ bộ nhớ.
+\end{itemize}
 
 \begin{figure}[!htbp]
   \begin{center}
@@ -218,9 +222,9 @@ Dưới đây là giao diện cùng các chức năng của ứng dụng đượ
   \begin{center}
     \leavevmode
     \ifpdf
-      \includegraphics[scale=0.3]{interface_1}
+      \includegraphics[scale=0.35]{interface_1}
     \else
-      \includegraphics[scale=0.3]{interface_1}
+      \includegraphics[scale=0.35]{interface_1}
     \fi
     \caption[Hình ảnh ứng dụng với các chức năng chính]{Hình ảnh giao diện ứng dụng với các chức năng chính. Ứng dụng cho phép người dùng chọn vùng đối tượng trên camera, chụp hình vùng đối tượng, bật / tắt đèn flash và chọn hình ảnh trong thiết bị để truy vấn.}
     \label{FigInterface1}
@@ -257,9 +261,9 @@ Dưới đây là giao diện cùng các chức năng của ứng dụng đượ
   \begin{center}
     \leavevmode
     \ifpdf
-      \includegraphics[scale=0.36]{interface_4}
+      \includegraphics[scale=0.35]{interface_4}
     \else
-      \includegraphics[scale=0.36]{interface_4}
+      \includegraphics[scale=0.35]{interface_4}
     \fi
     \caption[Hình ảnh ứng dụng khi xem chi tiết kết quả truy vấn]{Hình ảnh ứng dụng khi xem chi tiết kết quả truy vấn. Người dùng có thể chọn xem một hình ảnh trong danh sách kết quả truy vấn. Ứng dụng sẽ tải hình ảnh chất lượng cao hơn để người dùng dễ dàng xem trong khung hình lớn hơn, nhưng đây chưa phải hình ảnh với chất lượng tốt nhất. Do dó, ứng dụng cũng cho phép người dùng tải hình ảnh gốc chất lượng cao bằng cách chạm vào nút như trên hình.}
     \label{FigInterface4}
@@ -270,9 +274,9 @@ Dưới đây là giao diện cùng các chức năng của ứng dụng đượ
   \begin{center}
     \leavevmode
     \ifpdf
-      \includegraphics[scale=0.36]{interface_5}
+      \includegraphics[scale=0.35]{interface_5}
     \else
-      \includegraphics[scale=0.36]{interface_5}
+      \includegraphics[scale=0.35]{interface_5}
     \fi
     \caption[Hình ảnh ứng dụng với chức năng tải thêm hình ảnh trong danh sách kết quả]{Hình ảnh ứng dụng với chức năng tải thêm hình ảnh trong danh sách kết quả truy vấn. Khi hoàn tất xử lý, server chỉ trả về cho ứng dụng một số hình ảnh đứng đầu danh sách xếp hạng, người dùng có thể tải thêm các hình ảnh khác bằng cách chạm vào dấu cộng như trên hình, với số lượng hình ảnh tối đa có thể tải là 50 hình.}
     \label{FigInterface5}
@@ -320,7 +324,10 @@ Thêm vào đó, việc sử dụng các server truy xuất dữ liệu độc l
 \end{itemize}
 
 Hiệu quả của việc tối ưu các thành phần trên sẽ được kiểm chứng trong phần tiếp theo.
-
+\\
+\\
+\\
+\\
 \section{Cài đặt và thực nghiệm}
 \label{c5-caidat}
 	\subsection{Môi trường cài đặt}
